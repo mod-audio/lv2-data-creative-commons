@@ -1,6 +1,6 @@
 #
 # Copyright (C) 2014 Guitarix project MOD project
-# 
+#
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation; either version 2 of the License, or
@@ -46,14 +46,17 @@
     doap:license <http://opensource.org/licenses/isc> ;
     lv2:project <http://guitarix.sourceforge.net/plugins/gx_supersonic_> ;
     lv2:optionalFeature lv2:hardRTCapable ;
-      
+
     lv2:minorVersion 35;
     lv2:microVersion 0;
-    
+
 rdfs:comment """
+The GxSuperSonic is a guitar tube amplifier simulator plugin based on the  Rickenbacker M-16 Supersonic® (*).The Supersonic was produced in the 1960s as an answer to Fender’s popular Bassman® (*) amplifiers and was used by artists such as Jim Reeves. This is the perfect amplifier plugin for powerful clean tones, but the input gain can be pushed to get access to some smooth and creamy overdrive tones as well.While the original is a combo amplifier, this plugin does not emulate the speaker cabinet. To complete the signal chain, it is recommended to combine this plugin with the MOD Vintage Cabinets plugin.
 
-Tube amp simulation.
-
+Features:
+Modeled by Guitarix
+(*)
+“Other product names modeled in the software are trademarks of their respective companies that do not endorse and are not associated or affiliated with MOD. Rickenbacker M-16 Supersonic® and Fender Bassman® are trademarks or trade names of other manufacturers and were used merely to identify the product whose sound was reviewed in the creation of the product. All other trademarks are the property of their respective holders.”
 """;
 
 
