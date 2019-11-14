@@ -1,142 +1,87 @@
 /* SKINS */
-.mod-panel{{{cns}}} {
-    border-radius: 20px;
+.gx-supersonic{{{cns}}} {
+  background-image: url(/resources/gx_supersonic_bg.png{{{ns}}});
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 359px;
+  position: relative;
+  width: 564px;
 }
 
-.mod-panel-0720{{{cns}}} {
-    background-image: url(/resources/combos/pedal.png{{{ns}}});
-    background-position: center center;
-    background-repeat: no-repeat;
-    height: 180px;
-    position: relative;
-    width: 720px;
+.gx-supersonic{{{cns}}} .mod-pedal-input,
+.gx-supersonic{{{cns}}} .mod-pedal-output {
+    top: 125px;
 }
 
+/* Switch / Light */
+
+.gx-supersonic{{{cns}}} .mod-switch {
+  position: absolute;
+  background-image: url(/resources/spritesheets/switch_toggle.png{{{ns}}});
+  background-repeat: no-repeat;
+  cursor: pointer;
+  height: 40px;
+  width: 33px;
+  top: 230px;
+  left: 79px;
+  z-index: 30;
+}
+
+.gx-supersonic{{{cns}}} .mod-switch.off {
+  background-position: right center;
+}
+
+.gx-supersonic{{{cns}}} .mod-switch.on {
+  background-position: left center;
+  top: 235px;
+}
+
+.gx-supersonic{{{cns}}} .mod-light {
+  position: absolute;
+  background-image: url(/resources/spritesheets/led.png{{{ns}}});
+  height: 32px;
+  width: 30px;
+  left: 45px;
+  top: 236px;
+}
+
+.gx-supersonic{{{cns}}} .mod-light.off {
+  background-position: left center;
+}
+
+.gx-supersonic{{{cns}}} .mod-light.on {
+  background-position: right center;
+}
 /* CONTROLS */
-.mod-panel{{{cns}}} .mod-control-group {
-    border-style: none;
-    bottom: 149px;
-    color: #999;
-    font-size: 10px;
-    font-weight: bold;
-    height: 71px;
-    left: 58px;
-    position: absolute;
-    right: 8px;
-    top: 47px;
+.gx-supersonic{{{cns}}} .mod-control-group {
+  position: relative;
+  z-index: 30;
 }
 
-.mod-panel{{{cns}}} .mod-control-group > div {
-    margin-right: 10px;
-}
-.mod-panel{{{cns}}} .mod-control-group-k {
-    border-style: none;
-    bottom: 149px;
-    color: #666;
-    font-size: 10px;
-    font-weight: bold;
-    height: 71px;
-    left: 258px;
-    position: absolute;
-    right: 8px;
-    top: 5px;
+.gx-supersonic{{{cns}}} .mod-control-group .mod-knob {
+  position: absolute;
+  top: 207px;
 }
 
-.mod-panel{{{cns}}} .mod-control-group-k > div {
-    margin-right: 20px;
+.gx-supersonic{{{cns}}} .mod-control-group .mod-knob.gx-supersonic-GAIN {
+  left: 158px;
 }
 
-.mod-panel{{{cns}}} .mod-pedal-input,
-.mod-panel{{{cns}}} .mod-pedal-output {
-    top: 55px;
+.gx-supersonic{{{cns}}} .mod-control-group .mod-knob.gx-supersonic-BASS {
+  left: 249px;
 }
 
-/* SWITCH ON/OFF GENERAL */
-.mod-panel{{{cns}}} .mod-switch {
-    cursor: pointer;
-    float: left;
-    height: 71px;
-    position: relative;
-    width: 71px;
+.gx-supersonic{{{cns}}} .mod-control-group .mod-knob.gx-supersonic-TREBLE {
+  left: 340px;
 }
 
-.mod-panel{{{cns}}} .mod-switch-image {
-    background-image: url(/resources/switches/pswitch.png{{{ns}}});
-    background-position: -9px 0px;
-    background-repeat: no-repeat;
-    background-size: auto 71px;
-    margin-top: 18px;
-    height: 71px;
-    width: 71px;
+.gx-supersonic{{{cns}}} .mod-control-group .mod-knob.gx-supersonic-VOLUME {
+  left: 431px;
 }
 
-.mod-panel{{{cns}}} .mod-switch-image.on {
-    background-position: -79px 0px;
-}
-
-.mod-panel{{{cns}}} .mod-switch-image.off {
-    background-position: -8px 0px;
-}
-
-.mod-panel{{{cns}}} .mod-grid {
-    cursor: move;
-    float: left;
-    height: 71px;
-    position: relative;
-    width: 132px;
-}
-
-.mod-panel{{{cns}}} .mod-grid-image {
-    background-image: url(/resources/switches/grid.png{{{ns}}});
-    background-position: -9px 0px;
-    background-repeat: no-repeat;
-    background-size: auto 71px;
-    margin-top: 18px;
-    margin-left: 12px;
-    height: 86px;
-    width: 132px;
-}
-
-.mod-panel{{{cns}}} .mod-grid-image.on {
-    background-position: -132px 0px;
-}
-
-.mod-panel{{{cns}}} .mod-grid-image.off {
-    background-position: 0px 0px;
-}
-
-/* CHICKEN HEAD */
-.mod-panel{{{cns}}} .mod-knob {
-    float: left;
-    height: 101px;
-    overflow: hidden;
-    position: relative;
-    text-align: center;
-    width: 71px;
-}
-
-.mod-panel{{{cns}}} .mod-knob .mod-knob-image {
-    background-image: url(/resources/knobs/knob.png{{{ns}}});
-    background-position: left 0px;
-    background-repeat: no-repeat;
-    background-size: auto 71px;
-    height: 71px;
-    margin-top: 18px;
-    position: relative;
-    width: 71px;
-    z-index: 2;
-}
-
-.mod-panel{{{cns}}} .mod-knob .mod-knob-title {
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 10px;
-    font-weight: bold;
-    height:18px;
-    left: 0;
-    overflow:hidden;
-    position: absolute;
-    right: 0;
-    text-transform: uppercase;
-    top: 0;
-    z-index: 1;
+.gx-supersonic{{{cns}}} .mod-control-group .mod-knob .mod-knob-image {
+  background-image: url(/resources/spritesheets/gx_supersonic_knobs_70.png{{{ns}}});
+  background-repeat: no-repeat;
+  height: 80px;
+  width: 80px;
 }
