@@ -9,6 +9,7 @@
         modgui:screenshot <modgui/mod_control_to_cv_ss.png> ;
         modgui:thumbnail <modgui/mod_control_to_cv_tn.png> ;
         modgui:brand "MOD" ;
+        modgui:license "CC BY-NC-ND 4.0";
         modgui:label "Control to CV" ;
         modgui:port [
             lv2:index 0 ;

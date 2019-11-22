@@ -9,6 +9,7 @@
         modgui:screenshot <modgui/mod_midi_to_cv_mono_ss.png> ;
         modgui:thumbnail <modgui/mod_midi_to_cv_mono_tn.png> ;
         modgui:brand "MOD" ;
+        modgui:license "CC BY-NC-ND 4.0";
         modgui:label "MIDI to CV mono" ;
         modgui:port [
             lv2:index 0 ;

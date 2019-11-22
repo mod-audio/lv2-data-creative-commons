@@ -9,6 +9,7 @@
         modgui:screenshot <modgui/switchbox_cv_1to2_ss.png> ;
         modgui:thumbnail <modgui/switchbox_cv_1to2_tn.png> ;
         modgui:brand "MOD" ;
+        modgui:license "CC BY-NC-ND 4.0";
         modgui:label "CV Switchbox 1-2" ;
         modgui:port [
             lv2:index 0 ;
