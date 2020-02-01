@@ -31,13 +31,15 @@ doap:maintainer [
     lv2:microVersion 0;
 
 rdfs:comment """
-Control to CV enables you to generate a control voltage signal from a control value. 
+Control to CV enables you to generate a control voltage signal from a control value.
 """;
 
 lv2:port
 [
-    a lv2:OutputPort, lv2:CVPort;
+    a lv2:OutputPort, lv2:CVPort, mod:CVPort;
     lv2:index 0;
+    lv2:minimum 0.0 ;
+    lv2:maximum 10.0 ;
     lv2:symbol "Cvoutput";
     lv2:name "CV Output";
 ],
