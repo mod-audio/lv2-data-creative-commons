@@ -1,0 +1,23 @@
+@prefix modgui: <http://moddevices.com/ns/modgui#> .
+@prefix lv2:    <http://lv2plug.in/ns/lv2core#> .
+
+<http://moddevices.com/plugins/mod-devel/mod-cv-parameter-modulation>
+    modgui:gui [
+        modgui:resourcesDirectory <modgui> ;
+        modgui:iconTemplate <modgui/icon-cv-parameter-modulation.html> ;
+        modgui:stylesheet <modgui/stylesheet-cv-parameter-modulation.css> ;
+        modgui:screenshot <modgui/cv_parameter_modulation_ss.png> ;
+        modgui:thumbnail <modgui/cv_parameter_modulation_tn.png> ;
+        modgui:brand "MOD" ;
+        modgui:label "CV Parameter Modulation" ;
+        modgui:license "CC BY-NC-ND 4.0";
+        modgui:port [
+            lv2:index 0 ;
+            lv2:symbol "ParameterValue" ;
+            lv2:name "Parameter Value" ;
+        ] , [
+            lv2:index 1 ;
+            lv2:symbol "ModulationDepth" ;
+            lv2:name "Modulation Depth" ;
+        ] ;
+    ] .
