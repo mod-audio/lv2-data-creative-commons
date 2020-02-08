@@ -29,6 +29,14 @@ doap:maintainer [
     lv2:microVersion 0;
 
 rdfs:comment """
+The MOD CV Parameter Modulation plugin is a control voltage utility specifically designed for use with MOD Devices’ products.
+Its purpose is to facilitate mapping internal control voltage signals to plugin parameters, using the “manage CV ports” feature.
+
+The PARAMETER VALUE sets the initial value (before modulation is applied) of the mapped plugin parameter.
+The MODULATION DEPTH sets the amount of modulation on the mapped plugin parameter, coming from the control voltage input of the CV Parameter Modulation plugin. To invert the polarity of the modulation, set this parameter to a negative amount.
+
+Features:
+Plugin by MOD Devices
 """;
 
 lv2:port
