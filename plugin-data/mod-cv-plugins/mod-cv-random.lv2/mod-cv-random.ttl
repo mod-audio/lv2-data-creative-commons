@@ -57,10 +57,11 @@ lv2:port
     lv2:ControlPort ;
     lv2:index 2 ;
     lv2:symbol "MinValue" ;
-    lv2:name "MinValue";
+    lv2:name "Min Value";
     lv2:default 0.0 ;
     lv2:minimum -10.0 ;
     lv2:maximum 10.0 ;
+    mod:volts ;
 ]
 ,
 [
@@ -68,10 +69,11 @@ lv2:port
     lv2:ControlPort ;
     lv2:index 3 ;
     lv2:symbol "MaxValue" ;
-    lv2:name "MaxValue";
+    lv2:name "Max Value";
     lv2:default 1.0 ;
     lv2:minimum -10.0 ;
     lv2:maximum 10.0 ;
+    mod:volts ;
 ]
 ,
 [
