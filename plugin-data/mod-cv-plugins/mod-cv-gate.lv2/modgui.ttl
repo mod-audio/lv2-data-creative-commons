@@ -1,0 +1,23 @@
+@prefix modgui: <http://moddevices.com/ns/modgui#> .
+@prefix lv2:    <http://lv2plug.in/ns/lv2core#> .
+
+<http://moddevices.com/plugins/mod-devel/mod-cv-gate>
+    modgui:gui [
+        modgui:resourcesDirectory <modgui> ;
+        modgui:iconTemplate <modgui/icon-mod-cv-gate.html> ;
+        modgui:stylesheet <modgui/stylesheet-mod-cv-gate.css> ;
+        modgui:screenshot <modgui/mod_cv_gate_ss.png> ;
+        modgui:thumbnail <modgui/mod_cv_gate_tn.png> ;
+        modgui:brand "MOD" ;
+        modgui:label "CV Gate" ;
+        modgui:license "CC BY-NC-ND 4.0";
+        modgui:port [
+            lv2:index 0 ;
+            lv2:symbol "OpeningThreshold" ;
+            lv2:name "OpeningThreshold" ;
+        ] , [
+            lv2:index 1 ;
+            lv2:symbol "ClosingThreshold" ;
+            lv2:name "ClosingThreshold" ;
+        ] ;
+    ] .
