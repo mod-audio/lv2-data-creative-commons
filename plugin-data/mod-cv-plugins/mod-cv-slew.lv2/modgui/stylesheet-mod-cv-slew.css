@@ -24,8 +24,8 @@
     background-position: left center;
     height: 25px;
     width: 25px;
-    top: 11px;
-    right: 30px;
+    top: 45px;
+    right: 19px;
 }
 
 .mod-cv-slew{{{cns}}} .mod-light.on {
@@ -43,8 +43,8 @@
     background-position: center bottom;
     background-repeat: no-repeat;
     background-size: auto 28px 77px;
-    top: 30px;
-    right: 28px;
+    top: 67px;
+    right: 17px;
     cursor: pointer;
     height: 38.5px;
     width: 28px;
@@ -54,7 +54,7 @@
 
 .mod-cv-slew{{{cns}}} .mod-switch.on {
     background-position: center top;
-    top: 40px;
+    top: 76px;
 }
 
 .mod-cv-slew{{{cns}}} .mod-switch.off {
