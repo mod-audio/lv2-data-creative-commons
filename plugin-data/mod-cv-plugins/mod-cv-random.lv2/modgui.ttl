@@ -18,5 +18,9 @@
             lv2:index 1 ;
             lv2:symbol "MaxValue" ;
             lv2:name "MaxValue" ;
+        ] , [
+            lv2:index 2 ;
+            lv2:symbol "Trigger" ;
+            lv2:name "New Random Value" ;
         ] ;
     ] .

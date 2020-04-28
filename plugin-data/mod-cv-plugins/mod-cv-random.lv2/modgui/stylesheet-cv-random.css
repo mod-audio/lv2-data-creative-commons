@@ -2,9 +2,9 @@
 ================================================ */
 .mod-cv-random{{{cns}}} {
     background-image: url(/resources/mod_cv_random_bg.png{{{ns}}});
-    height: 378px;
+    height: 392px;
     position: absolute;
-    width: 227px;
+    width: 235px;
 }
 
 /* PORTS
@@ -24,8 +24,8 @@
     background-position: left center;
     height: 25px;
     width: 25px;
-    top: 11px;
-    right: 30px;
+    top: 44px;
+    right: 26px;
 }
 
 .mod-cv-random{{{cns}}} .mod-light.on {
@@ -43,8 +43,8 @@
     background-position: center bottom;
     background-repeat: no-repeat;
     background-size: auto 28px 77px;
-    top: 30px;
-    right: 28px;
+    top: 63px;
+    right: 24px;
     cursor: pointer;
     height: 38.5px;
     width: 28px;
@@ -54,7 +54,7 @@
 
 .mod-cv-random{{{cns}}} .mod-switch.on {
     background-position: center top;
-    top: 40px;
+    top: 72px;
 }
 
 .mod-cv-random{{{cns}}} .mod-switch.off {
@@ -74,10 +74,34 @@
     background-image: url(/resources/mod_cv_random_sprite_sheets/Big_knob_3_70frames.png{{{ns}}});
     height: 83px;
     width: 83px;
-    margin: 0 22px;
+    margin: 0 26px;
 }
 
 .mod-cv-random{{{cns}}} .mod-control-group .mod-knob {
     padding-top: 42px;
     padding-bottom: 27px;
+}
+
+/* RESET
+================================================ */
+
+.mod-cv-random{{{cns}}} .mod-reset {
+    background-image:url(/resources/mod_cv_random_sprite_sheets/trigger_button.png{{{ns}}});
+    background-position:top center;
+    background-repeat:no-repeat;
+    bottom: 38px;
+    cursor:pointer;
+    height: 21px;
+    width: 42px;
+    left: 17px;
+    position:absolute;
+    z-index: 101;
+}
+
+.mod-cv-random{{{cns}}} .mod-reset.on {
+    background-position:top center;
+}
+
+.mod-cv-random{{{cns}}} .mod-reset.off {
+    background-position:bottom center;
 }
