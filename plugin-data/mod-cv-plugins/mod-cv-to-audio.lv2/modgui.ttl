@@ -9,15 +9,11 @@
         modgui:screenshot <modgui/mod_cv_to_audio_ss.png> ;
         modgui:thumbnail <modgui/mod_cv_to_audio_tn.png> ;
         modgui:brand "MOD" ;
-        modgui:label "CV to audio" ;
         modgui:license "CC BY-NC-ND 4.0";
+        modgui:label "Control to CV" ;
         modgui:port [
             lv2:index 0 ;
             lv2:symbol "Level" ;
             lv2:name "Level" ;
-        ] , [
-            lv2:index 1 ;
-            lv2:symbol "Offset" ;
-            lv2:name "Offset" ;
         ] ;
     ] .
