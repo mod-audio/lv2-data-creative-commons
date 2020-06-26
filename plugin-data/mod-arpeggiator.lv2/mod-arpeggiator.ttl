@@ -87,7 +87,7 @@ lv2:port
     lv2:scalePoint [ rdfs:label "Up";                   rdf:value 0; ] ;
     lv2:scalePoint [ rdfs:label "Down";                 rdf:value 1; ] ;
     lv2:scalePoint [ rdfs:label "Up-Down";              rdf:value 2; ] ;
-    lv2:scalePoint [ rdfs:label "Up-Down(alternative)"; rdf:value 3; ] ;
+    lv2:scalePoint [ rdfs:label "Up-Down (alt)";         rdf:value 3; ] ;
     lv2:scalePoint [ rdfs:label "Played";               rdf:value 4; ] ;
     lv2:scalePoint [ rdfs:label "Random";               rdf:value 5; ] ;
     lv2:portProperty lv2:enumeration;
@@ -159,10 +159,10 @@ lv2:port
     lv2:minimum 1 ;
     lv2:maximum 4 ;
     lv2:portProperty lv2:enumeration, lv2:integer;
-    lv2:scalePoint [ rdfs:label "1 Octave" ; rdf:value 1 ] ;
-    lv2:scalePoint [ rdfs:label "2 Octaves" ; rdf:value 2 ] ;
-    lv2:scalePoint [ rdfs:label "3 Octaves" ; rdf:value 3 ] ;
-    lv2:scalePoint [ rdfs:label "4 Octaves" ; rdf:value 4 ] ;
+    lv2:scalePoint [ rdfs:label "1 Oct" ; rdf:value 1 ] ;
+    lv2:scalePoint [ rdfs:label "2 Oct" ; rdf:value 2 ] ;
+    lv2:scalePoint [ rdfs:label "3 Oct" ; rdf:value 3 ] ;
+    lv2:scalePoint [ rdfs:label "4 Oct" ; rdf:value 4 ] ;
 ]
 ,
 [
@@ -178,7 +178,7 @@ lv2:port
     lv2:scalePoint [ rdfs:label "Down"    ; rdf:value 1 ] ;
     lv2:scalePoint [ rdfs:label "Up-Down" ; rdf:value 2 ] ;
     lv2:scalePoint [ rdfs:label "Down-Up" ; rdf:value 3 ] ;
-    lv2:scalePoint [ rdfs:label "1 Octave Up Per Cycle" ; rdf:value 4 ] ;
+    lv2:scalePoint [ rdfs:label "1 Up / Cycle" ; rdf:value 4 ] ;
 ]
 ,
 [
