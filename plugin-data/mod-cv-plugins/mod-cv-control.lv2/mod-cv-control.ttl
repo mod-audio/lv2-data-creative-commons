@@ -32,6 +32,9 @@ doap:maintainer [
 
 rdfs:comment """
 Control to CV enables you to generate a control voltage signal from a control value.
+
+Features:
+Plugin by MOD Devices
 """;
 
 lv2:port

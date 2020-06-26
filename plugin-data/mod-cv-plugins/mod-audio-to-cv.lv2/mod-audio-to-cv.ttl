@@ -32,6 +32,9 @@ doap:maintainer [
 
 rdfs:comment """
 Audio to CV converts an audio signal to a control voltage signal.
+
+Features:
+Plugin by MOD Devices
 """;
 
 lv2:port

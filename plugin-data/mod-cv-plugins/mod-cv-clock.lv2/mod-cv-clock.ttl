@@ -33,6 +33,9 @@ doap:maintainer [
 
 rdfs:comment """
 CV Clock generates CV clock pulses or square waves in multiple divisions. The clock can run in free mode or be signed with the host tempo.
+
+Features:
+Plugin by MOD Devices
 """;
 
 lv2:port

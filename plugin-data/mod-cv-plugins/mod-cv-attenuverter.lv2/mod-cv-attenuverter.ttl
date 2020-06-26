@@ -31,7 +31,11 @@ doap:maintainer [
     lv2:microVersion 0;
 
 rdfs:comment """
-Attenuverter Booster multiplies the CV signal by any given value between -10 and +10
+Attenuverter Booster multiplies the CV signal by any given value between -10 and +10.
+The plugin can also be used to set an offset to the incomming signal.
+
+Features:
+Plugin by MOD Devices
 """;
 
 lv2:port
