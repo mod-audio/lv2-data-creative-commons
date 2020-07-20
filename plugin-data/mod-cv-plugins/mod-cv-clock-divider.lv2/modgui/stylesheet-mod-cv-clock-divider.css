@@ -1,0 +1,118 @@
+/* = CONTAINER
+================================================ */
+.mod-cv-clock-divider{{{cns}}} {
+    background-image: url(/resources/mod_cv_clock_divider_bg.png{{{ns}}});
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 126px 493px;
+    height: 493px;
+    position: absolute;
+    width: 126px;
+}
+
+/* PORTS
+================================================ */
+
+.mod-cv-clock-divider{{{cns}}} .mod-pedal-input {
+    top: 190px;
+}
+
+.mod-cv-clock-divider{{{cns}}} .mod-pedal-input .mod-input-group {
+    padding-bottom: 6px;
+}
+
+.mod-cv-clock-divider{{{cns}}} .mod-pedal-input .mod-cv-input {
+    margin-bottom: 34px;
+}
+
+.mod-cv-clock-divider{{{cns}}} .mod-pedal-output {
+    top: 106px;
+}
+
+.mod-cv-clock-divider{{{cns}}} .mod-pedal-output .mod-output-group {
+    padding-bottom: 6px;
+}
+
+.mod-cv-clock-divider{{{cns}}} .mod-pedal-output .mod-cv-output {
+    height: 29px;
+    margin-bottom: 16px;
+    background-position-y: center;
+    background-size: 85%;
+}
+
+.mod-cv-clock-divider{{{cns}}} .mod-pedal-output .mod-cv-output .mod-output-jack {
+    background-position: 0 center;
+    height: 29px;
+    cursor: pointer;
+    background-size: 85%;
+}
+
+/* = LIGHT ON/OFF
+================================================ */
+.mod-cv-clock-divider{{{cns}}} .mod-light {
+    background-image: url(/resources/mod_cv_clock_divider_sprite_sheets/lights.png{{{ns}}});
+    background-position: left center;
+    background-size: auto 25px;
+    height: 25px;
+    width: 25px;
+    position: absolute;
+    right: 5px;
+    top: 71px;
+}
+
+.mod-cv-clock-divider{{{cns}}} .mod-light.on {
+    background-position: left center;
+}
+
+.mod-cv-clock-divider{{{cns}}} .mod-light.off {
+    background-position: right center;
+}
+
+/* = SWITCH
+================================================ */
+.mod-cv-clock-divider{{{cns}}} .mod-switch {
+    background-image: url(/resources/mod_cv_clock_divider_sprite_sheets/switch_key.png{{{ns}}});
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: auto 28px 77px;
+    left: 48px;
+    top: 59px;
+    cursor: pointer;
+    height: 38.5px;
+    width: 28px;
+    position: absolute;
+    z-index: 30;
+}
+
+.mod-cv-clock-divider{{{cns}}} .mod-switch.on {
+    background-position: center top;
+    top: 68px;
+}
+
+.mod-cv-clock-divider{{{cns}}} .mod-switch.off {
+    background-position: center bottom;
+}
+
+/* MODE
+================================================ */
+
+.mod-cv-clock-divider{{{cns}}} .mod-mode {
+    background-image:url(/resources/mod_cv_clock_divider_sprite_sheets/slider.png{{{ns}}});
+    background-position:top center;
+    background-repeat:no-repeat;
+    top: 131px;
+    cursor:pointer;
+    height: 29px;
+    width: 14px;
+    left: 25px;
+    position:absolute;
+    z-index: 101;
+}
+
+.mod-cv-clock-divider{{{cns}}} .mod-mode.on {
+    background-position:top center;
+}
+
+.mod-cv-clock-divider{{{cns}}} .mod-mode.off {
+    background-position:bottom center;
+}

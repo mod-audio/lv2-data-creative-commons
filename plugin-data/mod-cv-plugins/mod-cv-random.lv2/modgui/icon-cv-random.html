@@ -2,13 +2,15 @@
     <div mod-role="drag-handle" class="mod-drag-handle"></div>
     <div class="mod-light" mod-role="bypass-light"></div>
     <div class="mod-control-group mod-{{knob}} clearfix">
-        {{#controls}}
-        <div class="mod-knob" title="{{comment}}">
-            <div class="mod-knob-image" mod-role="input-control-port" mod-port-symbol="{{symbol}}"></div>
+        <div class="mod-knob" title="minvalue">
+            <div class="mod-knob-image" mod-role="input-control-port" mod-port-symbol="MinValue"></div>
         </div>
-        {{/controls}}
+        <div class="mod-knob" title="maxvalue">
+            <div class="mod-knob-image" mod-role="input-control-port" mod-port-symbol="MaxValue"></div>
+        </div>
     </div>
     <div class="mod-switch" mod-role="bypass"></div>
+    <div class="mod-reset" mod-role="input-control-port" mod-port-symbol="Trigger" title="Reset"></div>
     <div class="mod-pedal-input">
         {{#effect.ports.cv.input}}
         <div class="mod-input" title="{{name}}" mod-role="input-cv-port" mod-port-symbol="{{symbol}}">

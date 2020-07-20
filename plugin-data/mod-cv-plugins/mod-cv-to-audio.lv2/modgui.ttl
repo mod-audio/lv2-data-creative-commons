@@ -1,0 +1,19 @@
+@prefix modgui: <http://moddevices.com/ns/modgui#> .
+@prefix lv2:    <http://lv2plug.in/ns/lv2core#> .
+
+<http://moddevices.com/plugins/mod-devel/mod-cv-to-audio>
+    modgui:gui [
+        modgui:resourcesDirectory <modgui> ;
+        modgui:iconTemplate <modgui/icon-cv-to-audio.html> ;
+        modgui:stylesheet <modgui/stylesheet-cv-to-audio.css> ;
+        modgui:screenshot <modgui/mod_cv_to_audio_ss.png> ;
+        modgui:thumbnail <modgui/mod_cv_to_audio_tn.png> ;
+        modgui:brand "MOD" ;
+        modgui:license "CC BY-NC-ND 4.0";
+        modgui:label "Control to CV" ;
+        modgui:port [
+            lv2:index 0 ;
+            lv2:symbol "Level" ;
+            lv2:name "Level" ;
+        ] ;
+    ] .

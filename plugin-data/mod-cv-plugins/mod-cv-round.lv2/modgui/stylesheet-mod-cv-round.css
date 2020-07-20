@@ -1,0 +1,41 @@
+/* = CONTAINER
+================================================ */
+.mod-cv-round{{{cns}}} {
+    background-image: url(/resources/mod_cv_round_bg.png{{{ns}}});
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 161px 202px;
+    position: absolute;
+    height: 202px;
+    width: 161px;
+}
+
+/* PORTS
+================================================ */
+
+.mod-cv-round{{{cns}}} .mod-pedal-input {
+    top: 75px !important;
+}
+
+.mod-cv-round{{{cns}}} .mod-pedal-output {
+    top: 45px;
+}
+
+.mod-cv-round{{{cns}}} .mod-pedal-output .mod-output-group {
+    padding-bottom: 6px;
+}
+
+.mod-cv-round{{{cns}}} .mod-pedal-output .mod-cv-output {
+    height: 29px;
+    margin-bottom: 2px;
+    background-position-y: center;
+    background-size: 85%;
+}
+
+.mod-cv-round{{{cns}}} .mod-pedal-output .mod-cv-output .mod-output-jack {
+    background-position: 0 center;
+    height: 29px;
+    cursor: pointer;
+    background-size: 85%;
+}
+
