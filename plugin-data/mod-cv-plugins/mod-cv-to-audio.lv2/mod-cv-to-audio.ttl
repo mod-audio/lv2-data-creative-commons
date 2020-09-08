@@ -30,6 +30,9 @@ doap:maintainer [
 
 rdfs:comment """
 CV to audio converts an control voltage signal to an audio signal with DC Blocker. This blocker can be turned of if needed. This is NOT recommended when the plugin is connected to any kind of audio output!
+
+Features:
+Plugin by MOD Devices
 """;
 
 lv2:port
