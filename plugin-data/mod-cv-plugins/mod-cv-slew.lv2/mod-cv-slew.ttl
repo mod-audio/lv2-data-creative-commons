@@ -33,6 +33,9 @@ doap:maintainer [
 
 rdfs:comment """
 Plugin to limit the speed of the rise and fall times of a CV signal.
+
+Features:
+Plugin by MOD Devices
 """;
 
 lv2:port

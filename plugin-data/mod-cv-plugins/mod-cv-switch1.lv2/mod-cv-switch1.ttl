@@ -32,6 +32,9 @@ doap:maintainer [
 
 rdfs:comment """
 CV Switchbox 1-2 routes one cv input to either one of the two outputs.
+
+Features:
+Plugin by MOD Devices
 """;
 
 lv2:port
