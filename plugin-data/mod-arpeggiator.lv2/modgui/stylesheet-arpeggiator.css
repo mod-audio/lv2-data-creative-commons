@@ -114,9 +114,14 @@
     background-image: url(/resources/sprite_sheets/Knob_Red_66.png{{{ns}}});
 }
 .arpeggiator{{{cns}}} .mod-control-group .mod-knob.arpeggiator-Bpm .value {
-    margin: -9px 0 0 -2px;
+    margin: -4px 0 0 -15px;
     text-align: right;
-    width: 43px;
+    width: 83px;
+    background-color: black;
+    height: 25px;
+    padding-right: 6px;
+    padding-top: 0px;
+    line-height: 27px;
 }
 
 /* Divisions */
