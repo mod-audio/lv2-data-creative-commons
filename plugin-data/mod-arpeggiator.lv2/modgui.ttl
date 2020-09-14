@@ -7,6 +7,7 @@
         modgui:iconTemplate <modgui/icon-arpeggiator.html> ;
         modgui:stylesheet <modgui/stylesheet-arpeggiator.css> ;
         modgui:screenshot <modgui/mod_arpeggiator_ss.png> ;
+        modgui:javascript<modgui/js-arpeggiator.js> ;
         modgui:thumbnail <modgui/mod_arpeggiator_tn.png> ;
         modgui:brand "MOD" ;
         modgui:label "Arpeggiator" ;
