@@ -295,7 +295,16 @@
                          <http://kxstudio.sf.net/ns/lv2ext/props#NonAutomable> ;
     ] ;
 
-    rdfs:comment """A MIDI arpeggiator""" ;
+    rdfs:comment """
+The MOD Arpeggiator is a classic arpeggiator with some added spice. The plugin is specifically designed for the MOD platform, with a focus on live usage.
+
+Besides the standard arpeggiator controls, there is also a special control, called "Octave Mode". When set to "1 Up / Cycle", the plugin acts as the typical arpeggiator we all know and love. The other options provide more variations to extend the classic paradigm.
+
+The plugin has multiple sync modes. In "Free Running" mode, it will use the internal tempo of the plugin, which is set by the BPM parameter. In "Host Sync" mode, it will use the host tempo. When "Quantized Start" is selected, it will use the host-tempo, and make sure that all notes are quantized. This allows the plugin and the notes that it sends to be perfectly in sync with other plugins and devices.
+
+Features:
+Plugin by MOD Devices
+""" ;
 
     mod:brand "MOD" ;
     mod:label "Arpeggiator" ;
