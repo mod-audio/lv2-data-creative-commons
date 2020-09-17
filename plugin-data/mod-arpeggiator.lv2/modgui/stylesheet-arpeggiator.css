@@ -117,6 +117,8 @@
     margin: -9px 0 0 -2px;
     text-align: right;
     width: 43px;
+    height: 25px;
+    overflow: hidden;
 }
 
 /* Divisions */
