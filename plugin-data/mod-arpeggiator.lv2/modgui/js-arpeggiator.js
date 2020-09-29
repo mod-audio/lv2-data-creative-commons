@@ -8,7 +8,5 @@ function(event) {
     } else {
         return;
     }
-    bpm = bpm.toString();
-    bpm = parseInt(bpm);
-    event.icon.find('[mod-role=input-control-value][mod-port-symbol=Bpm]').text(bpm.toString());
+    event.icon.find('[mod-role=input-control-value][mod-port-symbol=Bpm]').text(bpm.toFixed(0));
 }

@@ -40,7 +40,8 @@
     font-size: 14px;
 }
 
-/* MIDI Output */
+/* MIDI PORTS */
+.arpeggiator{{{cns}}} .mod-midi-input,
 .arpeggiator{{{cns}}} .mod-midi-output {
     top: 75px;
 }
