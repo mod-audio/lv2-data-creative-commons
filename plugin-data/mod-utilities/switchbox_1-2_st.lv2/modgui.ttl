@@ -1,0 +1,19 @@
+@prefix modgui: <http://moddevices.com/ns/modgui#> .
+@prefix lv2:    <http://lv2plug.in/ns/lv2core#> .
+
+<http://moddevices.com/plugins/mod-devel/switchbox_1-2_st>
+    modgui:gui [
+        modgui:resourcesDirectory <modgui> ;
+        modgui:iconTemplate <modgui/icon-switchbox_1-2_st.html> ;
+        modgui:stylesheet <modgui/stylesheet-switchbox_1-2_st.css> ;
+        modgui:screenshot <modgui/switchbox_1-2_st_ss.png> ;
+        modgui:thumbnail <modgui/switchbox_1-2_st_tn.png> ;
+        modgui:brand "MOD" ;
+        modgui:label "Stereo Switchbox" ;
+        modgui:license "CC BY-NC-ND 4.0";
+        modgui:port [
+            lv2:index 0 ;
+            lv2:symbol "Switch";
+            lv2:name "Channel";
+        ] ;
+    ] .

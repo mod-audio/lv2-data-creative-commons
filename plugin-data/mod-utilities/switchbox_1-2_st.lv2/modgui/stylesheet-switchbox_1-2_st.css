@@ -1,0 +1,78 @@
+    .switchbox-1-2-st {
+        background-image:url(/resources/switchbox_1-2_st_bg.png{{{ns}}});
+        background-repeat:no-repeat;
+        height:274px;
+        position:relative;
+        width:200px;
+    }
+    .switchbox-1-2-st .mod-drag-handle {
+        bottom:0;
+        left:0;
+        position:absolute;
+        right:0;
+        top:0;
+    }
+    .switchbox-1-2-st .mod-plugin-author {
+        bottom:20px;
+        left:0;
+        position:absolute;
+        right:0;
+        text-align:center;
+    }
+    .switchbox-1-2-st .mod-plugin-author h1 {
+        color:rgb(51,51,51);
+        font-size:21px;
+    }
+    .switchbox-1-2-st .mod-plugin-name {
+        left:0;
+        position:absolute;
+        right:0;
+        text-align:center;
+        top:0;
+    }
+    .switchbox-1-2-st .mod-plugin-name  h1 {
+        color:rgb(51,51,51);
+        font-size:18px;
+    }
+    .switchbox-1-2-st .mod-pedal-input {
+        top:92px; */
+    }
+    .switchbox-1-2-st .mod-pedal-input .mod-input:nth-child(2){
+        top:-12px;
+    }
+    .switchbox-1-2-st .mod-pedal-output {
+        top:20px;
+    }
+	.switchbox-1-2-st .mod-pedal-output .mod-output:nth-child(2) {
+		top: -15px;
+	}
+	.switchbox-1-2-st .mod-pedal-output .mod-output:nth-child(3) {
+		top: -3px;
+	}
+	.switchbox-1-2-st .mod-pedal-output .mod-output:nth-child(4) {
+		top: -18px;
+	}
+    .switchbox-1-2-st .mod-control-group {
+        left:52px;
+        position:absolute;
+        top:71px;
+    }
+    .switchbox-1-2-st .mod-control-group .mod-knob .mod-knob-image {
+        background-image:url(/resources/sprites/stereo-switchbox_sprite.png{{{ns}}});
+        background-repeat:no-repeat;
+        background-size:264px 180px;
+        height:180px;
+        margin:-16px 4px auto;
+        width:132px;
+        cursor: pointer;
+    }
+    .switchbox-1-2-st .mod-control-group .mod-knob .mod-knob-title {
+        display:none;
+        font-size:11px;
+        left:0;
+        position:absolute;
+        right:0;
+        text-align:center;
+        text-transform:uppercase;
+        top:92px;
+    }
