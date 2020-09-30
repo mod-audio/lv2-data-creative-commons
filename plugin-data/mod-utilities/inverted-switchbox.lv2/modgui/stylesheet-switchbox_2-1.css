@@ -1,54 +1,54 @@
-    .switchbox-2-1-st {
+    .switchbox-2-1 {
         background-image:url(/resources/switchbox_2-1_bg.png{{{ns}}});
         background-repeat:no-repeat;
         height:274px;
         position:relative;
         width:200px;
     }
-    .switchbox-2-1-st .mod-drag-handle {
+    .switchbox-2-1 .mod-drag-handle {
         bottom:0;
         left:0;
         position:absolute;
         right:0;
         top:0;
     }
-    .switchbox-2-1-st .mod-plugin-author {
+    .switchbox-2-1 .mod-plugin-author {
         bottom:20px;
         left:0;
         position:absolute;
         right:0;
         text-align:center;
     }
-    .switchbox-2-1-st .mod-plugin-author h1 {
+    .switchbox-2-1 .mod-plugin-author h1 {
         color:rgb(51,51,51);
         font-size:21px;
     }
-    .switchbox-2-1-st .mod-plugin-name {
+    .switchbox-2-1 .mod-plugin-name {
         left:0;
         position:absolute;
         right:0;
         text-align:center;
         top:0;
     }
-    .switchbox-2-1-st .mod-plugin-name  h1 {
+    .switchbox-2-1 .mod-plugin-name  h1 {
         color:rgb(51,51,51);
         font-size:18px;
     }
-    .switchbox-2-1-st .mod-pedal-input {
+    .switchbox-2-1 .mod-pedal-input {
         top:50px;
     }
-	.switchbox-2-1-st .mod-pedal-input .mod-input:nth-child(2) {
+	.switchbox-2-1 .mod-pedal-input .mod-input:nth-child(2) {
 		top: 75px;
 	}
-    .switchbox-2-1-st .mod-pedal-output {
+    .switchbox-2-1 .mod-pedal-output {
         top:115px;
     }
-    .switchbox-2-1-st .mod-control-group {
+    .switchbox-2-1 .mod-control-group {
         left:52px;
         position:absolute;
         top:71px;
     }
-    .switchbox-2-1-st .mod-control-group .mod-knob .mod-knob-image {
+    .switchbox-2-1 .mod-control-group .mod-knob .mod-knob-image {
         background-image:url(/resources/sprites/switchbox_2-1_sprite.png{{{ns}}});
         background-repeat:no-repeat;
         background-size:276px 155px;
@@ -57,7 +57,7 @@
         width:138px;
         cursor: pointer;
     }
-    .switchbox-2-1-st .mod-control-group .mod-knob .mod-knob-title {
+    .switchbox-2-1 .mod-control-group .mod-knob .mod-knob-title {
         display:none;
         font-size:11px;
         left:0;
