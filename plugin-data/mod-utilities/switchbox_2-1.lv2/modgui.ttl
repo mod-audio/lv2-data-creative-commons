@@ -1,0 +1,19 @@
+@prefix modgui: <http://moddevices.com/ns/modgui#> .
+@prefix lv2:    <http://lv2plug.in/ns/lv2core#> .
+
+<http://moddevices.com/plugins/mod-devel/switchbox_2-1>
+    modgui:gui [
+        modgui:resourcesDirectory <modgui> ;
+        modgui:iconTemplate <modgui/icon-switchbox_2-1.html> ;
+        modgui:stylesheet <modgui/stylesheet-switchbox_2-1.css> ;
+        modgui:screenshot <modgui/switchbox_2-1_ss.png> ;
+        modgui:thumbnail <modgui/switchbox_2-1_tn.png> ;
+        modgui:brand "MOD" ;
+        modgui:label "Switchbox 2-1" ;
+        modgui:license "CC BY-NC-ND 4.0";
+        modgui:port [
+            lv2:index 0 ;
+            lv2:symbol "Switch";
+            lv2:name "Channel";
+        ] ;
+    ] .

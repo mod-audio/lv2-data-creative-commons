@@ -1,0 +1,42 @@
+/* = CONTAINER
+================================================ */
+.midi-switchbox-1-2{{{cns}}} {
+    background-image: url(/resources/midi-switchbox_1-2_bg.png{{{ns}}});
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 274px;
+    position: absolute;
+    width: 200px;
+}
+
+/* PORTS
+================================================ */
+
+.midi-switchbox-1-2{{{cns}}} .mod-pedal-input {
+    top: 108px;
+}
+
+.midi-switchbox-1-2{{{cns}}} .mod-pedal-output {
+    top: 38px;
+}
+
+.midi-switchbox-1-2{{{cns}}} .mod-pedal-output .mod-output:nth-child(2) {
+    top: 73px !important;
+}
+
+/* = KNOBS
+================================================ */
+.midi-switchbox-1-2{{{cns}}} .mod-control-group {
+    margin: 63px 0 0 46px;
+    position: relative;
+    z-index: 30;
+}
+
+/* ONE KNOB */
+.midi-switchbox-1-2{{{cns}}} .mod-control-group .mod-knob .mod-knob-image {
+    background-image: url(/resources/sprites/midi-switchbox_1-2_sprite.png{{{ns}}});
+    background-repeat: no-repeat;
+    height: 161px;
+    width: 140px;
+    margin: 4px 11px auto;
+}

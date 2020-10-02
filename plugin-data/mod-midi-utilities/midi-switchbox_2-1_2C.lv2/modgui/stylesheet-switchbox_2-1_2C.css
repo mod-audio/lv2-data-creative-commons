@@ -1,0 +1,83 @@
+/* = CONTAINER
+================================================ */
+
+.midi-switchbox-2-1-2c{{{cns}}} {
+    background-image: url(/resources/midi-switchbox_2-1_2C_bg.png{{{ns}}});
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 274px;
+    position: absolute;
+    width: 200px;
+}
+
+.midi-switchbox-2-1-2c{{{cns}}} .mod-drag-handle {
+    bottom:0;
+    left:0;
+    position:absolute;
+    right:0;
+    top:0;
+}
+.midi-switchbox-2-1-2c{{{cns}}} .mod-plugin-author {
+    bottom:20px;
+    left:0;
+    position:absolute;
+    right:0;
+    text-align:center;
+}
+.midi-switchbox-2-1-2c{{{cns}}} .mod-plugin-author h1 {
+    color:rgb(51,51,51);
+    font-size:21px;
+}
+.midi-switchbox-2-1-2c{{{cns}}} .mod-plugin-name {
+    left:0;
+    position:absolute;
+    right:0;
+    text-align:center;
+    top:0;
+}
+.midi-switchbox-2-1-2c{{{cns}}} .mod-plugin-name  h1 {
+    color:rgb(51,51,51);
+    font-size:18px;
+}
+.midi-switchbox-2-1-2c{{{cns}}} .mod-pedal-input {
+    top:20px;
+}
+.midi-switchbox-2-1-2c{{{cns}}} .mod-pedal-input .mod-input:nth-child(2) {
+	top: -15px;
+}
+.midi-switchbox-2-1-2c{{{cns}}} .mod-pedal-input .mod-input:nth-child(3) {
+	top: -3px;
+}
+.midi-switchbox-2-1-2c{{{cns}}} .mod-pedal-input .mod-input:nth-child(4) {
+	top: -18px;
+}
+.midi-switchbox-2-1-2c{{{cns}}} .mod-pedal-output {
+    top:93px;
+}
+.midi-switchbox-2-1-2c{{{cns}}} .mod-pedal-output .mod-output {
+    margin-bottom: 0px;
+}
+.midi-switchbox-2-1-2c{{{cns}}} .mod-control-group {
+    left:52px;
+    position:absolute;
+    top:71px;
+}
+.midi-switchbox-2-1-2c{{{cns}}} .mod-control-group .mod-knob .mod-knob-image {
+    background-image:url(/resources/sprites/midi-switchbox_2-1_2C_sprite.png{{{ns}}});
+    background-repeat:no-repeat;
+    background-size:282px 190px;
+    height:190px;
+    margin:-22px -48px auto;
+    width:141px;
+    cursor: pointer;
+}
+.midi-switchbox-2-1-2c{{{cns}}} .mod-control-group .mod-knob .mod-knob-title {
+    display:none;
+    font-size:11px;
+    left:0;
+    position:absolute;
+    right:0;
+    text-align:center;
+    text-transform:uppercase;
+    top:92px;
+}

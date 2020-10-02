@@ -1,0 +1,19 @@
+@prefix modgui: <http://moddevices.com/ns/modgui#> .
+@prefix lv2:    <http://lv2plug.in/ns/lv2core#> .
+
+<http://moddevices.com/plugins/mod-devel/midi-switchbox_3-1>
+    modgui:gui [
+        modgui:resourcesDirectory <modgui> ;
+        modgui:iconTemplate <modgui/icon-midi-switchbox_3-1.html> ;
+        modgui:stylesheet <modgui/stylesheet-midi-switchbox_3-1.css> ;
+        modgui:screenshot <modgui/midi-switchbox_3-1_ss.png> ;
+        modgui:thumbnail <modgui/midi-switchbox_3-1_tn.png> ;
+        modgui:brand "MOD" ;
+        modgui:license "CC BY-NC-ND 4.0";
+        modgui:label "MIDI Switchbox 3-1" ;
+        modgui:port [
+            lv2:index 0 ;
+            lv2:symbol "target" ;
+            lv2:name "Target" ;
+        ] ;
+    ] .
