@@ -1,0 +1,59 @@
+/* = CONTAINER
+================================================ */
+.mod-cv-transport{{{cns}}} {
+    background-image: url(/resources/mod_cv_transport_bg.png{{{ns}}});
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 191px 120px;
+    height: 120px;
+    position: absolute;
+    width: 191px;
+}
+
+/* PORTS
+================================================ */
+
+.mod-cv-transport{{{cns}}} .mod-pedal-output {
+    top: 35px;
+}
+
+
+/* = LIGHT ON/OFF
+================================================ */
+.mod-cv-transport{{{cns}}} .mod-stopped {
+    background-image: url(/resources/mod_cv_transport_sprite_sheets/lights-red.png{{{ns}}});
+    background-position: left center;
+    background-size: auto 19px;
+    height: 19px;
+    width: 19px;
+    position: absolute;
+    left: 42px;
+    top: 63px;
+}
+
+.mod-cv-transport{{{cns}}} .mod-stopped.on {
+    background-position: left center;
+}
+
+.mod-cv-transport{{{cns}}} .mod-stopped.off {
+    background-position: right center;
+}
+
+.mod-cv-transport{{{cns}}} .mod-played {
+    background-image: url(/resources/mod_cv_transport_sprite_sheets/lights-green.png{{{ns}}});
+    background-position: left center;
+    background-size: auto 19px;
+    height: 19px;
+    width: 19px;
+    position: absolute;
+    right: 46px;
+    top: 63px;
+}
+
+.mod-cv-transport{{{cns}}} .mod-played.on {
+    background-position: left center;
+}
+
+.mod-cv-transport{{{cns}}} .mod-played.off {
+    background-position: right center;
+}
