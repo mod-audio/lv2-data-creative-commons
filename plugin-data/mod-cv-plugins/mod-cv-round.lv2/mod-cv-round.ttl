@@ -31,7 +31,12 @@ doap:maintainer [
     lv2:microVersion 0;
 
 rdfs:comment """
-Plugin that can either return the integer value of the incoming signal or the decimal value only.
+The MOD CV Round performs multiple mathematical operations that are useful for algorithmic and generative patches. Each operation has its own dedicated output. The operations are round, ceil, floor and fraction.
+
+For example if the incoming signal would be 1.4v the plugin would return a rounded value of 1.0v, the ceiled value of 2.0v, the floored value of 1.0v and the fraction which would be 0.4v.
+
+Features:
+Plugin by MOD Devices
 """;
 
 lv2:port

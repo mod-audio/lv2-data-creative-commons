@@ -31,7 +31,10 @@ doap:maintainer [
     lv2:microVersion 0;
 
 rdfs:comment """
-Plugin that converts the incoming signal to an absolute value.
+The MOD CV ABS performs a mathematical operation on the signal that is particularly useful for algorithmic and generative patches. The plugin converts the incoming CV value to an absolute value, which means that it returns the distance between the incoming value and zero. The result is that all negative input values will become positive on the output.
+
+Features:
+Plugin by MOD Devices
 """;
 
 lv2:port

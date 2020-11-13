@@ -31,7 +31,12 @@ doap:maintainer [
     lv2:microVersion 0;
 
 rdfs:comment """
-CV Gate Plugin - if the incoming signal on input on is equal or higher then 1 it will pass the incoming signal of input two pass through the output, otherwise it will output 0.0
+A variable CV gate that has a parameter to set the value that opens the gate and a parameter that sets the value that closes the gate.
+
+The plugin sends the input signal to the output whenever the gate is opened. When the gate is closed, the output will send the value 0v.
+
+Features:
+Plugin by MOD Devices
 """;
 
 lv2:port

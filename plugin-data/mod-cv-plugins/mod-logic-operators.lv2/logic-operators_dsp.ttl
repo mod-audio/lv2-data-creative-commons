@@ -88,7 +88,16 @@ a lv2:Plugin, mod:ControlVoltagePlugin ;
     ] ;
 
     rdfs:comment """
-Logic operators
+The MOD CV Logic Operators is a CV plugin that can do all the common logic operations.
+The included operators are; INV, NAND, AND, OR, NOR, XOR and XNOR. If the outcome is false the plugin outputs 0v, if true it outputs 10v.
+
+
+The threshold value that is used to determine if an incoming signal is true or false can be adjusted with the switchpoint parameter.
+
+Lastly, there is the hysteresis parameter. This parameter can be used to create a different  switchpoint for true and false. For example when the switchpoint parameter is set to 5v and the hysteresis parameter is set to 2v, the switch point for true will be at 6v and the switchpoint for false will be at 4v.
+
+Features: 
+Plugin by MOD Devices
 """ ;
 
     mod:brand "MOD" ;
