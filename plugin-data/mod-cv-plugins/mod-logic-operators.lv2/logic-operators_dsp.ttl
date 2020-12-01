@@ -75,6 +75,7 @@ a lv2:Plugin, mod:ControlVoltagePlugin ;
         lv2:default 5.0;
         lv2:minimum -10.0;
         lv2:maximum 10.0;
+        units:unit mod:volts ;
     ] ,
     [
         a lv2:InputPort, lv2:ControlPort ;
@@ -85,6 +86,7 @@ a lv2:Plugin, mod:ControlVoltagePlugin ;
         lv2:minimum 0.0;
         lv2:maximum 5.0;
         lv2:scalePoint [ rdfs:label "off"; rdf:value 0.0; ] ;
+        units:unit mod:volts ;
     ] ;
 
     rdfs:comment """
@@ -96,7 +98,7 @@ The threshold value that is used to determine if an incoming signal is true or f
 
 Lastly, there is the hysteresis parameter. This parameter can be used to create a different  switchpoint for true and false. For example when the switchpoint parameter is set to 5v and the hysteresis parameter is set to 2v, the switch point for true will be at 6v and the switchpoint for false will be at 4v.
 
-Features: 
+Features:
 Plugin by MOD Devices
 """ ;
 
