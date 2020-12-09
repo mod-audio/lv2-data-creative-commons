@@ -11,12 +11,16 @@
         a mod:MIDIPlugin ,
             lv2:UtilityPlugin ,
             lv2:Plugin ;
-        doap:name "MIDI SwitchBox 2inx1out" ;
+        doap:name "MIDI SwitchBox 2-1" ;
         doap:license "GPLv2+" ;
         rdfs:comment """
+The MIDI SwitchBox 2-1 allows you to route one of the two MIDI inputs to the single MIDI output of the plugin.
 
-MIDI version of the MOD Inverted SwitchBox.
-This switch box receives two MIDI inputs and channels it through its output.""" ;
+Switch the routing on the fly by mapping the source control.
+
+Features:
+Modeled by MOD Devices
+""" ;
 
         lv2:minorVersion 2 ;
         lv2:microVersion 0 ;
@@ -25,8 +29,8 @@ This switch box receives two MIDI inputs and channels it through its output.""" 
                 a lv2:InputPort ,
                         lv2:ControlPort ;
                 lv2:index 0 ;
-                lv2:symbol "target" ;
-                lv2:name "Target" ;
+                lv2:symbol "source" ;
+                lv2:name "Source" ;
                 lv2:default 0 ;
                 lv2:minimum 0 ;
                 lv2:maximum 1 ;
@@ -78,4 +82,4 @@ This switch box receives two MIDI inputs and channels it through its output.""" 
         ] ;
 
         mod:brand "MOD" ;
-        mod:label "MIDI SwitchBox 2inx1out" .
+        mod:label "MIDI SwitchBox 2-1" .

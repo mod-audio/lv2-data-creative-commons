@@ -13,7 +13,7 @@
         modgui:license "CC BY-NC-ND 4.0";
         modgui:port [
             lv2:index 0 ;
-            lv2:symbol "target";
-            lv2:name "Target";
+            lv2:symbol "source" ;
+            lv2:name "Source" ;
         ] ;
     ] .

@@ -14,9 +14,13 @@
         doap:name "MIDI SwitchBox 1-3" ;
         doap:license "GPLv2+" ;
         rdfs:comment """
+The SwitchBox 1-3 allows you to route the MIDI input to one of the three MIDI outputs of the plugin.
 
-MIDI version of the MOD SwitchBox.
-This switch box receives one MIDI input and channels it through of its three outputs.""" ;
+Switch the routing on the fly by mapping the target control.
+
+Features:
+Modeled by MOD Devices
+""" ;
 
         lv2:minorVersion 2 ;
         lv2:microVersion 0 ;
@@ -49,7 +53,7 @@ This switch box receives one MIDI input and channels it through of its three out
                 atom:supports midi:MidiEvent ;
                 lv2:index 1 ;
                 lv2:symbol "in" ;
-                lv2:name "In" ;        
+                lv2:name "In" ;
         ] , [
                 a lv2:OutputPort ,
                         atom:AtomPort ;
@@ -89,4 +93,4 @@ This switch box receives one MIDI input and channels it through of its three out
         ] ;
 
         mod:brand "MOD" ;
-        mod:label "MIDI SwitchBox 1inx3out" .
+        mod:label "MIDI SwitchBox 1-3" .
