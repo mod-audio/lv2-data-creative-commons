@@ -1,7 +1,7 @@
 @prefix modgui: <http://moddevices.com/ns/modgui#> .
 @prefix lv2:    <http://lv2plug.in/ns/lv2core#> .
 
-<http://moddevices.com/plugins/mod-devel/MIDI-Switchbox-1inx2out>
+<http://moddevices.com/plugins/mod-devel/MIDI-Switchbox_1-2>
     modgui:gui [
         modgui:resourcesDirectory <modgui> ;
         modgui:iconTemplate <modgui/icon-midi-switchbox_1-2.html> ;
