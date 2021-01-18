@@ -1,0 +1,292 @@
+@prefix lv2:    <http://lv2plug.in/ns/lv2core#> .
+@prefix modgui: <http://moddevices.com/ns/modgui#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://samplv1.sourceforge.net/lv2>
+    modgui:gui [
+        modgui:resourcesDirectory <modgui> ;
+        modgui:iconTemplate <modgui/icon-samplv1.html> ;
+        modgui:stylesheet <modgui/stylesheet-samplv1.css> ;
+        modgui:screenshot <modgui/samplv1_ss.png> ;
+        modgui:thumbnail <modgui/samplv1_tn.png> ;
+
+        modgui:brand "SAMPLV1" ;
+        modgui:label "samplv1" ;
+        modgui:model "boxy" ;
+        modgui:panel "1-select-3-knobs" ;
+        modgui:color "gray" ;
+        modgui:knob "steel" ;
+
+        modgui:port [
+            a lv2:InputPort, lv2:ControlPort ;
+            lv2:index 0 ;
+            lv2:symbol "GEN1_SAMPLE" ;
+            lv2:name "GEN1 Sample" ;
+	    ], [
+            a lv2:InputPort, lv2:ControlPort ;
+            lv2:index 1 ;
+            lv2:symbol "GEN1_REVERSE" ;
+            lv2:name "GEN1 Reverse" ;
+        ], [
+            a lv2:InputPort, lv2:ControlPort ;
+            lv2:index 2 ;
+            lv2:symbol "GEN1_OFFSET" ;
+            lv2:name "GEN1 Offset" ;
+        ], [
+            a lv2:InputPort, lv2:ControlPort ;
+            lv2:index 3 ;
+            lv2:symbol "GEN1_OFFSET_1" ;
+            lv2:name "GEN1 Offset Start" ;
+        ], [
+            a lv2:InputPort, lv2:ControlPort ;
+            lv2:index 4 ;
+            lv2:symbol "GEN1_OFFSET_2" ;
+            lv2:name "GEN1 Offset End" ;
+        ], [
+            a lv2:InputPort, lv2:ControlPort ;
+            lv2:index 5 ;
+            lv2:symbol "GEN1_LOOP" ;
+            lv2:name "GEN1 Loop" ;
+        ], [
+            a lv2:InputPort, lv2:ControlPort ;
+            lv2:index 6 ;
+            lv2:symbol "GEN1_LOOP_1" ;
+            lv2:name "GEN1 Loop Start" ;
+        ], [
+            a lv2:InputPort, lv2:ControlPort ;
+            lv2:index 7 ;
+            lv2:symbol "GEN1_LOOP_2" ;
+            lv2:name "GEN1 Loop End" ;
+        ], [
+            a lv2:InputPort, lv2:ControlPort ;
+            lv2:index 8 ;
+            lv2:symbol "GEN1_OCTAVE" ;
+            lv2:name "GEN1 Octave" ;
+        ], [
+            a lv2:InputPort, lv2:ControlPort ;
+            lv2:index 9 ;
+            lv2:symbol "GEN1_TUNING" ;
+            lv2:name "GEN1 Tuning" ;
+        ], [
+            a lv2:InputPort, lv2:ControlPort ;
+            lv2:index 10 ;
+            lv2:symbol "GEN1_GLIDE" ;
+            lv2:name "GEN1 Glide" ;
+        ], [
+            a lv2:InputPort, lv2:ControlPort ;
+            lv2:index 11 ;
+            lv2:symbol "GEN1_ENVTIME" ;
+            lv2:name "GEN1 Env.Time" ;
+        ], [
+            a lv2:InputPort, lv2:ControlPort ;
+            lv2:index 12 ;
+            lv2:symbol "DCF1_ENABLED" ;
+            lv2:name "DCF1 Enabled" ;
+        ], [
+            a lv2:InputPort, lv2:ControlPort ;
+            lv2:index 13 ;
+            lv2:symbol "DCF1_CUTOFF" ;
+            lv2:name "DCF1 Cutoff" ;
+        ], [
+            a lv2:InputPort, lv2:ControlPort ;
+            lv2:index 14 ;
+            lv2:symbol "DCF1_RESO" ;
+            lv2:name "DCF1 Resonance" ;
+        ], [
+            a lv2:InputPort, lv2:ControlPort ;
+            lv2:index 15 ;
+            lv2:symbol "DCF1_TYPE" ;
+            lv2:name "DCF1 Type" ;
+        ], [
+            a lv2:InputPort, lv2:ControlPort ;
+            lv2:index 16 ;
+            lv2:symbol "DCF1_SLOPE" ;
+            lv2:name "DCF1 Slope" ;
+        ], [
+            a lv2:InputPort, lv2:ControlPort ;
+            lv2:index 17 ;
+            lv2:symbol "DCF1_ENVELOPE" ;
+            lv2:name "DCF1 Envelope" ;
+        ], [
+            a lv2:InputPort, lv2:ControlPort ;
+            lv2:index 18 ;
+            lv2:symbol "DCF1_ATTACK" ;
+            lv2:name "DCF1 Attack" ;
+        ], [
+            a lv2:InputPort, lv2:ControlPort ;
+            lv2:index 19 ;
+            lv2:symbol "DCF1_DECAY" ;
+            lv2:name "DCF1 Decay" ;
+        ], [
+            a lv2:InputPort, lv2:ControlPort ;
+            lv2:index 20 ;
+            lv2:symbol "DCF1_SUSTAIN" ;
+            lv2:name "DCF1 Sustain" ;
+        ], [
+            a lv2:InputPort, lv2:ControlPort ;
+            lv2:index 21 ;
+            lv2:symbol "DCF1_RELEASE" ;
+            lv2:name "DCF1 Release" ;
+        ], [
+            a lv2:InputPort, lv2:ControlPort ;
+            lv2:index 22 ;
+            lv2:symbol "LFO1_ENABLED" ;
+            lv2:name "LFO1 Enabled" ;
+        ], [
+            a lv2:InputPort, lv2:ControlPort ;
+            lv2:index 23 ;
+            lv2:symbol "LFO1_SHAPE" ;
+            lv2:name "LFO1 Wave Shape" ;
+        ], [
+            a lv2:InputPort, lv2:ControlPort ;
+            lv2:index 24 ;
+            lv2:symbol "LFO1_WIDTH" ;
+            lv2:name "LFO1 Wave Width" ;
+        ], [
+            a lv2:InputPort, lv2:ControlPort ;
+            lv2:index 25 ;
+            lv2:symbol "LFO1_BPM" ;
+            lv2:name "LFO1 BPM" ;
+        ], [
+            a lv2:InputPort, lv2:ControlPort ;
+            lv2:index 26 ;
+            lv2:symbol "LFO1_RATE" ;
+            lv2:name "LFO1 Rate" ;
+        ], [
+            a lv2:InputPort, lv2:ControlPort ;
+            lv2:index 27 ;
+            lv2:symbol "LFO1_SYNC" ;
+            lv2:name "LFO1 Sync" ;
+        ], [
+            a lv2:InputPort, lv2:ControlPort ;
+            lv2:index 28 ;
+            lv2:symbol "LFO1_SWEEP" ;
+            lv2:name "LFO1 Sweep" ;
+        ], [
+            a lv2:InputPort, lv2:ControlPort ;
+            lv2:index 29 ;
+            lv2:symbol "LFO1_PITCH" ;
+            lv2:name "LFO1 Pitch" ;
+        ], [
+            a lv2:InputPort, lv2:ControlPort ;
+            lv2:index 30 ;
+            lv2:symbol "LFO1_CUTOFF" ;
+            lv2:name "LFO1 Cutoff" ;
+        ], [
+            a lv2:InputPort, lv2:ControlPort ;
+            lv2:index 31 ;
+            lv2:symbol "LFO1_RESO" ;
+            lv2:name "LFO1 Resonance" ;
+        ], [
+            a lv2:InputPort, lv2:ControlPort ;
+            lv2:index 32 ;
+            lv2:symbol "LFO1_PANNING" ;
+            lv2:name "LFO1 Panning" ;
+        ], [
+            a lv2:InputPort, lv2:ControlPort ;
+            lv2:index 33 ;
+            lv2:symbol "LFO1_VOLUME" ;
+            lv2:name "LFO1 Volume" ;
+        ], [
+            a lv2:InputPort, lv2:ControlPort ;
+            lv2:index 34 ;
+            lv2:symbol "LFO1_ATTACK" ;
+            lv2:name "LFO1 Attack" ;
+        ], [
+            a lv2:InputPort, lv2:ControlPort ;
+            lv2:index 35 ;
+            lv2:symbol "LFO1_DECAY" ;
+            lv2:name "LFO1 Decay" ;
+        ], [
+            a lv2:InputPort, lv2:ControlPort ;
+            lv2:index 36 ;
+            lv2:symbol "LFO1_SUSTAIN" ;
+            lv2:name "LFO1 Sustain" ;
+        ], [
+            a lv2:InputPort, lv2:ControlPort ;
+            lv2:index 37 ;
+            lv2:symbol "LFO1_RELEASE" ;
+            lv2:name "LFO1 Release" ;
+        ], [
+            a lv2:InputPort, lv2:ControlPort ;
+            lv2:index 38 ;
+            lv2:symbol "DCA1_ENABLED" ;
+            lv2:name "DCA1 Enabled" ;
+        ], [
+            a lv2:InputPort, lv2:ControlPort ;
+            lv2:index 39 ;
+            lv2:symbol "DCA1_VOLUME" ;
+            lv2:name "DCA1 Volume" ;
+        ], [
+            a lv2:InputPort, lv2:ControlPort ;
+            lv2:index 40 ;
+            lv2:symbol "DCA1_ATTACK" ;
+            lv2:name "DCA1 Attack" ;
+        ], [
+            a lv2:InputPort, lv2:ControlPort ;
+            lv2:index 41 ;
+            lv2:symbol "DCA1_DECAY" ;
+            lv2:name "DCA1 Decay" ;
+        ], [
+            a lv2:InputPort, lv2:ControlPort ;
+            lv2:index 42 ;
+            lv2:symbol "DCA1_SUSTAIN" ;
+            lv2:name "DCA1 Sustain" ;
+        ], [
+            a lv2:InputPort, lv2:ControlPort ;
+            lv2:index 43 ;
+            lv2:symbol "DCA1_RELEASE" ;
+            lv2:name "DCA1 Release" ;
+        ], [
+            a lv2:InputPort, lv2:ControlPort ;
+            lv2:index 44 ;
+            lv2:symbol "OUT1_WIDTH" ;
+            lv2:name "OUT1 Stereo Width" ;
+        ], [
+            a lv2:InputPort, lv2:ControlPort ;
+            lv2:index 45 ;
+            lv2:symbol "OUT1_PANNING" ;
+            lv2:name "OUT1 Panning" ;
+        ], [
+            a lv2:InputPort, lv2:ControlPort ;
+            lv2:index 46 ;
+            lv2:symbol "OUT1_FXSEND" ;
+            lv2:name "OUT1 FX Send" ;
+        ], [
+            a lv2:InputPort, lv2:ControlPort ;
+            lv2:index 47 ;
+            lv2:symbol "OUT1_VOLUME" ;
+            lv2:name "OUT1 Volume" ;
+        ], [
+            a lv2:InputPort, lv2:ControlPort ;
+            lv2:index 48 ;
+            lv2:symbol "DEF1_PITCHBEND" ;
+            lv2:name "DEF1 Pitchbend" ;
+        ], [
+            a lv2:InputPort, lv2:ControlPort ;
+            lv2:index 49 ;
+            lv2:symbol "DEF1_MODWHEEL" ;
+            lv2:name "DEF1 Modwheel" ;
+        ], [
+            a lv2:InputPort, lv2:ControlPort ;
+            lv2:index 50 ;
+            lv2:symbol "DEF1_PRESSURE" ;
+            lv2:name "DEF1 Pressure" ;
+        ], [
+            a lv2:InputPort, lv2:ControlPort ;
+            lv2:index 51 ;
+            lv2:symbol "DEF1_VELOCITY" ;
+            lv2:name "DEF1 Velocity" ;
+        ], [
+            a lv2:InputPort, lv2:ControlPort ;
+            lv2:index 52 ;
+            lv2:symbol "DEF1_CHANNEL" ;
+            lv2:name "DEF1 Channel" ;
+        ], [
+            a lv2:InputPort, lv2:ControlPort ;
+            lv2:index 53 ;
+            lv2:symbol "DEF1_MONO" ;
+            lv2:name "DEF1 Mono" ;
+            ] ;
+
+    ] .
