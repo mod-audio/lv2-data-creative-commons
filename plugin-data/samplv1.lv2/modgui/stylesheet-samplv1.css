@@ -23,13 +23,19 @@
 .samplv1{{{cns}}} .value {
     font-family: 'lets_go_digital' !important;
     font-variant-numeric: tabular-nums !important;
-    color: RGB(212, 42, 42);
+    color: #295035;
     font-size: 22px;
     font-weight: bold;
     text-align: center;
     width: 60px;
     height: 25px;
     padding-top: 3px;
+    user-select: none;
+    margin: -7px 0px 0px -2px;
+    text-align: center;
+    width: 43px;
+    height: 25px;
+    overflow: hidden;
 }
 
 
@@ -119,9 +125,9 @@
 .samplv1{{{cns}}} .mod-control-group .mod-knob .mod-knob-image {
     background-image: url(/resources/samplv1_sprite_sheets/knobs/knob_grey.png{{{ns}}});
     background-repeat: no-repeat;
-    background-size: auto 100px;
-    height: 100px;
-    width: 100px;
+    background-size: auto 41px;
+    height: 41px;
+    width: 36px;
     margin: 0 auto;
 }
 
@@ -225,68 +231,76 @@
 /* SAMPLE CONTROLS */
 .samplv1{{{cns}}} .mod-control-group .samplv1-sample-controls {
     position: absolute;
-    top: 42px;
+    top: 69px;
     left: 0px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-sample-controls .mod-knob.samplv1-GEN1_SAMPLE {
-    top: 106px;
+    top: 78px;
     left: 15px;
+}
+.samplv1{{{cns}}} .mod-control-group .mod-knob.samplv1-GEN1_SAMPLE .value {
+    margin: -9px 0 0 3px;
+    color: RGB(212, 42, 42);
+    text-align: center;
+    width: 43px;
+    height: 25px;
+    overflow: hidden;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-sample-controls .mod-knob.samplv1-GEN1_REVERSE {
-    top: -11px;
+    top: -39px;
     left: 259px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-sample-controls .mod-knob.samplv1-GEN1_OFFSET {
-    top: -17px;
+    top: -45px;
     left: 484px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-sample-controls .mod-knob.samplv1-GEN1_OFFSET_1 {
     top: 86px;
-    left: 455px;
+    left: 484px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-sample-controls .mod-knob.samplv1-GEN1_OFFSET_2 {
     top: 86px;
-    left: 517px;
+    left: 546px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-sample-controls .mod-knob.samplv1-GEN1_LOOP {
-    top: -53px;
+    top: -81px;
     left: 631px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-sample-controls .mod-knob.samplv1-GEN1_LOOP_1 {
     top: 86px;
-    left: 597px;
+    left: 626px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-sample-controls .mod-knob.samplv1-GEN1_LOOP_2 {
     top: 86px;
-    left: 657px;
+    left: 686px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-sample-controls .mod-knob.samplv1-GEN1_OCTAVE {
     top: 86px;
-    left: 832px;
+    left: 861px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-sample-controls .mod-knob.samplv1-GEN1_TUNING {
     top: 86px;
-    left: 895px;
+    left: 924px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-sample-controls .mod-knob.samplv1-GEN1_GLIDE {
     top: 86px;
-    left: 957px;
+    left: 986px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-sample-controls .mod-knob.samplv1-GEN1_ENVTIME {
     top: 86px;
-    left: 1019px;
+    left: 1048px;
 }
 
 /* DCF */
@@ -302,17 +316,17 @@
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-dcf .mod-knob.samplv1-DCF1_CUTOFF {
-    top: 76px;
-    left: 170px;
+    top: 105px;
+    left: 199px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-dcf .mod-knob.samplv1-DCF1_RESO {
-    top: 76px;
-    left: 231px;
+    top: 105px;
+    left: 260px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-dcf .mod-knob.samplv1-DCF1_TYPE {
-    top: 76px;
+    top: 105px;
     left: 231px;
 }
 
@@ -320,25 +334,33 @@
     top: 189px;
     left: 16px;
 }
+.samplv1{{{cns}}} .mod-control-group .mod-knob.samplv1-DCF1_ENVELOPE .value {
+    margin: -2px 0 0 3px;
+    color: RGB(212, 42, 42);
+    text-align: center;
+    width: 43px;
+    height: 25px;
+    overflow: hidden;
+}
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-dcf .mod-knob.samplv1-DCF1_ATTACK {
-    top: 176px;
-    left: 170px;
+    top: 205px;
+    left: 199px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-dcf .mod-knob.samplv1-DCF1_DECAY {
-    top: 176px;
-    left: 232px;
+    top: 205px;
+    left: 261px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-dcf .mod-knob.samplv1-DCF1_SUSTAIN {
-    top: 176px;
-    left: 293px;
+    top: 205px;
+    left: 322px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-dcf .mod-knob.samplv1-DCF1_RELEASE {
-    top: 176px;
-    left: 355px;
+    top: 205px;
+    left: 384px;
 }
 
 /* LFO */
@@ -357,70 +379,78 @@
     top: 49px;
     left: 172px;
 }
+.samplv1{{{cns}}} .mod-control-group .mod-knob.samplv1-LFO1_WIDTH .value {
+    margin: -8px 0 0 3px;
+    color: RGB(212, 42, 42);
+    text-align: center;
+    width: 43px;
+    height: 25px;
+    overflow: hidden;
+}
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-lfo .mod-knob.samplv1-LFO1_BPM {
-    top: 128px;
-    left: -13px;
+    top: 155px;
+    left: 17px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-lfo .mod-knob.samplv1-LFO1_RATE {
-    top: 128px;
-    left: 50px;
+    top: 155px;
+    left: 79px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-lfo .mod-knob.samplv1-LFO1_SYNC {
     top: 42px;
-    left: 136px;
+    left: 135px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-lfo .mod-knob.samplv1-LFO1_SWEEP {
-    top: 128px;
-    left: 234px;
+    top: 155px;
+    left: 264px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-lfo .mod-knob.samplv1-LFO1_PITCH {
-    top: 128px;
-    left: 296px;
+    top: 155px;
+    left: 325px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-lfo .mod-knob.samplv1-LFO1_CUTOFF {
-    top: 128px;
-    left: 384px;
+    top: 155px;
+    left: 413px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-lfo .mod-knob.samplv1-LFO1_RESO {
-    top: 128px;
-    left: 445px;
+    top: 155px;
+    left: 474px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-lfo .mod-knob.samplv1-LFO1_PANNING {
-    top: 128px;
-    left: 507px;
+    top: 155px;
+    left: 536px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-lfo .mod-knob.samplv1-LFO1_VOLUME {
-    top: 128px;
-    left: 570px;
+    top: 155px;
+    left: 599px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-lfo .mod-knob.samplv1-LFO1_ATTACK {
-    top: 28px;
-    left: 383px;
+    top: 57px;
+    left: 412px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-lfo .mod-knob.samplv1-LFO1_DECAY {
-    top: 28px;
-    left: 445px;
+    top: 57px;
+    left: 474px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-lfo .mod-knob.samplv1-LFO1_SUSTAIN {
-    top: 28px;
-    left: 507px;
+    top: 57px;
+    left: 536px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-lfo .mod-knob.samplv1-LFO1_RELEASE {
-    top: 28px;
-    left: 570px;
+    top: 57px;
+    left: 599px;
 }
 
 /* DCA */
@@ -439,32 +469,40 @@
     top: 51px;
     left: 16px;
 }
+.samplv1{{{cns}}} .mod-control-group .mod-knob.samplv1-DCA1_VOLUME .value {
+    margin: -2px 0 0 3px;
+    color: RGB(212, 42, 42);
+    text-align: center;
+    width: 43px;
+    height: 25px;
+    overflow: hidden;
+}
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-dca .mod-knob.samplv1-DCA1_ATTACK {
-    top: 35px;
-    left: 169px;
+    top: 64px;
+    left: 198px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-dca .mod-knob.samplv1-DCA1_DECAY {
-    top: 35px;
-    left: 231px;
+    top: 64px;
+    left: 260px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-dca .mod-knob.samplv1-DCA1_SUSTAIN {
-    top: 35px;
-    left: 295px;
+    top: 64px;
+    left: 324px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-dca .mod-knob.samplv1-DCA1_RELEASE {
-    top: 35px;
-    left: 356px;
+    top: 64px;
+    left: 385px;
 }
 
 /* DEF */
 .samplv1{{{cns}}} .mod-control-group .samplv1-def {
     position: absolute;
-    top: 512px;
-    left: 435px;
+    top: 541px;
+    left: 468px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-def .mod-knob.samplv1-DEF1_PITCHBEND {
@@ -490,8 +528,8 @@
 /* OUT */
 .samplv1{{{cns}}} .mod-control-group .samplv1-out {
     position: absolute;
-    top: 512px;
-    left: 832px;
+    top: 541px;
+    left: 863px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-out .mod-knob.samplv1-OUT1_WIDTH {
@@ -586,17 +624,17 @@
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-def .mod-knob.samplv1-DEF1_MONO {
-    left: 335px;
+    left: 302px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-def .mod-knob.samplv1-DEF1_MONO.pos1 {
-    top: 10px;
+    top: -19px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-def .mod-knob.samplv1-DEF1_MONO.pos2 {
-    top: 14px;
+    top: -15px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-def .mod-knob.samplv1-DEF1_MONO.pos3 {
-    top: 17px;
+    top: -11px;
 }
