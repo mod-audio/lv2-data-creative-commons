@@ -15,6 +15,7 @@
 @prefix lv2resize: <http://lv2plug.in/ns/ext/resize-port#> .
 @prefix lv2pg:   <http://lv2plug.in/ns/ext/port-groups#> .
 @prefix units: <http://lv2plug.in/ns/extensions/units#> .
+@prefix mod:   <http://moddevices.com/ns/mod#> .
 
 @prefix samplv1_lv2: <http://samplv1.sourceforge.net/lv2#> .
 
@@ -860,6 +861,7 @@
 
 samplv1_lv2:P101_SAMPLE_FILE
 	a lv2:Parameter ;
+	mod:fileTypes "audiosample" ;
 	rdfs:label "P101 Sample File" ;
 	rdfs:range lv2atom:Path .
 

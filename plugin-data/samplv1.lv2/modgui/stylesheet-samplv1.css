@@ -33,6 +33,66 @@
 }
 
 
+/* ENUMERATED LIST */
+.samplv1{{{cns}}} .mod-enumerated-dropdown-group {
+    height:31px;
+    margin:20px auto 0 !important;
+    position:relative;
+    width: 171px;
+    left: 81px;
+    top: 17px;
+    z-index:35;
+}
+
+.samplv1{{{cns}}} .mod-enumerated-dropdown {
+    color: #000;
+    display: inline-block;
+    overflow: hidden;
+    width: 100%;
+    cursor: pointer
+}
+
+.samplv1{{{cns}}} .mod-enumerated-dropdown .mod-enumerated-dropdown-selected {
+    background: none;
+    border-radius: 4px;
+    /* box-shadow:inset 1px 1px 10px #000; */
+    font-size: 14px;
+    color: lightgrey;
+    height: 34px;
+    line-height: 2.5;
+    margin-right: 8px;
+    overflow: hidden;
+    padding: 0 9px;
+}
+
+/* WHEN IS HOVER */
+.samplv1{{{cns}}} .mod-enumerated-dropdown:hover .mod-enumerated-dropdown-selected {
+    border-radius: 4px 4px 0 0;
+}
+
+/* THE LIST OF OPTIONS */
+.samplv1{{{cns}}} .mod-enumerated-dropdown .mod-enumerated-list {
+    background: rgba(255,255,255,.85);
+    display: none;
+    font-weight: bold;
+    height: 69px;
+    overflow: auto;
+    position: relative;
+    position: absolute;
+    width: 200px;
+    z-index: 3;
+}
+
+.samplv1{{{cns}}} .mod-enumerated-dropdown .mod-enumerated-list > div {
+    padding: 3px 9px;
+}
+
+.samplv1{{{cns}}} .mod-enumerated-dropdown .mod-enumerated-list > div:hover {
+    background: rgba(0,0,0,.35);
+    cursor: pointer;
+}
+
+
 /* PORTS
 ================================================ */
 
@@ -165,7 +225,7 @@
 /* SAMPLE CONTROLS */
 .samplv1{{{cns}}} .mod-control-group .samplv1-sample-controls {
     position: absolute;
-    top: 60px;
+    top: 42px;
     left: 0px;
 }
 
@@ -175,12 +235,12 @@
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-sample-controls .mod-knob.samplv1-GEN1_REVERSE {
-    top: 21px;
+    top: -11px;
     left: 259px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-sample-controls .mod-knob.samplv1-GEN1_OFFSET {
-    top: 15px;
+    top: -17px;
     left: 484px;
 }
 
@@ -195,7 +255,7 @@
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-sample-controls .mod-knob.samplv1-GEN1_LOOP {
-    top: -20px;
+    top: -53px;
     left: 631px;
 }
 
