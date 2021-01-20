@@ -45,8 +45,8 @@
     margin:20px auto 0 !important;
     position:relative;
     width: 171px;
-    left: 81px;
-    top: 17px;
+    left: 10px;
+    top: -10px;
     z-index:35;
 }
 
@@ -232,12 +232,12 @@
 .samplv1{{{cns}}} .mod-control-group .samplv1-sample-controls {
     position: absolute;
     top: 69px;
-    left: 0px;
+    left: 67px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-sample-controls .mod-knob.samplv1-GEN1_SAMPLE {
     top: 78px;
-    left: 15px;
+    left: -52px;
 }
 .samplv1{{{cns}}} .mod-control-group .mod-knob.samplv1-GEN1_SAMPLE .value {
     margin: -9px 0 0 3px;
@@ -250,57 +250,57 @@
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-sample-controls .mod-knob.samplv1-GEN1_REVERSE {
     top: -39px;
-    left: 259px;
+    left: 192px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-sample-controls .mod-knob.samplv1-GEN1_OFFSET {
     top: -45px;
-    left: 484px;
+    left: 417px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-sample-controls .mod-knob.samplv1-GEN1_OFFSET_1 {
     top: 86px;
-    left: 484px;
+    left: 417px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-sample-controls .mod-knob.samplv1-GEN1_OFFSET_2 {
     top: 86px;
-    left: 546px;
+    left: 479px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-sample-controls .mod-knob.samplv1-GEN1_LOOP {
     top: -81px;
-    left: 631px;
+    left: 564px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-sample-controls .mod-knob.samplv1-GEN1_LOOP_1 {
     top: 86px;
-    left: 626px;
+    left: 559px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-sample-controls .mod-knob.samplv1-GEN1_LOOP_2 {
     top: 86px;
-    left: 686px;
+    left: 619px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-sample-controls .mod-knob.samplv1-GEN1_OCTAVE {
     top: 86px;
-    left: 861px;
+    left: 794px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-sample-controls .mod-knob.samplv1-GEN1_TUNING {
     top: 86px;
-    left: 924px;
+    left: 857px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-sample-controls .mod-knob.samplv1-GEN1_GLIDE {
     top: 86px;
-    left: 986px;
+    left: 919px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-sample-controls .mod-knob.samplv1-GEN1_ENVTIME {
     top: 86px;
-    left: 1048px;
+    left: 981px;
 }
 
 /* DCF */
@@ -322,7 +322,7 @@
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-dcf .mod-knob.samplv1-DCF1_RESO {
     top: 105px;
-    left: 260px;
+    left: 262px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-dcf .mod-knob.samplv1-DCF1_TYPE {
@@ -344,30 +344,30 @@
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-dcf .mod-knob.samplv1-DCF1_ATTACK {
-    top: 205px;
-    left: 199px;
+    top: 202px;
+    left: 201px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-dcf .mod-knob.samplv1-DCF1_DECAY {
-    top: 205px;
-    left: 261px;
+    top: 202px;
+    left: 263px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-dcf .mod-knob.samplv1-DCF1_SUSTAIN {
-    top: 205px;
-    left: 322px;
+    top: 202px;
+    left: 324px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-dcf .mod-knob.samplv1-DCF1_RELEASE {
-    top: 205px;
-    left: 384px;
+    top: 202px;
+    left: 386px;
 }
 
 /* LFO */
 .samplv1{{{cns}}} .mod-control-group .samplv1-lfo {
     position: absolute;
-    top: 249px;
-    left: 449px;
+    top: 248px;
+    left: 451px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-lfo .mod-knob.samplv1-LFO1_ENABLED {
@@ -389,12 +389,12 @@
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-lfo .mod-knob.samplv1-LFO1_BPM {
-    top: 155px;
+    top: 154px;
     left: 17px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-lfo .mod-knob.samplv1-LFO1_RATE {
-    top: 155px;
+    top: 154px;
     left: 79px;
 }
 
@@ -404,32 +404,32 @@
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-lfo .mod-knob.samplv1-LFO1_SWEEP {
-    top: 155px;
+    top: 154px;
     left: 264px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-lfo .mod-knob.samplv1-LFO1_PITCH {
-    top: 155px;
+    top: 154px;
     left: 325px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-lfo .mod-knob.samplv1-LFO1_CUTOFF {
-    top: 155px;
+    top: 154px;
     left: 413px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-lfo .mod-knob.samplv1-LFO1_RESO {
-    top: 155px;
+    top: 154px;
     left: 474px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-lfo .mod-knob.samplv1-LFO1_PANNING {
-    top: 155px;
+    top: 154px;
     left: 536px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-lfo .mod-knob.samplv1-LFO1_VOLUME {
-    top: 155px;
+    top: 154px;
     left: 599px;
 }
 
@@ -480,7 +480,7 @@
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-dca .mod-knob.samplv1-DCA1_ATTACK {
     top: 64px;
-    left: 198px;
+    left: 200px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-dca .mod-knob.samplv1-DCA1_DECAY {
@@ -490,18 +490,18 @@
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-dca .mod-knob.samplv1-DCA1_SUSTAIN {
     top: 64px;
-    left: 324px;
+    left: 326px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-dca .mod-knob.samplv1-DCA1_RELEASE {
     top: 64px;
-    left: 385px;
+    left: 387px;
 }
 
 /* DEF */
 .samplv1{{{cns}}} .mod-control-group .samplv1-def {
     position: absolute;
-    top: 541px;
+    top: 540px;
     left: 468px;
 }
 
@@ -528,7 +528,7 @@
 /* OUT */
 .samplv1{{{cns}}} .mod-control-group .samplv1-out {
     position: absolute;
-    top: 541px;
+    top: 540px;
     left: 863px;
 }
 
