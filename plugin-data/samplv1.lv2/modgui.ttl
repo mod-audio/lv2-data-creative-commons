@@ -6,6 +6,7 @@
     modgui:gui [
         modgui:resourcesDirectory <modgui> ;
         modgui:iconTemplate <modgui/icon-samplv1.html> ;
+        modgui:javascript <modgui/javascript-samplv1.js> ;
         modgui:stylesheet <modgui/stylesheet-samplv1.css> ;
         modgui:screenshot <modgui/samplv1_ss.png> ;
         modgui:thumbnail <modgui/samplv1_tn.png> ;

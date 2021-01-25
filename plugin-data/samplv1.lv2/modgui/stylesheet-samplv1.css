@@ -638,3 +638,39 @@
 .samplv1{{{cns}}} .mod-control-group .samplv1-def .mod-knob.samplv1-DEF1_MONO.pos3 {
     top: -11px;
 }
+
+/* = SVG
+================================================================= */
+
+.samplv1{{{cns}}} .mod-control-group .samplv1-adsr {
+    position: absolute;
+    border: none;
+    display: inline-block;
+    background-color: #000;
+    border: 1px solid #666;
+}
+
+.samplv1{{{cns}}} .mod-control-group .samplv1-svg {
+    position:relative;
+}
+
+.samplv1{{{cns}}} .mod-control-group .samplv1-dca .samplv1-adsr {
+    top: 46px;
+    left: 82px;
+    width: 100px;
+    height: 80px;
+}
+
+.samplv1{{{cns}}} .mod-control-group .samplv1-dcf .samplv1-adsr {
+    top: 184px;
+    left: 82px;
+    width: 100px;
+    height: 80px;
+}
+
+.samplv1{{{cns}}} .mod-control-group .samplv1-lfo .samplv1-adsr {
+    top: 40px;
+    left: 237px;
+    width: 155px;
+    height: 80px;
+}
