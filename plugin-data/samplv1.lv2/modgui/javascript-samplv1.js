@@ -17,20 +17,28 @@ function (event) {
         });
     }
 
-    function draw_sample(elem) {
+    function draw_sample(elem, n_channels) {
         var ds = sd.data ('xModPorts');
         var svg = elem.svg('get');
         svg.clear();
 
         var sample_data = ds['http://samplv1.sourceforge.net/lv2#P109_WAVE_FORM'];
-        var data = [];
+        var data1 = []; //data for left channel or mono
+        var data2 = []; //data for right channel
 
         if (sample_data === undefined) {
-            data = [[0, 50], [400,50]];
+            data1 = [[0, 50], [400,50]];
             strokeColor = '#5a5a5a';
         } else {
-            for (var x = 0; x < 256; x++) {
-                data.push([Math.floor((x / 256) * sd_width), (sample_data[x] * 100.0) + (svg_height / 6)]);
+            if (n_channels == 2) {
+                for (var x = 0; x < sample_data.length; x+=n_channels) {
+                    data1.push([Math.floor((x / sample_data.length) * sd_width), (sample_data[x] * 40.0) + (svg_height / 8)]);
+                    data2.push([Math.floor((x / sample_data.length) * sd_width), (sample_data[x+1] * 40.0) + (svg_height / 1.2)]);
+                }
+            } else {
+                for (var x = 0; x < sample_data.length; x+=n_channels) {
+                    data1.push([Math.floor((x / sample_data.length) * sd_width), (sample_data[x] * 100.0) + (svg_height / 6)]);
+                }
             }
             strokeColor = '#009515';
         }
@@ -39,7 +47,13 @@ function (event) {
         svg.linearGradient(defs, 'fadeBg', [[0, '#2e5033'], [1, '#1a2d1d']]);
 
         var g = svg.group({stroke: strokeColor, strokeWidth: 1.0, fill: 'url(#fadeBg)'});
-        svg.polyline(g, data);
+
+        if (n_channels == 2) {
+            svg.polyline(g, data1);
+            svg.polyline(g, data2);
+        } else {
+            svg.polyline(g, data1);
+        }
     }
 
     function draw_adsr(elem, a, d, s, r) {
@@ -87,7 +101,6 @@ function (event) {
     {
         var symbol;
 
-
         // cache relevant values locally
         var values = event.data.values = {};
         for (var i in event.ports)
@@ -123,7 +136,7 @@ function (event) {
         // initial drawing
         var ds = {};
         sd.data ('xModPorts', ds);
-        draw_sample(sd);
+        draw_sample(sd, 1);
 
         draw_adsr(dca,
             values['DCA1_ATTACK'],
@@ -143,19 +156,26 @@ function (event) {
     }
     else if (event.type == 'change')
     {
+        var n_channels;
         var sd = event.icon.find ('[mod-role="samplv1-sample-svg"]');
         var ds = sd.data ('xModPorts');
 
         if (event.uri == 'http://samplv1.sourceforge.net/lv2#P109_WAVE_FORM') {
-            if (event.value.length !== 256) {
+            if (event.value.length == 512) {
+                n_channels = 2;
+            }
+            else if (event.value.length == 256) {
+                n_channels = 1;
+            } else {
                 console.log("modspectre: Invalid data")
                 return
             }
             ds[event.uri] = event.value;
+
+            sd.data ('xModPorts', ds);
+            draw_sample(sd, n_channels);
         }
 
-        sd.data ('xModPorts', ds);
-        draw_sample(sd);
 
         if (event.symbol === undefined)
             return;
