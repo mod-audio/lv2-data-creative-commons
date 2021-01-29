@@ -171,6 +171,16 @@
     position: relative;
 }
 
+.samplv1{{{cns}}} .wave-forms {
+    background-image: url(/resources/samplv1_sprite_sheets/wave-shapes/waveforms.png{{{ns}}});
+    background-repeat: no-repeat;
+	position: relative;
+    height: 79px;
+    width: 62px;
+	top: 6px;
+	left: 14px;
+}
+
 /* = BUTTONS
 ================================================ */
 
@@ -600,27 +610,27 @@
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-lfo .mod-knob.samplv1-LFO1_SHAPE {
-    left: 91px;
+    left: 85px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-lfo .mod-knob.samplv1-LFO1_SHAPE.pos1 {
-    top: -3px;
+    top: -81px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-lfo .mod-knob.samplv1-LFO1_SHAPE.pos2 {
-    top: -7px;
+    top: -85px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-lfo .mod-knob.samplv1-LFO1_SHAPE.pos3 {
-    top: -12px;
+    top: -89px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-lfo .mod-knob.samplv1-LFO1_SHAPE.pos4 {
-    top: -16px;
+    top: -93px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-lfo .mod-knob.samplv1-LFO1_SHAPE.pos5 {
-    top: -20px;
+    top: -96px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-def .mod-knob.samplv1-DEF1_MONO {

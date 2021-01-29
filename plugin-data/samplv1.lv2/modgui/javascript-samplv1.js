@@ -6,6 +6,15 @@ function (event) {
     /* common */
     var svg_height = 78;
 
+    function switch_waveform_image(index) {
+        var backgroundPositions = ['0px', '-80px', '-158px', '-237px', '-316px'];
+        var backgroundPosition = '0px' + ' ' + backgroundPositions[index];
+
+        event.icon.find(".wave-forms").css({
+            'background-position' : backgroundPosition
+        });
+    }
+
     function draw_adsr(elem, a, d, s, r) {
         var svg = elem.svg('get');
         svg.clear();
@@ -64,6 +73,11 @@ function (event) {
             {
                 values[symbol] = event.ports[i].value;
             }
+
+            if (symbol === "LFO1_SHAPE")
+            {
+                switch_waveform_image(event.ports[i].value);
+            }
         }
 
         // get elements
@@ -108,7 +122,8 @@ function (event) {
             values[event.symbol] = event.value;
 
             // draw new polygons
-            /**/ if (event.symbol.startsWith('DCA1_'))
+            /**/
+            if (event.symbol.startsWith('DCA1_'))
             {
                 draw_adsr(event.icon.find('[mod-role="samplv1-dca-svg"]'),
                           values['DCA1_ATTACK'],
@@ -132,6 +147,11 @@ function (event) {
                           values['LFO1_SUSTAIN'],
                           values['LFO1_RELEASE']);
             }
+        }
+
+        if (event.symbol === "LFO1_SHAPE")
+        {
+            switch_waveform_image(event.value);
         }
     }
 }
