@@ -409,8 +409,8 @@
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-lfo .mod-knob.samplv1-LFO1_SYNC {
-    top: 42px;
-    left: 135px;
+    top: -36px;
+    left: 131px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-lfo .mod-knob.samplv1-LFO1_SWEEP {
@@ -566,7 +566,7 @@
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-dcf .mod-knob.samplv1-DCF1_TYPE {
-    left: 325px;
+    left: 321px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-dcf .mod-knob.samplv1-DCF1_TYPE.pos1 {
@@ -590,7 +590,7 @@
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-dcf .mod-knob.samplv1-DCF1_SLOPE {
-    left: 379px;
+    left: 375px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-dcf .mod-knob.samplv1-DCF1_SLOPE.pos1 {
@@ -614,15 +614,15 @@
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-lfo .mod-knob.samplv1-LFO1_SHAPE.pos1 {
-    top: -81px;
+    top: -82px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-lfo .mod-knob.samplv1-LFO1_SHAPE.pos2 {
-    top: -85px;
+    top: -87px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-lfo .mod-knob.samplv1-LFO1_SHAPE.pos3 {
-    top: -89px;
+    top: -90px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-lfo .mod-knob.samplv1-LFO1_SHAPE.pos4 {
@@ -630,11 +630,11 @@
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-lfo .mod-knob.samplv1-LFO1_SHAPE.pos5 {
-    top: -96px;
+    top: -97px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-def .mod-knob.samplv1-DEF1_MONO {
-    left: 302px;
+    left: 298px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-def .mod-knob.samplv1-DEF1_MONO.pos1 {
@@ -660,8 +660,23 @@
     border: 1px solid #666;
 }
 
+.samplv1{{{cns}}} .mod-control-group .samplv1-sd {
+    position: absolute;
+    border: none;
+    display: inline-block;
+    background-color: #000;
+    border: 1px solid #666;
+    top: 28px;
+    left: 16px;
+    width: 364px;
+    height: 120px;
+}
+
 .samplv1{{{cns}}} .mod-control-group .samplv1-svg {
     position:relative;
+}
+
+.samplv1{{{cns}}} .mod-control-group .samplv1-sample .samplv1-sd{
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-dca .samplv1-adsr {

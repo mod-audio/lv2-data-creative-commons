@@ -1,10 +1,12 @@
 function (event) {
     /* constants */
+    var sd_width  = 362;
     var dca_width = 98;
     var dcf_width = 98;
     var lfo_width = 153;
     /* common */
     var svg_height = 78;
+    var sd_height  = 118;
 
     function switch_waveform_image(index) {
         var backgroundPositions = ['0px', '-80px', '-158px', '-237px', '-316px'];
@@ -13,6 +15,31 @@ function (event) {
         event.icon.find(".wave-forms").css({
             'background-position' : backgroundPosition
         });
+    }
+
+    function draw_sample(elem) {
+        var ds = sd.data ('xModPorts');
+        var svg = elem.svg('get');
+        svg.clear();
+
+        var sample_data = ds['http://samplv1.sourceforge.net/lv2#P109_WAVE_FORM'];
+        var data = [];
+
+        if (sample_data === undefined) {
+            data = [[0, 50], [400,50]];
+            strokeColor = '#5a5a5a';
+        } else {
+            for (var x = 0; x < 256; x++) {
+                data.push([Math.floor((x / 256) * sd_width), (sample_data[x] * 100.0) + (svg_height / 6)]);
+            }
+            strokeColor = '#009515';
+        }
+
+        var defs = svg.defs();
+        svg.linearGradient(defs, 'fadeBg', [[0, '#2e5033'], [1, '#1a2d1d']]);
+
+        var g = svg.group({stroke: strokeColor, strokeWidth: 1.0, fill: 'url(#fadeBg)'});
+        svg.polyline(g, data);
     }
 
     function draw_adsr(elem, a, d, s, r) {
@@ -43,22 +70,23 @@ function (event) {
         svg.linearGradient(defs, 'fadeBg', [[0, '#2e5033'], [1, '#1a2d1d']]);
 
         // draw polygon
-        var g = svg.group({stroke: '#009515', strokeWidth: 2.0, fill: 'url(#fadeBg)'});
+        var g = svg.group({stroke: '#009515', strokeWidth: 1.0, fill: 'url(#fadeBg)'});
         svg.polygon(g, path, {});
     }
 
-    function setup_svg(elem, width) {
+    function setup_svg(elem, width, height) {
         // enable svg element
         elem.svg();
         // setup svg size
         var svg = elem.svg('get');
         svg.configure({width: '' + width + 'px'}, false);
-        svg.configure({height: '' + svg_height + 'px'}, false);
+        svg.configure({height: '' + height + 'px'}, false);
     }
 
     if (event.type == 'start')
     {
         var symbol;
+
 
         // cache relevant values locally
         var values = event.data.values = {};
@@ -81,34 +109,54 @@ function (event) {
         }
 
         // get elements
+        var sd = event.icon.find('[mod-role=samplv1-sample-svg]');
         var dca = event.icon.find('[mod-role="samplv1-dca-svg"]');
         var dcf = event.icon.find('[mod-role="samplv1-dcf-svg"]');
         var lfo = event.icon.find('[mod-role="samplv1-lfo-svg"]');
 
         // setup svgs
-        setup_svg(dca, dca_width);
-        setup_svg(dcf, dcf_width);
-        setup_svg(lfo, lfo_width);
+        setup_svg(sd,  sd_width,  sd_height);
+        setup_svg(dca, dca_width, svg_height);
+        setup_svg(dcf, dcf_width, svg_height);
+        setup_svg(lfo, lfo_width, svg_height);
 
         // initial drawing
+        var ds = {};
+        sd.data ('xModPorts', ds);
+        draw_sample(sd);
+
         draw_adsr(dca,
-                  values['DCA1_ATTACK'],
-                  values['DCA1_DECAY'],
-                  values['DCA1_SUSTAIN'],
-                  values['DCA1_RELEASE']);
+            values['DCA1_ATTACK'],
+            values['DCA1_DECAY'],
+            values['DCA1_SUSTAIN'],
+            values['DCA1_RELEASE']);
         draw_adsr(dcf,
-                  values['DCF1_ATTACK'],
-                  values['DCF1_DECAY'],
-                  values['DCF1_SUSTAIN'],
-                  values['DCF1_RELEASE']);
+            values['DCF1_ATTACK'],
+            values['DCF1_DECAY'],
+            values['DCF1_SUSTAIN'],
+            values['DCF1_RELEASE']);
         draw_adsr(lfo,
-                  values['LFO1_ATTACK'],
-                  values['LFO1_DECAY'],
-                  values['LFO1_SUSTAIN'],
-                  values['LFO1_RELEASE']);
+            values['LFO1_ATTACK'],
+            values['LFO1_DECAY'],
+            values['LFO1_SUSTAIN'],
+            values['LFO1_RELEASE']);
     }
     else if (event.type == 'change')
     {
+        var sd = event.icon.find ('[mod-role="samplv1-sample-svg"]');
+        var ds = sd.data ('xModPorts');
+
+        if (event.uri == 'http://samplv1.sourceforge.net/lv2#P109_WAVE_FORM') {
+            if (event.value.length !== 256) {
+                console.log("modspectre: Invalid data")
+                return
+            }
+            ds[event.uri] = event.value;
+        }
+
+        sd.data ('xModPorts', ds);
+        draw_sample(sd);
+
         if (event.symbol === undefined)
             return;
 
@@ -126,26 +174,26 @@ function (event) {
             if (event.symbol.startsWith('DCA1_'))
             {
                 draw_adsr(event.icon.find('[mod-role="samplv1-dca-svg"]'),
-                          values['DCA1_ATTACK'],
-                          values['DCA1_DECAY'],
-                          values['DCA1_SUSTAIN'],
-                          values['DCA1_RELEASE']);
+                    values['DCA1_ATTACK'],
+                    values['DCA1_DECAY'],
+                    values['DCA1_SUSTAIN'],
+                    values['DCA1_RELEASE']);
             }
             else if (event.symbol.startsWith('DCF1_'))
             {
                 draw_adsr(event.icon.find('[mod-role="samplv1-dcf-svg"]'),
-                          values['DCF1_ATTACK'],
-                          values['DCF1_DECAY'],
-                          values['DCF1_SUSTAIN'],
-                          values['DCF1_RELEASE']);
+                    values['DCF1_ATTACK'],
+                    values['DCF1_DECAY'],
+                    values['DCF1_SUSTAIN'],
+                    values['DCF1_RELEASE']);
             }
             else if (event.symbol.startsWith('LFO1_'))
             {
                 draw_adsr(event.icon.find('[mod-role="samplv1-lfo-svg"]'),
-                          values['LFO1_ATTACK'],
-                          values['LFO1_DECAY'],
-                          values['LFO1_SUSTAIN'],
-                          values['LFO1_RELEASE']);
+                    values['LFO1_ATTACK'],
+                    values['LFO1_DECAY'],
+                    values['LFO1_SUSTAIN'],
+                    values['LFO1_RELEASE']);
             }
         }
 
