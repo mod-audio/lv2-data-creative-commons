@@ -174,11 +174,11 @@
 .samplv1{{{cns}}} .wave-forms {
     background-image: url(/resources/samplv1_sprite_sheets/wave-shapes/waveforms.png{{{ns}}});
     background-repeat: no-repeat;
-	position: relative;
+    position: relative;
     height: 79px;
     width: 62px;
-	top: 6px;
-	left: 14px;
+    top: 6px;
+    left: 14px;
 }
 
 /* = BUTTONS
