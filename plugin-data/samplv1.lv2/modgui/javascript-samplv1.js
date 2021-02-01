@@ -1,9 +1,10 @@
 function (event) {
     /* constants */
-    var sd_width  = 362;
-    var dca_width = 98;
-    var dcf_width = 98;
-    var lfo_width = 153;
+    var sd_width   = 362;
+    var fil_width  = 164;
+    var dca_width  = 98;
+    var dcf_width  = 98;
+    var lfo_width  = 153;
     /* common */
     var svg_height = 78;
     var sd_height  = 118;
@@ -15,6 +16,23 @@ function (event) {
         event.icon.find(".wave-forms").css({
             'background-position' : backgroundPosition
         });
+    }
+
+    function draw_filter(elem) {
+        //var ds = sd.data ('xModPorts');
+        var svg = elem.svg('get');
+        svg.clear();
+
+        data1 = [[0, svg_height], [fil_width/4,svg_height/2], [fil_width/2,svg_height/2], [fil_width,svg_height/2]];
+        strokeColor = '#009515';
+
+        var defs = svg.defs();
+        svg.linearGradient(defs, 'fadeBg', [[0, '#2e5033'], [1, '#1a2d1d']]);
+        var g = svg.group({stroke: strokeColor, strokeWidth: 1.0, fill: 'url(#fadeBg)'});
+
+        data1.push([[fil_width + 3,svg_height/2], [fil_width,svg_height + 4]]);
+
+        svg.polyline(g, data1);
     }
 
     function draw_sample(elem, n_channels) {
@@ -122,13 +140,15 @@ function (event) {
         }
 
         // get elements
-        var sd = event.icon.find('[mod-role=samplv1-sample-svg]');
+        var sd  = event.icon.find('[mod-role=samplv1-sample-svg]');
+        var fil = event.icon.find('[mod-role=samplv1-filter-svg]');
         var dca = event.icon.find('[mod-role="samplv1-dca-svg"]');
         var dcf = event.icon.find('[mod-role="samplv1-dcf-svg"]');
         var lfo = event.icon.find('[mod-role="samplv1-lfo-svg"]');
 
         // setup svgs
         setup_svg(sd,  sd_width,  sd_height);
+        setup_svg(fil, fil_width, svg_height);
         setup_svg(dca, dca_width, svg_height);
         setup_svg(dcf, dcf_width, svg_height);
         setup_svg(lfo, lfo_width, svg_height);
@@ -137,6 +157,8 @@ function (event) {
         var ds = {};
         sd.data ('xModPorts', ds);
         draw_sample(sd, 1);
+
+        draw_filter(fil);
 
         draw_adsr(dca,
             values['DCA1_ATTACK'],
