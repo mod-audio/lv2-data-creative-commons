@@ -679,6 +679,18 @@
 .samplv1{{{cns}}} .mod-control-group .samplv1-sample .samplv1-sd{
 }
 
+.samplv1{{{cns}}} .mod-control-group .samplv1-fil {
+    position: absolute;
+    border: none;
+    display: inline-block;
+    background-color: #000;
+    border: 1px solid #666;
+    top: 88px;
+    left: 16px;
+    width: 164px;
+    height: 79px;
+}
+
 .samplv1{{{cns}}} .mod-control-group .samplv1-dca .samplv1-adsr {
     top: 46px;
     left: 82px;

@@ -18,19 +18,65 @@ function (event) {
         });
     }
 
-    function draw_filter(elem) {
-        //var ds = sd.data ('xModPorts');
+    function getBezierPoint(P0, P1, P2, P3, t)
+    {
+        return Math.pow(1 - t, 3) * P0 + 3 * t * Math.pow(1 - t, 2) * P1 + 3 * Math.pow(t, 2) * (1 - t) * P2 + Math.pow(t, 3) * P3;
+    }
+
+    function draw_filter(elem, cutoff_freq, resonance, filter_type) {
+
+        if (filter_type === undefined) {
+            filter_type = 0;
+        }
+
+        var cf  = cutoff_freq * fil_width * 0.45;
+        var res = resonance * -380;
+
         var svg = elem.svg('get');
         svg.clear();
 
-        data1 = [[0, svg_height], [fil_width/4,svg_height/2], [fil_width/2,svg_height/2], [fil_width,svg_height/2]];
+        var data1 = [];
+
+        switch (filter_type)
+        {
+            case 0:
+                data1.push([[-1 ,svg_height], [0,svg_height/2]]); //set start position
+
+                var peak_length = 30;
+                var slope_length = 30;
+
+                //straight line before cutoff freq
+                for (var x = 0; x < cf; x++) {
+                    data1.push([x, svg_height/2]);
+                }
+                //draw curve for resonance peak
+                var t = 0;
+                for (var x = Math.floor(cf); x < cf + peak_length; x++) {
+                    data1.push([x, getBezierPoint(svg_height/2, svg_height/2, svg_height/2 - (svg_height/2 * resonance), svg_height/2 + (res * 0.1) , t/(peak_length))]);
+                    t++;
+                }
+                //draw slope
+                t = 0;
+                for (var x = cf + peak_length; x < cf + peak_length + slope_length; x++) {
+                    data1.push([x, getBezierPoint(svg_height/2 + (res * 0.1), svg_height/2 - (svg_height/2 * resonance), svg_height/2, svg_height, t/(slope_length))]);
+                    t++;
+                }
+                //draw remaining bit
+                for (var x = cf + peak_length + slope_length; x < fil_width; x++) {
+                    data1.push([x, svg_height + 10]);
+                    t++;
+                }
+
+                break;
+            default:
+        }
+
         strokeColor = '#009515';
 
         var defs = svg.defs();
         svg.linearGradient(defs, 'fadeBg', [[0, '#2e5033'], [1, '#1a2d1d']]);
         var g = svg.group({stroke: strokeColor, strokeWidth: 1.0, fill: 'url(#fadeBg)'});
 
-        data1.push([[fil_width + 3,svg_height/2], [fil_width,svg_height + 4]]);
 
         svg.polyline(g, data1);
     }
@@ -133,9 +179,12 @@ function (event) {
                 values[symbol] = event.ports[i].value;
             }
 
-            if (symbol === "LFO1_SHAPE")
+            if (symbol === 'LFO1_SHAPE')
             {
                 switch_waveform_image(event.ports[i].value);
+            }
+            if (symbol == 'DCF1_CUTOFF') {
+                values[symbol] = event.ports[i].value;
             }
         }
 
@@ -158,7 +207,7 @@ function (event) {
         sd.data ('xModPorts', ds);
         draw_sample(sd, 1);
 
-        draw_filter(fil);
+        draw_filter(fil, values['DCF1_CUTOFF'], 0, 0);
 
         draw_adsr(dca,
             values['DCA1_ATTACK'],
@@ -243,6 +292,17 @@ function (event) {
         {
             switch_waveform_image(event.value);
         }
+
+        if (event.symbol == 'DCF1_CUTOFF' ||
+            event.symbol == 'DCF1_RESO' ||
+            event.symbol == 'DCF1_SLOP' ||
+            event.symbol == 'DCF1_TYPE') {
+            var values = event.data.values;
+            values[event.symbol] = event.value;
+            draw_filter(event.icon.find ('[mod-role="samplv1-filter-svg"]'), values['DCF1_CUTOFF'],
+                values['DCF1_RESO'], values['DCF1_TYPE']);
+        }
+
     }
 }
 
