@@ -23,10 +23,17 @@ function (event) {
         return Math.pow(1 - t, 3) * P0 + 3 * t * Math.pow(1 - t, 2) * P1 + 3 * Math.pow(t, 2) * (1 - t) * P2 + Math.pow(t, 3) * P3;
     }
 
-    function draw_filter(elem, cutoff_freq, resonance, filter_type) {
+    function draw_filter(elem, cutoff_freq, resonance, filter_type, slope) {
 
         if (filter_type === undefined) {
             filter_type = 0;
+        }
+
+        if (slope === undefined) {
+            slope = 0;
+        }
+        else if (slope == 3) {
+            filter_type = 4;
         }
 
         var cf  = cutoff_freq * fil_width * 0.45;
@@ -39,11 +46,11 @@ function (event) {
 
         switch (filter_type)
         {
-            case 0:
+            case 0: //lowpass filter
                 data1.push([[-1 ,svg_height], [0,svg_height/2]]); //set start position
 
                 var peak_length = 30;
-                var slope_length = 30;
+                var slope_length = Math.floor(30 + (slope * 2));
 
                 //straight line before cutoff freq
                 for (var x = 0; x < cf; x++) {
@@ -64,9 +71,100 @@ function (event) {
                 //draw remaining bit
                 for (var x = cf + peak_length + slope_length; x < fil_width; x++) {
                     data1.push([x, svg_height + 10]);
+                }
+                break;
+            case 1: //bandpass filter
+                var peak_length = 60;
+                var slope_length = Math.floor(30 + (slope * 2));
+                var slope_curve = Math.floor(slope * 2);
+
+                for (var x = 0; x < cf - slope_curve; x++) {
+                    data1.push([x, svg_height + 10]);
+                }
+                var t = 0;
+                for (var x = Math.floor(cf - slope_curve); x < cf - slope_curve + peak_length; x++) {
+                    data1.push([x, getBezierPoint(svg_height, svg_height/2, svg_height/2 - (svg_height/2 * resonance * 2.9), svg_height, t/(peak_length))]);
                     t++;
                 }
+                for (var x = cf + peak_length + slope_length; x < fil_width; x++) {
+                    data1.push([x, svg_height + 10]);
+                }
 
+                data1.push([[fil_width + 1 ,svg_height/2], [fil_width + 2,svg_height]]); //set end_pos
+                break;
+            case 2: //highpass filter
+                var peak_length = 30;
+                var slope_length = Math.floor(30 + (slope * 2));
+                var slope_curve = Math.floor(slope * 2);
+
+                for (var x = 0; x < cf - slope_curve; x++) {
+                    data1.push([x, svg_height + 10]);
+                }
+                var t = 0;
+                for (var x = Math.floor(cf - slope_curve); x < cf - slope_curve + peak_length; x++) {
+                    data1.push([x, getBezierPoint(svg_height, svg_height/2, svg_height/2 - (svg_height/2 * resonance), svg_height/2 + (res * 0.1) , t/(peak_length))]);
+                    t++;
+                }
+                t = 0;
+                for (var x = cf + peak_length; x < cf + peak_length + slope_length; x++) {
+                    data1.push([x, getBezierPoint(svg_height/2 + (res * 0.1), svg_height/2 - (svg_height/2 * resonance), svg_height/2, svg_height/2, t/(slope_length))]);
+                    t++;
+                }
+                for (var x = cf + peak_length + slope_length; x < fil_width; x++) {
+                    data1.push([x, svg_height/2]);
+                }
+
+                data1.push([[fil_width + 1 ,svg_height/2], [fil_width + 2,svg_height]]); //set end_pos
+                break;
+            case 3: //BRF filter
+                data1.push([[-1 ,svg_height], [0,svg_height/2]]); //set start position
+
+                var peak_length = 30;
+                var slope_length = Math.floor(30 + (slope * 2));
+                console.log("slope length = ", slope_length);
+                var second_slope_length = 30;
+
+                for (var x = 0; x < cf; x++) {
+                    data1.push([x, svg_height/2]);
+                }
+                var t = 0;
+                for (var x = Math.floor(cf); x < cf + peak_length; x++) {
+                    data1.push([x, getBezierPoint(svg_height/2, svg_height/2, svg_height/2 - (svg_height/2 * resonance), svg_height/2 + (res * 0.1) , t/(peak_length))]);
+                    t++;
+                }
+                t = 0;
+                for (var x = cf + peak_length; x < cf + peak_length + slope_length; x++) {
+                    data1.push([x, getBezierPoint(svg_height/2 + (res * 0.1), svg_height/2 - (svg_height/2 * resonance), svg_height/2, svg_height, t/(slope_length))]);
+                    t++;
+                }
+                var t = 0;
+                for (var x = cf + peak_length + slope_length; x < cf + peak_length + slope_length + second_slope_length; x++) {
+                    data1.push([x, getBezierPoint(svg_height, svg_height/2, svg_height/2, svg_height/2, t/(second_slope_length))]);
+                    t++;
+                }
+                for (var x = cf + peak_length + slope_length + second_slope_length; x < fil_width; x++) {
+                    data1.push([x, svg_height/2]);
+                }
+                data1.push([[fil_width + 1 ,svg_height/2], [fil_width + 2,svg_height]]); //set end_pos
+                break;
+            case 4: //formant filter
+                data1.push([[-1 ,svg_height], [0,svg_height/2]]); //set start position
+
+                var peak_length = Math.floor(30 - (((cutoff_freq * -1) + 1) * 15));
+                var n_peaks = 5;
+                var offset = 10
+
+                for (var peak = 0; peak < n_peaks; peak++) {
+                    var t = 0;
+                    for (var x = Math.floor(peak_length * peak); x < Math.floor(peak_length * (peak + 1)); x++) {
+                        data1.push([x, getBezierPoint(svg_height/2 + (offset * peak), svg_height/2, svg_height/2 - svg_height/2, svg_height/2 + (res * 0.1) + (offset * (1 + peak)) , t/(peak_length))]);
+                        t++;
+                    }
+                }
+
+                for (var x = Math.floor(peak_length * n_peaks); x < fil_width; x++) {
+                    data1.push([x, svg_height + 100]);
+                }
                 break;
             default:
         }
@@ -207,7 +305,7 @@ function (event) {
         sd.data ('xModPorts', ds);
         draw_sample(sd, 1);
 
-        draw_filter(fil, values['DCF1_CUTOFF'], 0, 0);
+        draw_filter(fil, values['DCF1_CUTOFF'], 0, 0, 0);
 
         draw_adsr(dca,
             values['DCA1_ATTACK'],
@@ -295,12 +393,12 @@ function (event) {
 
         if (event.symbol == 'DCF1_CUTOFF' ||
             event.symbol == 'DCF1_RESO' ||
-            event.symbol == 'DCF1_SLOP' ||
+            event.symbol == 'DCF1_SLOPE' ||
             event.symbol == 'DCF1_TYPE') {
             var values = event.data.values;
             values[event.symbol] = event.value;
             draw_filter(event.icon.find ('[mod-role="samplv1-filter-svg"]'), values['DCF1_CUTOFF'],
-                values['DCF1_RESO'], values['DCF1_TYPE']);
+                values['DCF1_RESO'], values['DCF1_TYPE'], values['DCF1_SLOPE']);
         }
 
     }
