@@ -1,0 +1,90 @@
+/* SKINS */
+.gx-bajatube{{{cns}}} {
+  background-image: url(/resources/gx_baja_tube_driver_bg.png{{{ns}}});
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 453px;
+  position: relative;
+  width: 301px;
+}
+
+/* CONTROLS */
+.gx-bajatube{{{cns}}} .mod-control-group {
+  margin: 20px !important;
+  position: relative;
+  z-index: 30;
+}
+
+/* PORTS */
+.gx-bajatube{{{cns}}} .mod-pedal-input,
+.gx-bajatube{{{cns}}} .mod-pedal-output {
+  top: 144px;
+}
+
+.gx-bajatube{{{cns}}} .mod-pedal-output .mod-output {
+  left: -15px;
+}
+
+/* SWITCH */
+.gx-bajatube{{{cns}}} .mod-footswitch {
+  background-image: url(/resources/baja_tube_driver_sprites/gx_baja_tube_driver_footswitch.png{{{ns}}});
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  bottom: 52px;
+  left: 120px;
+  cursor: pointer;
+  height: 49px;
+  width: 49px;
+  margin: auto;
+  position: absolute !important;
+}
+
+.gx-bajatube{{{cns}}} .mod-footswitch.on {
+  background-position-y: top !important
+}
+
+/* LIGHT */
+.gx-bajatube{{{cns}}} .mod-light {
+  background-image: url(/resources/baja_tube_driver_sprites/gx_baja_tube_driver_led.png{{{ns}}}) !important;
+  background-position: center right;
+  background-repeat: no-repeat;
+  height: 32px;
+  width: 30px;
+  position: absolute;
+  top: 158px;
+  left: 127px;
+}
+
+.gx-bajatube{{{cns}}} .mod-light.off {
+  background-position: center left;
+}
+
+/* KNOBS */
+.gx-bajatube{{{cns}}} .mod-knob {
+  position: absolute;
+}
+
+.gx-bajatube{{{cns}}} .mod-knob.gx-bajatube-DRIVE,
+.gx-bajatube{{{cns}}} .mod-knob.gx-bajatube-TONE,
+.gx-bajatube{{{cns}}} .mod-knob.gx-bajatube-VOLUME {
+  top: 24px;
+}
+
+.gx-bajatube{{{cns}}} .mod-knob.gx-bajatube-DRIVE {
+  left: -1px;
+}
+
+.gx-bajatube{{{cns}}} .mod-knob.gx-bajatube-TONE {
+  left: 92px;
+}
+
+.gx-bajatube{{{cns}}} .mod-knob.gx-bajatube-VOLUME {
+  left: 183px;
+}
+
+.gx-bajatube{{{cns}}} .mod-knob .mod-knob-image {
+  background-image: url(/resources/baja_tube_driver_sprites/gx_baja_tube_driver_knobs_70.png{{{ns}}});
+  background-repeat: no-repeat;
+  height: 64px;
+  width: 64px;
+}
