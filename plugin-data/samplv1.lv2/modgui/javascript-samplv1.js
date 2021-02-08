@@ -36,7 +36,7 @@ function (event) {
             filter_type = 4;
         }
 
-        var cf  = cutoff_freq * fil_width * 0.45;
+        var cf  = cutoff_freq * fil_width * 0.55;
         var res = resonance * -380;
 
         var svg = elem.svg('get');
@@ -49,8 +49,8 @@ function (event) {
             case 0: //lowpass filter
                 data1.push([[-1 ,svg_height], [0,svg_height/2]]); //set start position
 
-                var peak_length = 30;
-                var slope_length = Math.floor(30 + (slope * 2));
+                var peak_length = 20;
+                var slope_length = Math.floor(20 + (slope * 2));
 
                 var x = 0;
 
@@ -215,9 +215,11 @@ function (event) {
         var sample_data = ds['http://samplv1.sourceforge.net/lv2#P109_WAVE_FORM'];
         var data1 = []; //data for left channel or mono
         var data2 = []; //data for right channel
+        var mono = false;
 
         if (sample_data === undefined) {
-            data1 = [[0, 50], [400,50]];
+            data1 = [[0, 30], [400,30]];
+            data2 = [[0, 85], [400,85]];
             strokeColor = '#5a5a5a';
         } else {
             if (n_channels == 2) {
@@ -226,6 +228,7 @@ function (event) {
                     data2.push([Math.floor((x / sample_data.length) * sd_width), (sample_data[x+1] * 40.0) + (svg_height / 1.2)]);
                 }
             } else {
+                mono = true;
                 for (var x = 0; x < sample_data.length; x+=n_channels) {
                     data1.push([Math.floor((x / sample_data.length) * sd_width), (sample_data[x] * 100.0) + (svg_height / 6)]);
                 }
@@ -238,19 +241,19 @@ function (event) {
 
         var g = svg.group({stroke: strokeColor, strokeWidth: 1.0, fill: 'url(#fadeBg)'});
 
-        if (n_channels == 2) {
+        if (mono) {
             svg.polyline(g, data1);
-            svg.polyline(g, data2);
         } else {
             svg.polyline(g, data1);
+            svg.polyline(g, data2);
         }
     }
 
-    function draw_adsr(elem, a, d, s, r) {
+    function draw_adsr(elem, width, a, d, s, r) {
         var svg = elem.svg('get');
         svg.clear();
 
-        var quarter_width = elem.width() / 4;
+        var quarter_width = width / 4;
         var attack_w = a * quarter_width;
         var decay_w = d * quarter_width;
         var sustain_h = (1.0 - s) * svg_height;
@@ -309,7 +312,14 @@ function (event) {
             {
                 switch_waveform_image(event.ports[i].value);
             }
-            if (symbol == 'DCF1_CUTOFF') {
+            if (symbol === 'DCF1_CUTOFF') {
+                values[symbol] = event.ports[i].value;
+            }
+
+            if (symbol === 'DCF1_CUTOFF' ||
+                symbol === 'DCF1_RESO' ||
+                symbol === 'DCF1_SLOPE' ||
+                symbol === 'DCF1_TYPE') {
                 values[symbol] = event.ports[i].value;
             }
         }
@@ -333,19 +343,26 @@ function (event) {
         sd.data ('xModPorts', ds);
         draw_sample(sd, 1);
 
-        draw_filter(fil, values['DCF1_CUTOFF'], 0, 0, 0);
+        draw_filter(event.icon.find ('[mod-role="samplv1-filter-svg"]'),
+            values['DCF1_CUTOFF'],
+            values['DCF1_RESO'],
+            values['DCF1_TYPE'],
+            values['DCF1_SLOPE']);
 
         draw_adsr(dca,
+            dca_width,
             values['DCA1_ATTACK'],
             values['DCA1_DECAY'],
             values['DCA1_SUSTAIN'],
             values['DCA1_RELEASE']);
         draw_adsr(dcf,
+            dcf_width,
             values['DCF1_ATTACK'],
             values['DCF1_DECAY'],
             values['DCF1_SUSTAIN'],
             values['DCF1_RELEASE']);
         draw_adsr(lfo,
+            lfo_width,
             values['LFO1_ATTACK'],
             values['LFO1_DECAY'],
             values['LFO1_SUSTAIN'],
@@ -391,6 +408,7 @@ function (event) {
             if (event.symbol.startsWith('DCA1_'))
             {
                 draw_adsr(event.icon.find('[mod-role="samplv1-dca-svg"]'),
+                    dca_width,
                     values['DCA1_ATTACK'],
                     values['DCA1_DECAY'],
                     values['DCA1_SUSTAIN'],
@@ -399,6 +417,7 @@ function (event) {
             else if (event.symbol.startsWith('DCF1_'))
             {
                 draw_adsr(event.icon.find('[mod-role="samplv1-dcf-svg"]'),
+                    dcf_width,
                     values['DCF1_ATTACK'],
                     values['DCF1_DECAY'],
                     values['DCF1_SUSTAIN'],
@@ -407,6 +426,7 @@ function (event) {
             else if (event.symbol.startsWith('LFO1_'))
             {
                 draw_adsr(event.icon.find('[mod-role="samplv1-lfo-svg"]'),
+                    lfo_width,
                     values['LFO1_ATTACK'],
                     values['LFO1_DECAY'],
                     values['LFO1_SUSTAIN'],
@@ -425,8 +445,11 @@ function (event) {
             event.symbol == 'DCF1_TYPE') {
             var values = event.data.values;
             values[event.symbol] = event.value;
-            draw_filter(event.icon.find ('[mod-role="samplv1-filter-svg"]'), values['DCF1_CUTOFF'],
-                values['DCF1_RESO'], values['DCF1_TYPE'], values['DCF1_SLOPE']);
+            draw_filter(event.icon.find ('[mod-role="samplv1-filter-svg"]'),
+                values['DCF1_CUTOFF'],
+                values['DCF1_RESO'],
+                values['DCF1_TYPE'],
+                values['DCF1_SLOPE']);
         }
 
     }
