@@ -1,0 +1,113 @@
+.gx-timray{{{cns}}} {
+  background-image: url(/resources/gx_timray_bg.png{{{ns}}});
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 449px;
+  position: relative;
+  width: 317px;
+}
+
+/* CONTROLS */
+.gx-timray{{{cns}}} .mod-control-group {
+  margin: 20px !important;
+  position: relative;
+  z-index: 30;
+}
+
+/* PORTS */
+.gx-timray{{{cns}}} .mod-pedal-input,
+.gx-timray{{{cns}}} .mod-pedal-output {
+  top: 124px;
+}
+
+.gx-timray{{{cns}}} .mod-pedal-input .mod-input {
+  left: 16px;
+}
+
+.gx-timray{{{cns}}} .mod-pedal-output .mod-output {
+  left: -20px;
+}
+
+/* SWITCH */
+.gx-timray{{{cns}}} .mod-footswitch {
+  background-image: url(/resources/gx_timray_sprites/gx_timray_footswitch.png{{{ns}}});
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  bottom: 57px;
+  left: 136px;
+  cursor: pointer;
+  height: 49px;
+  width: 49px;
+  margin: auto;
+  position: absolute !important;
+}
+
+.gx-timray{{{cns}}} .mod-footswitch.on {
+  background-position-y: top !important
+}
+
+/* LIGHT */
+.gx-timray{{{cns}}} .mod-light {
+  background-image: url(/resources/gx_timray_sprites/gx_timray_thunder.png{{{ns}}}) !important;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  height: 105px;
+  width: 237px;
+  position: absolute;
+  top: 231px;
+  left: 42px;
+}
+
+.gx-timray{{{cns}}} .mod-light.off {
+  background-position: top center;
+}
+
+/* KNOBS */
+.gx-timray{{{cns}}} .mod-knob {
+  position: absolute;
+}
+
+.gx-timray{{{cns}}} .mod-knob.gx-timray-TRIM,
+.gx-timray{{{cns}}} .mod-knob.gx-timray-GAIN,
+.gx-timray{{{cns}}} .mod-knob.gx-timray-VOLUME {
+  top: 19px;
+}
+
+.gx-timray{{{cns}}} .mod-knob.gx-timray-TRIM {
+  left: 11px;
+}
+
+.gx-timray{{{cns}}} .mod-knob.gx-timray-GAIN {
+  left: 104px;
+}
+
+.gx-timray{{{cns}}} .mod-knob.gx-timray-VOLUME {
+  left: 195px;
+}
+
+.gx-timray{{{cns}}} .mod-knob.gx-timray-TREBLE,
+.gx-timray{{{cns}}} .mod-knob.gx-timray-BASS {
+  top: 103px;
+}
+
+.gx-timray{{{cns}}} .mod-knob.gx-timray-BASS {
+  left: 65.5px;
+}
+
+.gx-timray{{{cns}}} .mod-knob.gx-timray-TREBLE {
+  left: 158px;
+}
+
+.gx-timray{{{cns}}} .mod-knob .mod-knob-image.big {
+  background-image: url(/resources/gx_timray_sprites/gx_timray_knobs_big_70.png{{{ns}}});
+  background-repeat: no-repeat;
+  height: 71px;
+  width: 71px;
+}
+
+.gx-timray{{{cns}}} .mod-knob .mod-knob-image.small {
+  background-image: url(/resources/gx_timray_sprites/gx_timray_knobs_small_70.png{{{ns}}});
+  background-repeat: no-repeat;
+  height: 53px;
+  width: 53px;
+}
