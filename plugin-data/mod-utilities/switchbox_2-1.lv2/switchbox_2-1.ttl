@@ -29,8 +29,12 @@ doap:maintainer [
 doap:license <GPL>;
 
 rdfs:comment """
-This switch box receives two mono audio signals and channel it through it's mono output.
+The SwitchBox 2-1 allows you to route one of the two inputs to a single output. Switch the routing on the fly by mapping the channel control.
 
+There is also a stereo version available of this plugin.
+
+Features:
+Modeled by MOD Devices
 """;
 
 lv2:port
@@ -60,7 +64,7 @@ lv2:port
     lv2:portProperty lv2:integer;
     lv2:portProperty lv2:enumeration ;
         lv2:scalePoint [rdfs:label "1"; rdf:value 0];
-        lv2:scalePoint [rdfs:label "2"; rdf:value 1];    
+        lv2:scalePoint [rdfs:label "2"; rdf:value 1];
     lv2:default 0;
     lv2:minimum 0;
     lv2:maximum 1;

@@ -12,9 +12,9 @@ a lv2:Plugin, lv2:UtilityPlugin;
 doap:name "Switchbox 1-2 ST";
 
 doap:developer [
-    foaf:name "Jarno Verheesen";
+    foaf:name "Bram Giesen";
     foaf:homepage <>;
-    foaf:mbox <mailto:j.verheesen@hotmail.nl>;
+    foaf:mbox <mailto:bram@moddevices.com>;
     ];
 
 doap:maintainer [
@@ -29,8 +29,12 @@ doap:maintainer [
 doap:license <GPL>;
 
 rdfs:comment """
-This switch box receives two stereo audio input signals and channel it through it's stereo outputs.
+The SwitchBox 1-2 STEREO allows you to route a stereo signal to one of the two stereo outputs. Switch the routing on the fly by mapping the channel control.
 
+There is also a mono version available of this plugin.
+
+Features:
+Modeled by MOD Devices
 """;
 
 lv2:port

@@ -291,8 +291,6 @@
         lv2:maximum 1.000000 ;
         lv2:portProperty lv2:toggled ;
 		lv2:designation lv2:enabled;
-        lv2:portProperty <http://lv2plug.in/ns/ext/port-props#expensive> ,
-                         <http://kxstudio.sf.net/ns/lv2ext/props#NonAutomable> ;
     ] ;
 
     rdfs:comment """
