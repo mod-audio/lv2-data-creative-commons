@@ -41,6 +41,7 @@
 		samplv1_lv2:P106_LOOP_FADE,
 		samplv1_lv2:P107_LOOP_ZERO,
 		samplv1_lv2:P108_SAMPLE_OTABS,
+		samplv1_lv2:P109_WAVE_FORM,
 		samplv1_lv2:P201_TUNING_ENABLED,
 		samplv1_lv2:P202_TUNING_REF_PITCH,
 		samplv1_lv2:P203_TUNING_REF_NOTE,

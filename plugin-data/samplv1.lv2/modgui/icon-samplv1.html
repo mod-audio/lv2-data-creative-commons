@@ -72,6 +72,16 @@
                     <div mod-role="input-control-value" mod-port-symbol="{{symbol}}" class="value"></div>
                 </div>
                 {{/controls.8}}
+                <div class="mod-knob samplv1-button samplv1-FADE" title="FADE">
+                    <div class="mod-button-image" mod-widget="switch" mod-role="input-parameter" mod-parameter-uri="http://samplv1.sourceforge.net/lv2#P106_LOOP_FADE"></div>
+                </div>
+                <div class="mod-knob samplv1-CROSS_FADE" title="CROSS_FADE">
+                    <div class="mod-knob-image" mod-role="input-parameter" mod-parameter-uri="http://samplv1.sourceforge.net/lv2#P106_LOOP_FADE"></div>
+                    <div mod-role="input-control-value" mod-port-symbol="{{symbol}}" class="value"></div>
+                </div>
+                <div class="mod-knob samplv1-button small samplv1-LOOP_ZERO" title="LOOP_ZERO">
+                    <div class="mod-button-image" mod-widget="switch" mod-role="input-parameter" mod-parameter-uri="http://samplv1.sourceforge.net/lv2#P107_LOOP_ZERO"></div>
+                </div>
                 {{#controls.9}}
                 <div class="mod-knob samplv1-{{symbol}}" title="{{comment}}">
                     <div class="mod-knob-image" mod-role="input-control-port" mod-port-symbol="{{symbol}}"></div>

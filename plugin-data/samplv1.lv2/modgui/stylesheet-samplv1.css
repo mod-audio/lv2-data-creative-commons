@@ -258,9 +258,25 @@
     overflow: hidden;
 }
 
+.samplv1{{{cns}}} .mod-control-group .samplv1-sample-controls .mod-knob.samplv1-FADE {
+    top: -115px;
+    left: 687px;
+}
+
+
+.samplv1{{{cns}}} .mod-control-group .samplv1-sample-controls .mod-knob.samplv1-LOOP_ZERO {
+    top: -44px;
+    left: 735px;
+}
+
+.samplv1{{{cns}}} .mod-control-group .samplv1-sample-controls .mod-knob.samplv1-CROSS_FADE {
+    top: 87px;
+    left: 684px;
+}
+
 .samplv1{{{cns}}} .mod-control-group .samplv1-sample-controls .mod-knob.samplv1-GEN1_REVERSE {
-    top: -39px;
-    left: 192px;
+    top: -37px;
+    left: 187px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-sample-controls .mod-knob.samplv1-GEN1_OFFSET {
