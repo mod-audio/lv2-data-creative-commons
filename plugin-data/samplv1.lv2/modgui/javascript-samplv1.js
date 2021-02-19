@@ -1,7 +1,7 @@
 function (event) {
     /* constants */
     var sd_width   = 362;
-    var fil_width  = 164;
+    var fil_width  = 163;
     var dca_width  = 98;
     var dcf_width  = 98;
     var lfo_width  = 153;
@@ -82,20 +82,23 @@ function (event) {
 
                 break;
             case 1: //bandpass filter
+                cf *= 1.2;
                 var peak_length = 60;
                 var slope_length = Math.floor(30 + (slope * 2));
                 var slope_curve = Math.floor(slope * 2);
 
-                for (var x = 0; x < cf - slope_curve; x++) {
+                var x = 0;
+
+                for (x = 0; x < cf - slope_curve; x++) {
                     data1.push([x, svg_height + 10]);
                 }
                 var t = 0;
-                for (var x = Math.floor(cf - slope_curve); x < cf - slope_curve + peak_length; x++) {
+                for (; x < cf - slope_curve + peak_length; x++) {
                     data1.push([x, getBezierPoint(svg_height, svg_height/2, svg_height/2 - (svg_height/2 * resonance * 2.9),
                         svg_height, t/(peak_length))]);
                     t++;
                 }
-                for (var x = cf + peak_length + slope_length; x < fil_width; x++) {
+                for (; x < fil_width; x++) {
                     data1.push([x, svg_height + 10]);
                 }
 
@@ -131,7 +134,7 @@ function (event) {
                     data1.push([x, svg_height/2]);
                 }
 
-                data1.push([[fil_width + 1 ,svg_height/2], [fil_width + 2,svg_height]]); //set end_pos
+                data1.push([[fil_width + 1 ,svg_height/2], [fil_width + 2,svg_height]]); //set end pos
                 break;
             case 3: //BRF filter
                 data1.push([[-1 ,svg_height], [0,svg_height/2]]); //set start position
@@ -171,7 +174,7 @@ function (event) {
                     data1.push([x, svg_height/2]);
                 }
 
-                data1.push([[fil_width + 1 ,svg_height/2], [fil_width + 2,svg_height]]); //set end_pos
+                data1.push([[fil_width + 1 ,svg_height/2], [fil_width + 2,svg_height]]); //set end position
 
                 break;
             case 4: //formant filter
@@ -179,20 +182,24 @@ function (event) {
 
                 var peak_length = Math.floor(30 - (((cutoff_freq * -1) + 1) * 15));
                 var n_peaks = 5;
-                var offset = 10
+                var offset = 8;
+                //offset should rise together with resonance value
+                var resonance_offset = resonance * 17;
+                var offset_factor = 1 - (res * 0.001);
+                var base = 10;
+                var y_pos = (svg_height/2) - (base * resonance)
 
                 for (var peak = 0; peak < n_peaks; peak++) {
                     var t = 0;
                     for (var x = Math.floor(peak_length * peak); x < Math.floor(peak_length * (peak + 1)); x++) {
-                        data1.push([x, getBezierPoint(svg_height/2 + (offset * peak), svg_height/2, svg_height/2 - svg_height/2,
-                            svg_height/2 + (res * 0.1) + (offset * (1 + peak)) , t/(peak_length))]);
+                        data1.push([x, getBezierPoint(y_pos + ((offset * peak) * (offset_factor)) - resonance_offset, y_pos - resonance_offset, y_pos - (y_pos * (1 - (peak * 0.4))) - resonance_offset,
+                            y_pos + ((offset * (1 + peak)) * (offset_factor)) - resonance_offset, t/(peak_length))]);
                         t++;
                     }
                 }
 
-                for (var x = Math.floor(peak_length * n_peaks); x < fil_width; x++) {
-                    data1.push([x, svg_height + 100]);
-                }
+                data1.push([x + 50, svg_height + 250]); //set end position
+
                 break;
             default:
         }
