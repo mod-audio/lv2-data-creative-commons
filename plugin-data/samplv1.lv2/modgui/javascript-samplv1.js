@@ -1,4 +1,4 @@
-function (event) {
+function (event, funcs) {
     /* constants */
     var sd_width   = 362;
     var fil_width  = 163;
@@ -230,17 +230,15 @@ function (event) {
         svg.polyline(g, data1);
     }
 
-    function draw_sample(elem, n_channels) {
-        var ds = sd.data ('xModPorts');
+    function draw_sample(elem, n_channels, sample_data) {
         var svg = elem.svg('get');
         svg.clear();
 
-        var sample_data = ds['http://samplv1.sourceforge.net/lv2#P109_WAVE_FORM'];
         var data1 = []; //data for left channel or mono
         var data2 = []; //data for right channel
         var mono = false;
 
-        if (sample_data === undefined) {
+        if (n_channels === 0) {
             data1 = [[0, 30], [400,30]];
             data2 = [[0, 85], [400,85]];
             strokeColor = '#5a5a5a';
@@ -347,6 +345,9 @@ function (event) {
             }
         }
 
+        // store if we have a sample waveform yet
+        event.data.withwaveform = false;
+
         // get elements
         var sd  = event.icon.find('[mod-role=samplv1-sample-svg]');
         var fil = event.icon.find('[mod-role=samplv1-filter-svg]');
@@ -362,9 +363,7 @@ function (event) {
         setup_svg(lfo, lfo_width, svg_height);
 
         // initial drawing
-        var ds = {};
-        sd.data ('xModPorts', ds);
-        draw_sample(sd, 1);
+        draw_sample(sd, 0);
 
         draw_filter(event.icon.find ('[mod-role="samplv1-filter-svg"]'),
             values['DCF1_CUTOFF'],
@@ -393,26 +392,36 @@ function (event) {
     }
     else if (event.type == 'change')
     {
-        var n_channels;
         var sd = event.icon.find ('[mod-role="samplv1-sample-svg"]');
-        var ds = sd.data ('xModPorts');
 
-        if (event.uri == 'http://samplv1.sourceforge.net/lv2#P109_WAVE_FORM') {
-            if (event.value.length == 512) {
-                n_channels = 2;
-            }
-            else if (event.value.length == 256) {
-                n_channels = 1;
-            } else {
-                console.log("modspectre: Invalid data")
-                return
-            }
-            ds[event.uri] = event.value;
+        if (event.uri === 'http://samplv1.sourceforge.net/lv2#P109_WAVE_FORM') {
+            var n_channels;
 
-            sd.data ('xModPorts', ds);
-            draw_sample(sd, n_channels);
+            switch (event.value.length) {
+                case 512:
+                    n_channels = 2;
+                    break;
+                case 256:
+                    n_channels = 1;
+                    break;
+                default:
+                    console.log("modspectre: Invalid data");
+                    return;
+            }
+
+            event.data.withwaveform = true;
+            draw_sample(sd, n_channels, event.value);
+            return;
         }
 
+        if (event.uri === 'http://samplv1.sourceforge.net/lv2#P101_SAMPLE_FILE') {
+            if (! event.data.withwaveform) {
+                event.data.withwaveform = true;
+                funcs.patch_get('http://samplv1.sourceforge.net/lv2#P109_WAVE_FORM');
+                event
+            }
+            return;
+        }
 
         if (event.symbol === undefined)
             return;
@@ -455,11 +464,7 @@ function (event) {
                     values['LFO1_SUSTAIN'],
                     values['LFO1_RELEASE']);
             }
-        }
-
-        if (event.symbol === "LFO1_SHAPE")
-        {
-            switch_waveform_image(event.value);
+            return;
         }
 
         if (event.symbol == 'DCF1_CUTOFF' ||
@@ -473,8 +478,13 @@ function (event) {
                 values['DCF1_RESO'],
                 values['DCF1_TYPE'],
                 values['DCF1_SLOPE']);
+            return;
         }
 
+        if (event.symbol === "LFO1_SHAPE") {
+            switch_waveform_image(event.value);
+            return;
+        }
     }
 }
 
