@@ -1,7 +1,7 @@
 function (event, funcs) {
     /* constants */
     var sd_width   = 362;
-    var fil_width  = 163;
+    var fil_width  = 162;
     var dca_width  = 98;
     var dcf_width  = 98;
     var lfo_width  = 153;
@@ -25,18 +25,29 @@ function (event, funcs) {
 
     function draw_filter(elem, cutoff_freq, resonance, filter_type, slope) {
 
+        var svg = elem.svg('get');
+        svg.clear();
+
         if (slope == 3) {
             //setfilter type to formant
             filter_type = 4;
         }
 
-        var cf  = cutoff_freq * fil_width * 0.55;
-        var res = resonance * -380;
+        var slope_length;
 
-        var svg = elem.svg('get');
-        svg.clear();
+        switch (slope)
+        {
+            case 1: //filter slope of 12db
+                slope_length = 10;
+                break;
+            default: //filter slope of 24db
+                slope_length = 0;
+                break;
+        }
 
+        var cf  = cutoff_freq * fil_width * 0.685;
         var half_svg_height = svg_height/2;
+        var curve_length = 50;
 
         var data1 = [];
 
@@ -47,9 +58,6 @@ function (event, funcs) {
                 //set start position
                 data1.push([[-1 ,svg_height], [0,half_svg_height]]);
 
-                var peak_length = 20;
-                var slope_length = Math.floor(20 + (slope * 2));
-
                 var x = 0;
 
                 //straight line before cutoff freq
@@ -57,19 +65,11 @@ function (event, funcs) {
                     data1.push([x, half_svg_height]);
                 }
 
-                //draw curve for resonance peak
+                //draw curve
                 var t = 0;
-                for (x = Math.floor(cf); x < cf + peak_length; x++) {
-                    data1.push([x, getBezierPoint(half_svg_height, half_svg_height, half_svg_height - (half_svg_height * resonance),
-                        half_svg_height + (res * 0.1) , t/(peak_length))]);
-                    t++;
-                }
-
-                //draw slope
-                t = 0;
-                for (; x < cf + peak_length + slope_length; x++) {
-                    data1.push([x, getBezierPoint(half_svg_height + (res * 0.1), half_svg_height - (half_svg_height * resonance),
-                        half_svg_height, svg_height, t/(slope_length))]);
+                for (; x < cf + curve_length - slope_length; x++) {
+                    data1.push([x, getBezierPoint(half_svg_height, half_svg_height, half_svg_height - (half_svg_height * resonance * 2.8),
+                        svg_height + 1 , t/(curve_length - slope_length))]);
                     t++;
                 }
 
@@ -111,39 +111,29 @@ function (event, funcs) {
 
                 break;
             case 2: //highpass filter
-                var peak_length = 30;
-                var slope_length = Math.floor(30 + (slope * 2));
-                var slope_curve = Math.floor(slope * 2);
 
                 var x = 0;
 
-                for (; x < cf - slope_curve; x++) {
-                    data1.push([x, svg_height + 10]);
+                //straight line before cutoff freq
+                for (; x < cf + slope_length; x++) {
+                    data1.push([x, svg_height + 1]);
                 }
 
-                //draw slope
+                //draw curve
                 var t = 0;
-                for (; x < cf - slope_curve + peak_length; x++) {
-                    data1.push([x, getBezierPoint(svg_height, half_svg_height, half_svg_height - (half_svg_height * resonance),
-                        half_svg_height + (res * 0.1) , t/(peak_length))]);
+                for (; x < cf + curve_length; x++) {
+                    data1.push([x, getBezierPoint(svg_height, half_svg_height - (half_svg_height * resonance * 2.8), half_svg_height,
+                        half_svg_height, t/(curve_length - slope_length))]);
                     t++;
                 }
 
-                //draw resonance peak
-                t = 0;
-                for (x = cf + peak_length; x < cf + peak_length + slope_length; x++) {
-                    data1.push([x, getBezierPoint(half_svg_height + (res * 0.1), half_svg_height - (half_svg_height * resonance),
-                        half_svg_height, half_svg_height, t/(slope_length))]);
-                    t++;
-                }
-
-                //draw line for remaining bit
+                //draw remaining bit
                 for (; x < fil_width; x++) {
                     data1.push([x, half_svg_height]);
                 }
 
                 //set end pos
-                data1.push([[fil_width + 1 ,half_svg_height], [fil_width + 2,svg_height]]);
+                data1.push([[fil_width + 1 , half_svg_height], [fil_width + 2,svg_height]]);
                 break;
             case 3: //BRF filter
 
@@ -161,25 +151,17 @@ function (event, funcs) {
                     data1.push([x, half_svg_height]);
                 }
 
-                //draw resonce peak
+                //draw curve
                 var t = 0;
-                for (; x < cf + peak_length; x++) {
-                    data1.push([x, getBezierPoint(half_svg_height, half_svg_height, half_svg_height - (half_svg_height * resonance),
-                        half_svg_height + (res * 0.1) , t/(peak_length))]);
-                    t++;
-                }
-
-                //draw slope down
-                t = 0;
-                for (; x < cf + peak_length + slope_length; x++) {
-                    data1.push([x, getBezierPoint(half_svg_height + (res * 0.1), half_svg_height - (half_svg_height * resonance),
-                        half_svg_height, svg_height, t/(slope_length))]);
+                for (; x < cf + curve_length - slope_length; x++) {
+                    data1.push([x, getBezierPoint(half_svg_height, half_svg_height, half_svg_height - (half_svg_height * resonance * 2.8),
+                        svg_height + 1 , t/(curve_length - slope_length))]);
                     t++;
                 }
 
                 //draw slope up
                 t = 0;
-                for (; x < cf + peak_length + slope_length + second_slope_length; x++) {
+                for (; x < cf + curve_length - slope_length + second_slope_length; x++) {
                     data1.push([x, getBezierPoint(svg_height, half_svg_height, half_svg_height, half_svg_height, t/(second_slope_length))]);
                     t++;
                 }
@@ -203,7 +185,7 @@ function (event, funcs) {
 
                 //offset should rise together with resonance value
                 var resonance_offset = resonance * 17.0;
-                var offset_factor = 1 - (res * 0.001);
+                var offset_factor = 1 - (resonance * -0.38);
                 var y_pos = (half_svg_height) - (10.0 * resonance)
 
                 for (var peak = 0; peak < n_peaks; peak++) {
@@ -217,7 +199,6 @@ function (event, funcs) {
 
                 data1.push([x + 50, svg_height + 250]);
                 break;
-            default:
         }
 
         strokeColor = '#009515';

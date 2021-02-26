@@ -692,7 +692,8 @@
     position:relative;
 }
 
-.samplv1{{{cns}}} .mod-control-group .samplv1-sample .samplv1-sd{
+.samplv1{{{cns}}} .mod-control-group .samplv1-svg.fil-svg {
+    top: -1px;
 }
 
 .samplv1{{{cns}}} .mod-control-group .samplv1-fil {
