@@ -68,7 +68,7 @@ function (event, funcs) {
                 //draw curve
                 var t = 0;
                 for (; x < cf + curve_length - slope_length; x++) {
-                    data1.push([x, getBezierPoint(half_svg_height, half_svg_height, half_svg_height - (half_svg_height * resonance * 2.8),
+                    data1.push([x, getBezierPoint(half_svg_height, half_svg_height, half_svg_height - (half_svg_height * resonance * 2.7),
                         svg_height + 1 , t/(curve_length - slope_length))]);
                     t++;
                 }
@@ -81,23 +81,21 @@ function (event, funcs) {
                 break;
             case 1: //bandpass filter
                 cf *= 1.2;
-                var peak_length = 60;
-                var resonance_coef = resonance * 1.65;
-                var slope_length = Math.floor(30 + (slope * 2));
-                var slope_curve = Math.floor(slope * 2);
+                curve_length = 60;
+                var resonance_coef = resonance * 1.60;
 
                 var x = 0;
 
                 //draw line before curve
-                for (x = 0; x < cf - slope_curve; x++) {
+                for (x = 0; x < cf + (slope_length/2); x++) {
                     data1.push([x, svg_height + 10]);
                 }
 
                 //draw curve
                 var t = 0;
-                for (; x < cf - slope_curve + peak_length; x++) {
+                for (; x < cf + curve_length - (slope_length/2); x++) {
                     data1.push([x, getBezierPoint(svg_height, half_svg_height - (half_svg_height * resonance_coef), half_svg_height - (half_svg_height * resonance_coef),
-                        svg_height, t/(peak_length))]);
+                        svg_height, t/(curve_length - slope_length))]);
                     t++;
                 }
 
@@ -122,7 +120,7 @@ function (event, funcs) {
                 //draw curve
                 var t = 0;
                 for (; x < cf + curve_length; x++) {
-                    data1.push([x, getBezierPoint(svg_height, half_svg_height - (half_svg_height * resonance * 2.8), half_svg_height,
+                    data1.push([x, getBezierPoint(svg_height, half_svg_height - (half_svg_height * resonance * 2.6), half_svg_height,
                         half_svg_height, t/(curve_length - slope_length))]);
                     t++;
                 }
@@ -137,24 +135,24 @@ function (event, funcs) {
                 break;
             case 3: //BRF filter
 
-                //set start position
-                data1.push([[-1 ,svg_height], [0, half_svg_height]]);
-
-                var peak_length = 30;
-                var slope_length = Math.floor(30 + (slope * 2));
                 var second_slope_length = 30;
+                var drawing_offset = 15;
+                curve_length /=2;
+
+                //set start position
+                data1.push([[-2 ,svg_height], [-1, half_svg_height]]);
 
                 var x = 0;
 
                 //draw line before curve
                 for (; x < cf; x++) {
-                    data1.push([x, half_svg_height]);
+                    data1.push([x - drawing_offset, half_svg_height]);
                 }
 
                 //draw curve
                 var t = 0;
                 for (; x < cf + curve_length - slope_length; x++) {
-                    data1.push([x, getBezierPoint(half_svg_height, half_svg_height, half_svg_height - (half_svg_height * resonance * 2.8),
+                    data1.push([x - drawing_offset, getBezierPoint(half_svg_height, half_svg_height, half_svg_height - (half_svg_height * resonance * 2.6),
                         svg_height + 1 , t/(curve_length - slope_length))]);
                     t++;
                 }
@@ -162,13 +160,13 @@ function (event, funcs) {
                 //draw slope up
                 t = 0;
                 for (; x < cf + curve_length - slope_length + second_slope_length; x++) {
-                    data1.push([x, getBezierPoint(svg_height, half_svg_height, half_svg_height, half_svg_height, t/(second_slope_length))]);
+                    data1.push([x - drawing_offset, getBezierPoint(svg_height, half_svg_height, half_svg_height, half_svg_height, t/(second_slope_length))]);
                     t++;
                 }
 
                 //draw remaining line
                 for (; x < fil_width; x++) {
-                    data1.push([x, half_svg_height]);
+                    data1.push([x - drawing_offset, half_svg_height]);
                 }
 
                 data1.push([[fil_width + 1 ,half_svg_height], [fil_width + 2,svg_height]]); //set end_pos
