@@ -239,8 +239,6 @@ function (event, funcs) {
         var mono = false;
 
         if (n_channels === 0) {
-            data1 = [[0, 30], [400,30]];
-            data2 = [[0, 85], [400,85]];
             strokeColor = '#5a5a5a';
         } else {
             if (n_channels == 2) {
@@ -263,8 +261,14 @@ function (event, funcs) {
         var g = svg.group({stroke: strokeColor, strokeWidth: 1.0, fill: 'url(#fadeBg)'});
 
         if (mono) {
+            data1.unshift([0, sd_height*0.52542]);
+            data1.push([400, sd_height*0.52542]);
             svg.polyline(g, data1);
         } else {
+            data1.unshift([0, 30]);
+            data2.unshift([0, 85]);
+            data1.push([400, 30]);
+            data2.push([400, 85]);
             svg.polyline(g, data1);
             svg.polyline(g, data2);
         }
@@ -345,6 +349,9 @@ function (event, funcs) {
             }
         }
 
+        //set init value for cross_fade display
+        event.icon.find('[mod-role=input-control-value][mod-port-symbol=cross_fade]').text(0);
+
         // store if we have a sample waveform yet
         event.data.withwaveform = false;
 
@@ -393,6 +400,11 @@ function (event, funcs) {
     else if (event.type == 'change')
     {
         var sd = event.icon.find ('[mod-role="samplv1-sample-svg"]');
+
+        if (event.uri === 'http://samplv1.sourceforge.net/lv2#P106_LOOP_FADE') {
+            event.icon.find('[mod-role=input-control-value][mod-port-symbol=cross_fade]').text(event.value.toFixed(0));
+            return;
+        }
 
         if (event.uri === 'http://samplv1.sourceforge.net/lv2#P109_WAVE_FORM') {
             var n_channels;
