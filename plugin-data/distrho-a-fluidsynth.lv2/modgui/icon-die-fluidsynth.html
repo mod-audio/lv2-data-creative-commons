@@ -1,0 +1,117 @@
+<div class="mod-pedal die-fluidsynth">
+    <div mod-role="drag-handle" class="mod-drag-handle"></div>
+    <!-- knobs -->
+    <div class="mod-control-group knobs clearfix">
+        <!-- chorus -->
+        <div class="mod-knob die-fluidsynth-chorus_nr">
+            <div class="mod-knob-image black" mod-role="input-control-port" mod-port-symbol="chorus_nr"></div>
+            <div class="mod-knob-value" mod-role="input-control-value" mod-port-symbol="chorus_nr"></div>
+        </div>
+        <div class="mod-knob die-fluidsynth-chorus_speed">
+            <div class="mod-knob-image black" mod-role="input-control-port" mod-port-symbol="chorus_speed"></div>
+            <div class="mod-knob-value" mod-role="input-control-value" mod-port-symbol="chorus_speed"></div>
+        </div>
+        <div class="mod-knob die-fluidsynth-chorus_depth">
+            <div class="mod-knob-image black" mod-role="input-control-port" mod-port-symbol="chorus_depth"></div>
+            <div class="mod-knob-value" mod-role="input-control-value" mod-port-symbol="chorus_depth"></div>
+        </div>
+        <div class="mod-knob die-fluidsynth-chorus_level">
+            <div class="mod-knob-image black" mod-role="input-control-port" mod-port-symbol="chorus_level"></div>
+            <div class="mod-knob-value" mod-role="input-control-value" mod-port-symbol="chorus_level"></div>
+        </div>
+        <!-- reverb -->
+        <div class="mod-knob die-fluidsynth-rev_roomsize">
+            <div class="mod-knob-image black" mod-role="input-control-port" mod-port-symbol="rev_roomsize"></div>
+            <div class="mod-knob-value" mod-role="input-control-value" mod-port-symbol="rev_roomsize"></div>
+        </div>
+        <div class="mod-knob die-fluidsynth-rev_damp">
+            <div class="mod-knob-image black" mod-role="input-control-port" mod-port-symbol="rev_damp"></div>
+            <div class="mod-knob-value" mod-role="input-control-value" mod-port-symbol="rev_damp"></div>
+        </div>
+        <div class="mod-knob die-fluidsynth-rev_width">
+            <div class="mod-knob-image black" mod-role="input-control-port" mod-port-symbol="rev_width"></div>
+            <div class="mod-knob-value" mod-role="input-control-value" mod-port-symbol="rev_width"></div>
+        </div>
+        <div class="mod-knob die-fluidsynth-rev_level">
+            <div class="mod-knob-image black" mod-role="input-control-port" mod-port-symbol="rev_level"></div>
+            <div class="mod-knob-value" mod-role="input-control-value" mod-port-symbol="rev_level"></div>
+        </div>
+        <!-- master -->
+        <div class="mod-knob die-fluidsynth-level">
+            <div class="mod-knob-image red" mod-role="input-control-port" mod-port-symbol="level"></div>
+            <div class="mod-knob-value" mod-role="input-control-value" mod-port-symbol="level"></div>
+        </div>
+    </div>
+    <!-- enumerations -->
+    <div class="mod-control-group die-fluidsynth-file clearfix">
+        {{#effect.parameters}}
+        {{#path}}
+        <div class="mod-enumerated" mod-role="input-parameter" mod-parameter-uri="{{uri}}" mod-widget="custom-select-path">
+            <div mod-role="input-parameter-value" mod-parameter-uri="{{uri}}" class="mod-enumerated-selected"></div>
+            <div class="mod-enumerated-list">
+                {{#files}}
+                <div mod-role="enumeration-option" mod-parameter-value="{{fullname}}">{{basename}}</div>
+                {{/files}}
+            </div>
+        </div>
+        {{/path}}
+        {{/effect.parameters}}
+    </div>
+    <div class="mod-control-group die-fluidsynth-chorus_type clearfix">
+        <div class="mod-enumerated die-fluidsynth-chorus_type" mod-role="input-control-port" mod-port-symbol="chorus_type" mod-widget="custom-select">
+          <div mod-role="input-control-value" mod-port-symbol="chorus_type" class="mod-enumerated-selected"></div>
+          <div class="mod-enumerated-list">
+            <div mod-role="enumeration-option" mod-port-value="0">Sine</div>
+            <div mod-role="enumeration-option" mod-port-value="1">Triangle</div>
+          </div>
+        </div>
+    </div>
+    <!-- switches -->
+    <div class="mod-control-group die-fluidsynth-chorus_enable switch clearfix">
+        <div class="mod-knob die-fluidsynth-chorus_enable">
+            <div class="mod-knob-image switch" mod-role="input-control-port" mod-port-symbol="chorus_enable" mod-widget="switch"></div>
+        </div>
+    </div>
+    <div class="mod-control-group die-fluidsynth-rev_enable switch clearfix">
+        <div class="mod-knob die-fluidsynth-rev_enable">
+            <div class="mod-knob-image switch" mod-role="input-control-port" mod-port-symbol="rev_enable" mod-widget="switch"></div>
+        </div>
+    </div>
+    <div class="mod-footswitch" mod-role="bypass"></div>
+    <div class="mod-light on" mod-role="bypass-light"></div>
+    <!-- jacks -->
+    <div class="mod-pedal-input">
+        {{#effect.ports.audio.input}}
+        <div class="mod-input mod-input-disconnected" title="{{name}}" mod-role="input-audio-port" mod-port-symbol="{{symbol}}">
+            <div class="mod-pedal-input-image"></div>
+        </div>
+        {{/effect.ports.audio.input}}
+        {{#effect.ports.midi.input}}
+        <div class="mod-input mod-input-disconnected" title="{{name}}" mod-role="input-midi-port" mod-port-symbol="{{symbol}}">
+            <div class="mod-pedal-input-image"></div>
+        </div>
+        {{/effect.ports.midi.input}}
+        {{#effect.ports.cv.input}}
+        <div class="mod-input mod-input-disconnected" title="{{name}}" mod-role="input-cv-port" mod-port-symbol="{{symbol}}">
+            <div class="mod-pedal-input-image"></div>
+        </div>
+        {{/effect.ports.cv.input}}
+    </div>
+    <div class="mod-pedal-output">
+        {{#effect.ports.audio.output}}
+        <div class="mod-output mod-output-disconnected" title="{{name}}" mod-role="output-audio-port" mod-port-symbol="{{symbol}}">
+            <div class="mod-pedal-output-image"></div>
+        </div>
+        {{/effect.ports.audio.output}}
+        {{#effect.ports.midi.output}}
+        <div class="mod-output mod-output-disconnected" title="{{name}}" mod-role="output-midi-port" mod-port-symbol="{{symbol}}">
+            <div class="mod-pedal-output-image"></div>
+        </div>
+        {{/effect.ports.midi.output}}
+        {{#effect.ports.cv.output}}
+        <div class="mod-output mod-output-disconnected" title="{{name}}" mod-role="output-cv-port" mod-port-symbol="{{symbol}}">
+            <div class="mod-pedal-output-image"></div>
+        </div>
+        {{/effect.ports.cv.output}}
+    </div>
+</div>

@@ -1,0 +1,14 @@
+@prefix lv2:    <http://lv2plug.in/ns/lv2core#> .
+@prefix mod:    <http://moddevices.com/ns/mod#> .
+@prefix modgui: <http://moddevices.com/ns/modgui#> .
+
+<urn:distrho:a-fluidsynth>
+    mod:brand "DISTRHO" ;
+    mod:label "DIE Fluid Synth" ;
+    modgui:gui [
+        modgui:resourcesDirectory <modgui> ;
+        modgui:iconTemplate <modgui/icon-die-fluidsynth.html> ;
+        modgui:stylesheet <modgui/stylesheet-die-fluidsynth.css> ;
+        modgui:screenshot <modgui/screenshot-die-fluidsynth.png> ;
+        modgui:thumbnail <modgui/thumbnail-die-fluidsynth.png> ;
+    ] .

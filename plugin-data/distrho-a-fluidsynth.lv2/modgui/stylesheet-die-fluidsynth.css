@@ -1,0 +1,240 @@
+.die-fluidsynth {
+  background-image: url(/resources/resources/background.png{{{ns}}});
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
+  height: 369px;
+  width: 1027px;
+}
+
+/* PORTS */
+.die-fluidsynth .mod-pedal-input,
+.die-fluidsynth .mod-pedal-output {
+/*   top: 124px; */
+}
+
+.die-fluidsynth .mod-pedal-input .mod-input {
+/*   left: 16px; */
+}
+
+.die-fluidsynth .mod-pedal-output .mod-output {
+/*   left: -20px; */
+}
+
+/* SWITCH */
+.die-fluidsynth .mod-footswitch {
+  background-image: url(/resources/resources/toggleswitch.png{{{ns}}});
+  background-position: bottom left;
+  background-repeat: no-repeat;
+  position: absolute !important;
+  cursor: pointer;
+  margin: auto;
+  top: 27px;
+  left: 900px;
+  width: 33px;
+  height: 45px;
+}
+
+.die-fluidsynth .mod-footswitch.off {
+  background-position: bottom right;
+}
+
+/* LIGHT */
+.die-fluidsynth .mod-light {
+  background-image: url(/resources/resources/led_red.png{{{ns}}}) !important;
+  background-position: bottom left;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 32px;
+  left: 940px;
+  width: 32px;
+  height: 32px;
+}
+
+.die-fluidsynth .mod-light.off {
+  background-position: bottom right;
+}
+
+/* CONTROLS */
+.die-fluidsynth .mod-control-group {
+  display: inline;
+  position: absolute;
+  z-index: 30;
+}
+
+.die-fluidsynth .mod-control-group .mod-knob {
+  display: inline-block;
+  position: relative;
+}
+
+/* KNOBS */
+.die-fluidsynth .mod-control-group.knobs {
+  top: 120px;
+  left: 0px;
+  width: calc(1027px - 40px);
+  height: 170px;
+  margin: 0px 20px;
+}
+.die-fluidsynth .mod-control-group.knobs > .mod-knob {
+  top: 45px;
+}
+
+.die-fluidsynth .mod-knob-value {
+  position: relative;
+  top: -6px;
+  color: white;
+  font-size: 17px;
+  padding: 0px 10px;
+  text-align: center;
+}
+
+.die-fluidsynth .mod-knob .mod-knob-image.black {
+  background-image: url(/resources/resources/knob_black_70.png{{{ns}}});
+  background-repeat: no-repeat;
+  width: 100px;
+  height: 100px;
+}
+
+.die-fluidsynth .mod-knob .mod-knob-image.red {
+  background-image: url(/resources/resources/knob_red_70.png{{{ns}}});
+  background-repeat: no-repeat;
+  width: 100px;
+  height: 100px;
+}
+
+.die-fluidsynth .mod-knob.die-fluidsynth-chorus_nr {
+  left: 0px;
+}
+.die-fluidsynth .mod-knob.die-fluidsynth-chorus_speed {
+  left: 8px;
+}
+.die-fluidsynth .mod-knob.die-fluidsynth-chorus_depth {
+  left: 16px;
+}
+.die-fluidsynth .mod-knob.die-fluidsynth-chorus_level {
+  left: 24px;
+}
+.die-fluidsynth .mod-knob.die-fluidsynth-rev_roomsize {
+  left: 32px;
+}
+.die-fluidsynth .mod-knob.die-fluidsynth-rev_damp {
+  left: 40px;
+}
+.die-fluidsynth .mod-knob.die-fluidsynth-rev_width {
+  left: 48px;
+}
+.die-fluidsynth .mod-knob.die-fluidsynth-rev_level {
+  left: 54px;
+}
+.die-fluidsynth .mod-knob.die-fluidsynth-level {
+  left: 62px;
+}
+
+/* KNOB SWITCHES */
+.die-fluidsynth .mod-control-group.switch {
+  top: 300px;
+  left: 0px;
+  width: 100px;
+  height: 40px;
+}
+.die-fluidsynth .mod-control-group.switch > .mod-knob {
+  top: 0px;
+}
+
+.die-fluidsynth .mod-knob .mod-knob-image.switch {
+  background-image: url(/resources/resources/button_active.png{{{ns}}});
+  background-position: bottom left;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+}
+.die-fluidsynth .mod-knob .mod-knob-image.switch.on {
+  background-position: bottom right;
+}
+
+.die-fluidsynth .mod-control-group.switch.die-fluidsynth-chorus_enable {
+  left: 24px;
+}
+.die-fluidsynth .mod-control-group.switch.die-fluidsynth-rev_enable {
+  left: 470px;
+}
+
+/* ENUMERATIONS */
+.die-fluidsynth .mod-enumerated {
+  color: white;
+/*   overflow: hidden; */
+/*   overflow: visible; */
+  text-align: left;
+}
+
+.die-fluidsynth .mod-enumerated .mod-enumerated-selected {
+  padding: 5px;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.die-fluidsynth .mod-enumerated .mod-enumerated-list {
+  background-color: rgba(0, 0, 0, .9);
+  display: none;
+  position: relative;
+  z-index: 40;
+}
+
+.die-fluidsynth .mod-enumerated .mod-enumerated-list > div {
+  padding: 3px 9px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.die-fluidsynth .mod-enumerated .mod-enumerated-list > div.selected {
+  background-color: rgba(255,255,255,.1);
+  font-weight: bold;
+}
+.die-fluidsynth .mod-enumerated .mod-enumerated-list > div:hover {
+  background-color: rgba(255,255,255,.2);
+  cursor: pointer;
+  font-weight: bold;
+}
+.die-fluidsynth .mod-enumerated .mod-enumerated-list > div.selected:hover {
+  background-color: rgba(255,255,255,.3);
+}
+
+.die-fluidsynth .mod-control-group.die-fluidsynth-chorus_type {
+  top: 306px;
+  left: 304px;
+  width: 140px;
+  font-size: 20px;
+}
+.die-fluidsynth .mod-control-group.die-fluidsynth-chorus_type .mod-enumerated {
+  height: 30px;
+  line-height: 1em;
+}
+.die-fluidsynth .mod-control-group.die-fluidsynth-chorus_type .mod-enumerated-selected {
+  height: 30px;
+}
+.die-fluidsynth .mod-control-group.die-fluidsynth-chorus_type .mod-enumerated-list {
+  height: 72px;
+  line-height: 1.5em;
+}
+
+.die-fluidsynth .mod-control-group.die-fluidsynth-file {
+  top: 30px;
+  left: 555px;
+  width: 328px;
+  height: 38px;
+  font-size: 18px;
+}
+.die-fluidsynth .mod-control-group.die-fluidsynth-file .mod-enumerated {
+  height: 38px;
+  line-height: 28px;
+}
+.die-fluidsynth .mod-control-group.die-fluidsynth-file .mod-enumerated-selected {
+  height: 38px;
+}
+.die-fluidsynth .mod-control-group.die-fluidsynth-file .mod-enumerated-list {
+  height: 303px;
+  width: 461px;
+  overflow: visible auto;
+}
