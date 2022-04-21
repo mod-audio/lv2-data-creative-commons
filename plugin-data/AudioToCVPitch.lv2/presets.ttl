@@ -1,0 +1,26 @@
+@prefix lv2:   <http://lv2plug.in/ns/lv2core#> .
+@prefix pset:  <http://lv2plug.in/ns/ext/presets#> .
+
+<https://distrho.kx.studio/plugins/pitchtracking#cv:preset001>
+    lv2:port [
+        lv2:symbol "Sensitivity" ;
+        pset:value 50 ;
+    ] ,
+    [
+        lv2:symbol "ConfidenceThreshold" ;
+        pset:value 1250 ;
+    ] ,
+    [
+        lv2:symbol "Tolerance" ;
+        pset:value 6.25 ;
+    ] ,
+    [
+        lv2:symbol "Octave" ;
+        pset:value 0 ;
+    ] ,
+    [
+        lv2:symbol "HoldPitch" ;
+        pset:value 0 ;
+    ] .
+
+

@@ -1,0 +1,17 @@
+@prefix lv2:  <http://lv2plug.in/ns/lv2core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix pset: <http://lv2plug.in/ns/ext/presets#> .
+
+<https://distrho.kx.studio/plugins/pitchtracking#cv>
+    a lv2:Plugin ;
+    lv2:binary <AudioToCVPitch_dsp.so> ;
+    rdfs:seeAlso <AudioToCVPitch_dsp.ttl> ,
+                 <modgui.ttl> .
+
+<https://distrho.kx.studio/plugins/pitchtracking#cv:preset001>
+    a pset:Preset ;
+    lv2:appliesTo <https://distrho.kx.studio/plugins/pitchtracking#cv> ;
+    rdfs:label "Default" ;
+    rdfs:seeAlso <presets.ttl> .
+
+
