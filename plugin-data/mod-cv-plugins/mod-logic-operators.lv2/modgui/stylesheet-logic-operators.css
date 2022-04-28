@@ -1,11 +1,7 @@
 
-/* STYLES FOR THE BOXY PEDAL */
+/* STYLES FROM BOXY PEDAL */
 
-
-@import url(/fonts/nexa/stylesheet.css);
-@import url(/fonts/questrial/stylesheet.css);
-
-.mod-pedal-boxy{{{cns}}} {
+.mod-logic-operators {
     background-position:center center;
     background-repeat:no-repeat;
     background-size:230px 431px;
@@ -15,23 +11,23 @@
     border-radius: 26px;
 }
 
-.mod-pedal-boxy{{{cns}}} .mod-control-group {
+.mod-logic-operators .mod-control-group {
     margin:20px;
     position:relative;
     text-align:center;
     z-index:30;
 }
 
-.mod-pedal-boxy{{{cns}}} .mod-control-group .mod-knob {
+.mod-logic-operators .mod-control-group .mod-knob {
     overflow:hidden;
     position:relative;
 }
 
-.mod-pedal-boxy{{{cns}}} .mod-control-group .mod-knob {
+.mod-logic-operators .mod-control-group .mod-knob {
     height:110px;
 }
 
-.mod-pedal-boxy{{{cns}}} .mod-control-group .mod-knob > span.mod-knob-title {
+.mod-logic-operators .mod-control-group .mod-knob > span.mod-knob-title {
     bottom:0px;
     display:block;
     font-size:11px;
@@ -47,7 +43,7 @@
     text-transform:uppercase;
 }
 
-.mod-pedal-boxy{{{cns}}} .mod-enumerated-group {
+.mod-logic-operators .mod-enumerated-group {
     height:31px;
     margin:20px auto 0 !important;
     position:relative;
@@ -55,7 +51,7 @@
     z-index:35;
 }
 
-.mod-pedal-boxy{{{cns}}} .mod-enumerated {
+.mod-logic-operators .mod-enumerated {
     background-position:right center;
     background-repeat:no-repeat;
     font-size:11px;
@@ -68,231 +64,227 @@
     text-align:left;
 }
 
-.mod-pedal-boxy{{{cns}}} .mod-enumerated .mod-enumerated-selected {
+.mod-logic-operators .mod-enumerated .mod-enumerated-selected {
     background-color:rgba(0,0,0,.3);
     box-shadow:inset 0 0 4px rgba(0,0,0,.3);
     border-radius:4px;
     padding:3px 9px;
 }
 
-.mod-pedal-boxy{{{cns}}} .mod-enumerated .mod-enumerated-selected {
+.mod-logic-operators .mod-enumerated .mod-enumerated-selected {
     border-radius:4px 4px 0 0;
 }
 
-.mod-pedal-boxy{{{cns}}} .mod-enumerated .mod-enumerated-list {
+.mod-logic-operators .mod-enumerated .mod-enumerated-list {
     display:none;
     color:#fff;
 }
 
-.mod-pedal-boxy{{{cns}}} .mod-enumerated .mod-enumerated-list {
+.mod-logic-operators .mod-enumerated .mod-enumerated-list {
     background-color:rgba(0,0,0,.9);
     display:none;
     height:115px;
     overflow:auto;
     position:relative;
 }
-.mod-pedal-boxy{{{cns}}} .mod-enumerated .mod-enumerated-list > div {
+.mod-logic-operators .mod-enumerated .mod-enumerated-list > div {
     padding:3px 9px;
 }
 
-.mod-pedal-boxy{{{cns}}} .mod-enumerated .mod-enumerated-list > div:hover {
+.mod-logic-operators .mod-enumerated .mod-enumerated-list > div:hover {
     background-color:rgba(255,255,255,.2);
     cursor:pointer;
 }
 
 /* STYLES FOR THE PLUGIN */
 
-    .logic-operators * {
-        color: white !important;
-    }
-    .logic-operators .mod-plugin-name , .logic-operators .mod-plugin-author  {
-        display: none;
-    }
-    .logic-operators .mod-control-group .mod-knob {
-        text-align: center;
-        width: 70px
-    }
-    .mod-knob#speed {
-      position: absolute;
-      top: 66px;
-      left: 20px;
-    }
-    .mod-knob#da_db {
-      position: absolute;
-      top: 66px;
-      left: 265px;
-    }
-    .logic-operators .mod-knob-title {
-        position: relative !important;
-        padding-top: 20px;
-    }
-    .logic-operators {
-        background-image:url(/resources/logic_operators_bg.png{{{ns}}}) !important;
-        background-size: 227px 344px !important;
-        width: 227px;
-        height: 344px;
-        border-radius: 0 !important;
-    }
-    .logic-operators .mod-knob2 {
-        top: 68px;
-        position: relative;
-    }
-    .logic-operators .mod-control-group {
-      top: 0;
-      height: auto !important;
-      width: auto !important;
-      text-align: left;
-      position: relative;
-    }
-
-    .logic-operators .mod-control-group.group1 {
-      margin-top: 122px;
-      margin-left: 30px;
-      float: left;
-      width: 164px !important;
-    }
-    .logic-operators .mod-control-group.group2 {
-        margin-top: -5px;
-        margin-left: 34px;
-        float: left;
-        width: 263px !important;
-    }
-    .logic-operators .mod-control-group.group1 .mod-knob {
-      text-align: center;
-    }
-    .logic-operators .mod-control-group.group1 .mod-knob:first-child {
-      float: left;
-    }
-    .logic-operators .mod-control-group.group1 .mod-knob:last-child {
-      float: right;
-    }
-    .logic-operators .mod-control-group.group2 .mod-knob {
-      text-align: center;
-      margin: 0 26px 24px 0;
-      float: left;
-    }
-    .logic-operators .mod-control-group.group2 .mod-knob:last-child {
-      margin: 0 0 24px 0;
-    }
-
-    .logic-operators  .mod-knob2 .mod-knob-image {
-      background-image: url(/resources/logic_operators_sprite_sheets/big_knob_3_7frames.png{{{ns}}});
-      background-repeat:no-repeat;
-      background-size:auto 83px;
-      height:83px;
-      width:83px;
-      margin:26px auto 0 auto;
-      cursor: pointer;
-      z-index: 40;
-      position:relative;
-      overflow:hidden;
+.mod-logic-operators {
+    background-image:url(/resources/logic_operators_bg.png{{{ns}}}) !important;
+    background-size: 227px 344px !important;
+    width: 227px;
+    height: 344px;
+    border-radius: 0 !important;
 }
-    .logic-operators .mod-knob .mod-knob-image {
-      background-image: url(/resources/logic_operators_sprite_sheets/small_knob_3_70frames.png{{{ns}}});
-      background-repeat:no-repeat;
-      background-size:auto 53px;
-      height:53px;
-      width:53px;
-      margin:0 auto 0 auto;
-      cursor: pointer;
-      position:relative;
-      overflow:hidden;
-    }
-    .logic-operators .mod-slider {
-      position: relative;
-      float: right;
-      height: 200px;
-      color: black;
-      font-size: inherit;
-      margin-right: -18px;
-      overflow: hidden;
-      position: relative;
-      text-align: center;
-      width: 68px;
-    }
-    .logic-operators .mod-slider-value {
-      position: absolute;
-      color: #57D8FF !important;
-      background: #222;
-      font-family: monospace;
-      text-align: right;
-      padding-right: 2px;
-      border: 1px inset #555;
-      display: block;
-      height: 20px;
-      width: 50px;
-      left: 275px;
-      top: 80px;
+.mod-logic-operators .mod-plugin-name, .mod-logic-operators .mod-plugin-author  {
+    display: none;
+}
+.mod-logic-operators .mod-control-group .mod-knob {
+    text-align: center;
+    width: 70px
+}
+.mod-logic-operators .mod-knob#speed {
+    position: absolute;
+    top: 66px;
+    left: 20px;
+}
+.mod-logic-operators .mod-knob#da_db {
+    position: absolute;
+    top: 66px;
+    left: 265px;
+}
+.mod-logic-operators .mod-knob-title {
+    position: relative !important;
+    padding-top: 20px;
+}
+.mod-logic-operators .mod-knob2 {
+    top: 68px;
+    position: relative;
+}
+.mod-logic-operators .mod-control-group {
+    top: 0;
+    height: auto !important;
+    width: auto !important;
+    text-align: left;
+    position: relative;
+}
 
-      overflow: hidden;
-    }
-    .logic-operators .mod-knob-value  {
-        color: #57D8FF !important;
-        background: #222;
-        font-family: monospace;
-        text-align: right;
-        margin: 0 0 8px 8px;
-        padding-right: 2px;
-        border: 1px inset #555;
-        display: block;
-        height: 20px;
-        width: 50px;
-        overflow: hidden;
-    }
-    .logic-operators .mod-pedal-input {
-        top: 23px;
-    }
-    .logic-operators .mod-pedal-input .mod-input {
-        margin-bottom: 84px;
-    }
-    .logic-operators .mod-pedal-output {
-        top: 23px;
-    }
-    .logic-operators .mod-pedal-output .mod-output  {
-        margin-bottom: 84px;
-    }
-    .logic-operators .mod-light {
-        position: absolute;
-        background-image: url(/resources/logic_operators_sprite_sheets/lights.png{{{ns}}});
-        background-size: auto 25px;
-        background-position: left center;
-        height: 25px;
-        width: 25px;
-        top: 43px;
-        right: 18px;
-    }
-    .logic-operators .mod-light.on {
-        background-position: left center;
-    }
-    .logic-operators .mod-light.off {
-        background-position: right center;
-    }
-    .logic-operators .mod-logic-switch {
-        background-image: url(/resources/logic_operators_sprite_sheets/switch_key.png{{{ns}}});
-        background-position: center bottom;
-        background-repeat: no-repeat;
-        background-size: auto 28px 77px;
-        top: 64px;
-        right: 16px;
-        cursor: pointer;
-        height: 38.5px;
-        width: 28px;
-        position: absolute;
-        z-index: 30;
-    }
-    .logic-operators .mod-logic-switch.on {
-        background-position: center top;
-        top: 74px;
-    }
-    .logic-operators .mod-logic-switch.off {
-        background-position: center bottom;
-    }
-    .logic-operators .mod-pedal-input {
-        top: 64px;
-    }
-    .logic-operators .mod-pedal-input .mod-input:nth-child(2) {
-      top: -53px;
-    }
-    .logic-operators .mod-pedal-output {
-        top: 149px;
-    }
+.mod-logic-operators .mod-control-group.group1 {
+    margin-top: 122px;
+    margin-left: 30px;
+    float: left;
+    width: 164px !important;
+}
+.mod-logic-operators .mod-control-group.group2 {
+    margin-top: -5px;
+    margin-left: 34px;
+    float: left;
+    width: 263px !important;
+}
+.mod-logic-operators .mod-control-group.group1 .mod-knob {
+    text-align: center;
+}
+.mod-logic-operators .mod-control-group.group1 .mod-knob:first-child {
+    float: left;
+}
+.mod-logic-operators .mod-control-group.group1 .mod-knob:last-child {
+    float: right;
+}
+.mod-logic-operators .mod-control-group.group2 .mod-knob {
+    text-align: center;
+    margin: 0 26px 24px 0;
+    float: left;
+}
+.mod-logic-operators .mod-control-group.group2 .mod-knob:last-child {
+    margin: 0 0 24px 0;
+}
+
+.mod-logic-operators .mod-knob2 .mod-knob-image {
+    background-image: url(/resources/logic_operators_sprite_sheets/big_knob_3_7frames.png{{{ns}}});
+    background-repeat:no-repeat;
+    background-size:auto 83px;
+    height:83px;
+    width:83px;
+    margin:26px auto 0 auto;
+    cursor: pointer;
+    z-index: 40;
+    position:relative;
+    overflow:hidden;
+}
+.mod-logic-operators .mod-knob .mod-knob-image {
+    background-image: url(/resources/logic_operators_sprite_sheets/small_knob_3_70frames.png{{{ns}}});
+    background-repeat:no-repeat;
+    background-size:auto 53px;
+    height:53px;
+    width:53px;
+    margin:0 auto 0 auto;
+    cursor: pointer;
+    position:relative;
+    overflow:hidden;
+}
+.mod-logic-operators .mod-slider {
+    position: relative;
+    float: right;
+    height: 200px;
+    color: black;
+    font-size: inherit;
+    margin-right: -18px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    width: 68px;
+}
+.mod-logic-operators .mod-slider-value {
+    position: absolute;
+    color: #57D8FF !important;
+    background: #222;
+    font-family: monospace;
+    text-align: right;
+    padding-right: 2px;
+    border: 1px inset #555;
+    display: block;
+    height: 20px;
+    width: 50px;
+    left: 275px;
+    top: 80px;
+    overflow: hidden;
+}
+.mod-logic-operators .mod-knob-value  {
+    color: #57D8FF !important;
+    background: #222;
+    font-family: monospace;
+    text-align: right;
+    margin: 0 0 8px 8px;
+    padding-right: 2px;
+    border: 1px inset #555;
+    display: block;
+    height: 20px;
+    width: 50px;
+    overflow: hidden;
+}
+.mod-logic-operators .mod-pedal-input {
+    top: 23px;
+}
+.mod-logic-operators .mod-pedal-input .mod-input {
+    margin-bottom: 84px;
+}
+.mod-logic-operators .mod-pedal-output {
+    top: 23px;
+}
+.mod-logic-operators .mod-pedal-output .mod-output  {
+    margin-bottom: 84px;
+}
+.mod-logic-operators .mod-light {
+    position: absolute;
+    background-image: url(/resources/logic_operators_sprite_sheets/lights.png{{{ns}}});
+    background-size: auto 25px;
+    background-position: left center;
+    height: 25px;
+    width: 25px;
+    top: 43px;
+    right: 18px;
+}
+.mod-logic-operators .mod-light.on {
+    background-position: left center;
+}
+.mod-logic-operators .mod-light.off {
+    background-position: right center;
+}
+.mod-logic-operators .mod-logic-switch {
+    background-image: url(/resources/logic_operators_sprite_sheets/switch_key.png{{{ns}}});
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: auto 28px 77px;
+    top: 64px;
+    right: 16px;
+    cursor: pointer;
+    height: 38.5px;
+    width: 28px;
+    position: absolute;
+    z-index: 30;
+}
+.mod-logic-operators .mod-logic-switch.on {
+    background-position: center top;
+    top: 74px;
+}
+.mod-logic-operators .mod-logic-switch.off {
+    background-position: center bottom;
+}
+.mod-logic-operators .mod-pedal-input {
+    top: 64px;
+}
+.mod-logic-operators .mod-pedal-input .mod-input:nth-child(2) {
+    top: -53px;
+}
+.mod-logic-operators .mod-pedal-output {
+    top: 149px;
+}
