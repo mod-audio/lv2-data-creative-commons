@@ -8,7 +8,7 @@
     ] ,
     [
         lv2:symbol "ConfidenceThreshold" ;
-        pset:value 1250 ;
+        pset:value 12.5 ;
     ] ,
     [
         lv2:symbol "Tolerance" ;
