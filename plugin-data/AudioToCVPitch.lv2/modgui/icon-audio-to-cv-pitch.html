@@ -1,12 +1,13 @@
-<div class="mod-pedal mod-audio-to-cv-pitch{{{cns}}}">
+<div class="mod-pedal mod-audio-to-cv-pitch">
     <div mod-role="drag-handle" class="mod-drag-handle"></div>
     <div class="mod-light" mod-role="bypass-light"></div>
     <div class="mod-control-group mod-{{knob}} clearfix">
-        {{#controls}}
-        <div class="mod-knob" title="{{comment}}">
-            <div class="mod-knob-image" mod-role="input-control-port" mod-port-symbol="{{symbol}}"></div>
+        <div class="mod-knob" title="">
+            <div class="mod-knob-image mod-knob-image-sensitivity" mod-role="input-control-port" mod-port-symbol="Sensitivity"></div>
         </div>
-        {{/controls}}
+        <div class="mod-knob" title="">
+            <div class="mod-knob-image mod-knob-image-octave" mod-role="input-control-port" mod-port-symbol="Octave"></div>
+        </div>
     </div>
     <div class="mod-switch" mod-role="bypass"></div>
     <div class="mod-pedal-input">
