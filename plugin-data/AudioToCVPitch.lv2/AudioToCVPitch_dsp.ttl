@@ -156,10 +156,15 @@ Initial work by Bram Giesen
     doap:name "AudioToCV Pitch" ;
     doap:license <http://spdx.org/licenses/GPL-3.0-or-later.html> ;
 
-    doap:maintainer [
+    doap:developer [
         foaf:name "Bram Giesen and falkTX" ;
         foaf:homepage <https://github.com/DISTRHO/PitchTrackingSeries> ;
     ] ;
+
+    doap:maintainer [
+        foaf:name "MOD" ;
+        foaf:homepage <http://moddevices.com> ;
+    ];
 
     lv2:microVersion 0 ;
     lv2:minorVersion 2 .
