@@ -9,7 +9,6 @@
         modgui:screenshot <modgui/mod_cv_to_audio_ss.png> ;
         modgui:thumbnail <modgui/mod_cv_to_audio_tn.png> ;
         modgui:brand "MOD" ;
-        modgui:license "CC BY-NC-ND 4.0";
         modgui:label "Control to CV" ;
         modgui:port [
             lv2:index 0 ;

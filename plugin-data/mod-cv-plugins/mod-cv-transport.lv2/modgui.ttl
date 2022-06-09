@@ -10,7 +10,6 @@
         modgui:thumbnail <modgui/mod_cv_transport_tn.png> ;
         modgui:brand "MOD" ;
         modgui:label "CV Transport" ;
-        modgui:license "CC BY-NC-ND 4.0";
 
     modgui:monitoredOutputs [
 		lv2:symbol "transportStatus"

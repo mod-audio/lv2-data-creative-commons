@@ -11,7 +11,6 @@
         modgui:brand " Guitarix " ;
         modgui:label "GxSupersonic" ;
         modgui:model "combo-model-001" ;
-        modgui:license "CC BY-NC-ND 4.0";
         modgui:panel "0550" ;
         modgui:port [
             lv2:index 0 ;

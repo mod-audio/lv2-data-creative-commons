@@ -9,7 +9,6 @@
         modgui:screenshot <modgui/midi-switchbox_2-1_ss.png> ;
         modgui:thumbnail <modgui/midi-switchbox_2-1_tn.png> ;
         modgui:brand "MOD" ;
-        modgui:license "CC BY-NC-ND 4.0";
         modgui:label "MIDI Switchbox 2-1" ;
         modgui:port [
             lv2:index 0 ;

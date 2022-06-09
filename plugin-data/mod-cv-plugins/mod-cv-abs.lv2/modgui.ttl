@@ -10,5 +10,4 @@
         modgui:thumbnail <modgui/mod_cv_abs_tn.png> ;
         modgui:brand "MOD" ;
         modgui:label "CV ABS" ;
-        modgui:license "CC BY-NC-ND 4.0";
     ] .
