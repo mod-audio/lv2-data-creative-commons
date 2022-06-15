@@ -1,0 +1,96 @@
+.mod-pedal{{{cns}}} {
+    background-image: url(/resources/gx_alembic_mono_bg.png{{{ns}}});
+    width: 729px;
+    height: 161px;
+}
+
+/* PORTS
+================================================ */
+
+.mod-pedal{{{cns}}} .mod-pedal-input,
+.mod-pedal{{{cns}}} .mod-pedal-output
+{
+    top: 54px;
+}
+
+.mod-pedal{{{cns}}} .mod-switch {
+    background-image: url(/resources/assets/gx_alambic_power_switch.png{{{ns}}});
+    bottom: 46px;
+    left: 600px;
+    height: 62px;
+    overflow: hidden;
+    position: absolute;
+    text-align: center;
+    width: 41px;
+    z-index: 21;
+    cursor: pointer;
+}
+
+.mod-pedal{{{cns}}} .mod-switch.off {
+    background-position: right;
+}
+
+.mod-pedal{{{cns}}} .mod-switch.on {
+    background-position: left;
+}
+
+.mod-pedal{{{cns}}} .alembic-bass {
+    bottom: 35px;
+    left: 207px;
+    overflow: hidden;
+    position: absolute;
+    z-index: 21;
+}
+
+.mod-pedal{{{cns}}} .alembic-mid {
+    bottom: 35px;
+    left: 285px;
+    overflow: hidden;
+    position: absolute;
+    z-index: 21;
+}
+
+.mod-pedal{{{cns}}} .alembic-treble {
+    bottom: 35px;
+    left: 363px;
+    overflow: hidden;
+    position: absolute;
+    z-index: 21;
+}
+
+.mod-pedal{{{cns}}} .alembic-volume {
+    bottom: 35px;
+    left: 441px;
+    overflow: hidden;
+    position: absolute;
+    z-index: 21;
+}
+
+.mod-pedal{{{cns}}} .alembic-knob {
+    background-image: url(/resources/assets/gx_alambic_knob.png{{{ns}}});
+    background-position: left 0px;
+    background-repeat: no-repeat;
+    background-size: auto 66px;
+    height: 66px;
+    position: relative;
+    width: 66px;
+    z-index: 10;
+}
+
+.mod-pedal{{{cns}}} .alembic-bright-switch {
+    background-image: url(/resources/assets/switch_toggle.png{{{ns}}});
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: auto 28px 77px;
+    bottom: 47px;
+    left: 525px;
+    height: 42px;
+    width: 33px;
+    position: absolute;
+    z-index: 30;
+}
+
+.mod-pedal{{{cns}}} .alembic-bright-switch.on {
+    background-position: left center;
+    bottom: 43px;
+}
