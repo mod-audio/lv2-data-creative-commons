@@ -1,13 +1,13 @@
 function(event) {
     //status bitmasks
-    const SINGLE_PRESS_ON = 1;
-    const DOUBLE_PRESS_ON = 2;
-    const LONG_PRESS_ON   = 4;
+    var SINGLE_PRESS_ON = 1;
+    var DOUBLE_PRESS_ON = 2;
+    var LONG_PRESS_ON   = 4;
 
     var mask;
     var portName = "ButtonStatusMask";
 
-    if (event.symbol == portName) {
+    if (event.type == 'change' && event.uri === "http://moddevices.com/plugins/mod-devel/mod-button-to-cv#CVStateMask") {
         mask = event.value;
     } else {
         return;
