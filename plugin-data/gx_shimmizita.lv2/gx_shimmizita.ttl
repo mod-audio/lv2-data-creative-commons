@@ -1,3 +1,4 @@
+@prefix pg: <http://lv2plug.in/ns/ext/port-groups#> .
 #
 # Copyright (C) 2014 guitarix project MOD project
 # 
@@ -48,7 +49,7 @@
     lv2:optionalFeature lv2:hardRTCapable ;
 
     lv2:minorVersion 28;
-    lv2:microVersion 3;
+    lv2:microVersion 5;
 
 rdfs:comment """
 The GxShimmizita provides several reverb flavors of the shimmer type. It does so by being part pitch-shifter and part convolution-reverb.
@@ -93,6 +94,7 @@ Modeled by Guitarix
             lv2:ControlPort ;
         lv2:index 4 ;
         lv2:symbol "ModSource" ;
+        pg:group <http://guitarix.sourceforge.net/plugins/gx_shimmizita_#_shimmizita__group_modulation> ;
         lv2:name "ModSource" ;
         lv2:default 0.5 ;
         lv2:minimum 0.0 ;
@@ -102,6 +104,7 @@ Modeled by Guitarix
             lv2:ControlPort ;
         lv2:index 5 ;
         lv2:symbol "ModDepth" ;
+        pg:group <http://guitarix.sourceforge.net/plugins/gx_shimmizita_#_shimmizita__group_modulation> ;
         lv2:name "ModDepth" ;
         lv2:default 0.0 ;
         lv2:minimum 0.0 ;
@@ -111,6 +114,7 @@ Modeled by Guitarix
             lv2:ControlPort ;
         lv2:index 6 ;
         lv2:symbol "Mix" ;
+        pg:group <http://guitarix.sourceforge.net/plugins/gx_shimmizita_#_shimmizita__group_reverb> ;
         lv2:name "Mix" ;
         lv2:default 0.5 ;
         lv2:minimum 0.0 ;
@@ -120,6 +124,7 @@ Modeled by Guitarix
             lv2:ControlPort ;
         lv2:index 7 ;
         lv2:symbol "EnvTime" ;
+        pg:group <http://guitarix.sourceforge.net/plugins/gx_shimmizita_#_shimmizita__group_modulation> ;
         lv2:name "EnvTime" ;
         lv2:default 1.0 ;
         lv2:minimum 0.1 ;
@@ -129,6 +134,7 @@ Modeled by Guitarix
             lv2:ControlPort ;
         lv2:index 8 ;
         lv2:symbol "FreqLow" ;
+        pg:group <http://guitarix.sourceforge.net/plugins/gx_shimmizita_#_shimmizita__group_reverb> ;
         lv2:name "FreqLow" ;
         lv2:default 2e+02 ;
         lv2:minimum 5e+01 ;
@@ -138,6 +144,7 @@ Modeled by Guitarix
             lv2:ControlPort ;
         lv2:index 9 ;
         lv2:symbol "FreqHigh" ;
+        pg:group <http://guitarix.sourceforge.net/plugins/gx_shimmizita_#_shimmizita__group_reverb> ;
         lv2:name "FreqHigh" ;
         lv2:default 6e+03 ;
         lv2:minimum 1.5e+03 ;
@@ -147,6 +154,7 @@ Modeled by Guitarix
             lv2:ControlPort ;
         lv2:index 10 ;
         lv2:symbol "Mode" ;
+        pg:group <http://guitarix.sourceforge.net/plugins/gx_shimmizita_#_shimmizita__group_shimmer> ;
         lv2:name "Mode" ;
         lv2:default 0.0 ;
         lv2:minimum -3.0 ;
@@ -156,6 +164,7 @@ Modeled by Guitarix
             lv2:ControlPort ;
         lv2:index 11 ;
         lv2:symbol "PitchMix" ;
+        pg:group <http://guitarix.sourceforge.net/plugins/gx_shimmizita_#_shimmizita__group_shimmer> ;
         lv2:name "PitchMix" ;
         lv2:default 0.5 ;
         lv2:minimum 0.0 ;
@@ -165,6 +174,7 @@ Modeled by Guitarix
             lv2:ControlPort ;
         lv2:index 12 ;
         lv2:symbol "PitchShift" ;
+        pg:group <http://guitarix.sourceforge.net/plugins/gx_shimmizita_#_shimmizita__group_shimmer> ;
         lv2:name "PitchShift" ;
         lv2:default 0.0 ;
         lv2:minimum -6.0 ;
@@ -174,6 +184,7 @@ Modeled by Guitarix
             lv2:ControlPort ;
         lv2:index 13 ;
         lv2:symbol "LFOSpeed" ;
+        pg:group <http://guitarix.sourceforge.net/plugins/gx_shimmizita_#_shimmizita__group_modulation> ;
         lv2:name "LFOSpeed" ;
         lv2:default 0.1 ;
         lv2:minimum 0.1 ;
@@ -183,6 +194,7 @@ Modeled by Guitarix
             lv2:ControlPort ;
         lv2:index 14 ;
         lv2:symbol "DecayLow" ;
+        pg:group <http://guitarix.sourceforge.net/plugins/gx_shimmizita_#_shimmizita__group_reverb> ;
         lv2:name "DecayLow" ;
         lv2:default 3.0 ;
         lv2:minimum 1.0 ;
@@ -192,8 +204,28 @@ Modeled by Guitarix
             lv2:ControlPort ;
         lv2:index 15 ;
         lv2:symbol "DecayHigh" ;
+        pg:group <http://guitarix.sourceforge.net/plugins/gx_shimmizita_#_shimmizita__group_reverb> ;
         lv2:name "DecayHigh" ;
         lv2:default 2.0 ;
         lv2:minimum 1.0 ;
         lv2:maximum 8.0 ;
     ] .
+
+# Port groups (MOD OS 1.14 settings panel), added 2026-10
+<http://guitarix.sourceforge.net/plugins/gx_shimmizita_#_shimmizita__group_reverb>
+    a pg:InputGroup ;
+    lv2:symbol "reverb" ;
+    lv2:name "Reverb" ;
+    lv2:index 0 .
+
+<http://guitarix.sourceforge.net/plugins/gx_shimmizita_#_shimmizita__group_shimmer>
+    a pg:InputGroup ;
+    lv2:symbol "shimmer" ;
+    lv2:name "Shimmer" ;
+    lv2:index 1 .
+
+<http://guitarix.sourceforge.net/plugins/gx_shimmizita_#_shimmizita__group_modulation>
+    a pg:InputGroup ;
+    lv2:symbol "modulation" ;
+    lv2:name "Modulation" ;
+    lv2:index 2 .
