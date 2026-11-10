@@ -12,7 +12,7 @@
             lv2:UtilityPlugin ,
             lv2:Plugin ;
         doap:name "MIDI SwitchBox 1-2" ;
-        doap:license "GPLv2+" ;
+        doap:license <http://spdx.org/licenses/GPL-2.0-or-later> ;
         rdfs:comment """
 The SwitchBox 1-2 allows you to route the MIDI input to one of the two MIDI outputs of the plugin.
 
@@ -22,7 +22,7 @@ Features:
 Modeled by MOD Devices
 """ ;
         lv2:minorVersion 2 ;
-        lv2:microVersion 0 ;
+        lv2:microVersion 1 ;
         lv2:optionalFeature lv2:hardRTCapable ;
         lv2:port [
                 a lv2:InputPort ,

@@ -48,7 +48,7 @@
     lv2:optionalFeature lv2:hardRTCapable ;
 
     lv2:minorVersion 35;
-    lv2:microVersion 0;
+    lv2:microVersion 1;
 
 rdfs:comment """
 The GxSuperSonic is a guitar tube amplifier simulator plugin based on the  Rickenbacker M-16 Supersonic® (*).The Supersonic was produced in the 1960s as an answer to Fender’s popular Bassman® (*) amplifiers and was used by artists such as Jim Reeves. This is the perfect amplifier plugin for powerful clean tones, but the input gain can be pushed to get access to some smooth and creamy overdrive tones as well.While the original is a combo amplifier, this plugin does not emulate the speaker cabinet. To complete the signal chain, it is recommended to combine this plugin with the MOD Vintage Cabinets plugin.
